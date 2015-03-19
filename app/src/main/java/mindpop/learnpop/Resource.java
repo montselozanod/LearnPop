@@ -1,5 +1,7 @@
 package mindpop.learnpop;
 
+import java.util.Date;
+
 /**
  * Created by montselozanod on 3/16/15.
  */
@@ -8,8 +10,13 @@ public class Resource {
     private String title;
     private String url;
     private String type;
-    private int upVotes;
-    private int downVotes;
+    private String summary;
+    private int gradeLevel;
+    private int upVotes; //likes
+    private int downVotes; //dislikes
+    private Date pusblishDate;
+    private boolean status;
+
 
     //default constructor
     public Resource(){}
@@ -38,6 +45,22 @@ public class Resource {
         this.type = type;
     }
 
+    public String getSummary(){
+        return summary;
+    }
+
+    public void setSummary(String summ){
+        this.summary = summ;
+    }
+
+    public void getGradelevel(int grade){
+        this.gradeLevel = grade;
+    }
+
+    public int setGradeLevel(){
+        return gradeLevel;
+    }
+
     public void getUpVote(int votes){
         this.upVotes = votes;
     }
@@ -46,12 +69,28 @@ public class Resource {
         return upVotes;
     }
 
-    public void getDownVote(int votes){
+    public void setDownVote(int votes){
         this.downVotes = votes;
     }
 
-    public int settDownVote(){
+    public int getDownVote(){
         return downVotes;
+    }
+
+    public Date getPublishDate(){
+        return pusblishDate;
+    }
+
+    public void setPublishDate(Date pubDate){
+        this.pusblishDate = pubDate;
+    }
+    
+    public boolean getStatus(){
+        return status;
+    }
+
+    public void setStatus(boolean status){
+        this.status = status;
     }
 
     public int getRank(){
