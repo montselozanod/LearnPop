@@ -7,6 +7,7 @@ public class Resource {
     //attributes
     private String title;
     private String url;
+    private String type;
     private int upVotes;
     private int downVotes;
 
@@ -29,6 +30,14 @@ public class Resource {
         this.url = link;
     }
 
+    public String getType(){
+        return type;
+    }
+
+    public void setType(String type){
+        this.type = type;
+    }
+
     public void getUpVote(int votes){
         this.upVotes = votes;
     }
@@ -44,7 +53,7 @@ public class Resource {
     public int settDownVote(){
         return downVotes;
     }
-    
+
     public int getRank(){
         return upVotes-downVotes;
     }
