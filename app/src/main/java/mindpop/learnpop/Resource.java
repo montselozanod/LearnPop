@@ -7,6 +7,8 @@ import java.util.Date;
  */
 public class Resource {
     //attributes
+
+    private int id;
     private String title;
     private String url;
     private String type;
@@ -20,6 +22,14 @@ public class Resource {
 
     //default constructor
     public Resource(){}
+
+    public int getResourceId(){
+        return id;
+    }
+
+    public void setResourceId(int rId){
+        this.id = rId;
+    }
 
     public String getTitle(){
         return title;
@@ -84,7 +94,7 @@ public class Resource {
     public void setPublishDate(Date pubDate){
         this.pusblishDate = pubDate;
     }
-    
+
     public boolean getStatus(){
         return status;
     }
