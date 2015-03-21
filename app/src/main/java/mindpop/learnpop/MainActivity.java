@@ -73,6 +73,10 @@ public class MainActivity extends ActionBarActivity
                 //share
                 fragment = new Share();
                 break;
+            case 5:
+                //preferences
+                fragment = new Preferences();
+                break;
         }
         fragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)
@@ -95,6 +99,9 @@ public class MainActivity extends ActionBarActivity
                 break;
             case 5:
                 mTitle = getString(R.string.title_section5);
+                break;
+            case 6:
+                mTitle = getString(R.string.title_section6);
                 break;
         }
     }
