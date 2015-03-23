@@ -8,6 +8,7 @@ import android.content.CursorLoader;
 import android.content.Loader;
 import android.database.Cursor;
 import android.graphics.Paint;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -60,6 +61,15 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         //fb
         loginbutton = (LoginButton) findViewById(R.id.login_button);
+        loginbutton.setUserInfoChangedCallback(new LoginButton.UserInfoChangedCallback() {
+            @Override
+            public void onUserInfoFetched(GraphUser user) {
+                //MainActivity.this.user = user;
+                //handlePendingAction();
+            }
+        });
+
+
         emailTextView = (AutoCompleteTextView) findViewById(R.id.email);
         loadAutoComplete();
 
