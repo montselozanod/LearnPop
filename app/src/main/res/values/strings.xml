@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">LearnPop</string>
+    <string name="app_id">755386924557359</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_section1">Announcements</string>
     <string name="title_section2">Articles</string>

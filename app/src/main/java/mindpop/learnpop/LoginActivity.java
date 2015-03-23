@@ -1,5 +1,4 @@
 package mindpop.learnpop;
-
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
@@ -27,8 +26,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.facebook.*;
+import com.facebook.model.GraphObject;
+import com.facebook.model.GraphPlace;
+import com.facebook.model.GraphUser;
+import com.facebook.widget.*;
+
 import java.util.ArrayList;
 import java.util.List;
+
+
 /**
  * Android login screen Activity
  */
@@ -43,18 +50,21 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private EditText passwordTextView;
     private TextView signUpTextView;
 
+    //fb
+    private LoginButton loginbutton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
 
-        if(savedInstanceState == null){
-            setContentView(R.layout.activity_login);
+        //fb
+        loginbutton = (LoginButton) findViewById(R.id.login_button);
+        emailTextView = (AutoCompleteTextView) findViewById(R.id.email);
+        loadAutoComplete();
 
-            emailTextView = (AutoCompleteTextView) findViewById(R.id.email);
-            loadAutoComplete();
-
-            passwordTextView = (EditText) findViewById(R.id.password);
-            passwordTextView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        passwordTextView = (EditText) findViewById(R.id.password);
+        passwordTextView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == EditorInfo.IME_NULL) {
@@ -62,37 +72,34 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     return true;
                 }
                 return false;
-                }
-            });
-            Button loginButton = (Button) findViewById(R.id.email_sign_in_button);
+            }
+        });
 
+        Button loginButton = (Button) findViewById(R.id.email_sign_in_button);
+        loginButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                initLogin();
+            }
+        });
 
-            loginFormView = findViewById(R.id.login_form);
-            loginButton.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    initLogin();
-                }
-            });
-            progressView = findViewById(R.id.login_progress);
+        loginFormView = findViewById(R.id.login_form);
+        progressView = findViewById(R.id.login_progress);
 
-            signUpTextView = (TextView) findViewById(R.id.signUpTextView);
-            //adding underline and link to signup textview
-            signUpTextView.setPaintFlags(signUpTextView.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-            Linkify.addLinks(signUpTextView, Linkify.ALL);
+        //adding underline and link to signup textview
 
-            signUpTextView.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.i("LoginActivity", "Sign Up Activity activated.");
-                    // this is where you should start the signup Activity
-                    // LoginActivity.this.startActivity(new Intent(LoginActivity.this, SignupActivity.class));
-                 }
-            });
-        }else{
-            //set fragment from restored state info
+        signUpTextView = (TextView) findViewById(R.id.signUpTextView);
+        signUpTextView.setPaintFlags(signUpTextView.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        Linkify.addLinks(signUpTextView, Linkify.ALL);
 
-        }
+        signUpTextView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("LoginActivity", "Sign Up Activity activated.");
+                // this is where you should start the signup Activity
+                // LoginActivity.this.startActivity(new Intent(LoginActivity.this, SignupActivity.class));
+            }
+        });
     }
 
     private void loadAutoComplete() {
