@@ -22,6 +22,20 @@
         <item>High School</item>
     </string-array>
 
+    <string-array name="subjects_array">
+        <item>Arts</item>
+        <item>English</item>
+        <item>History</item>
+        <item>Math</item>
+        <item>Science</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="type_array">
+        <item>Article</item>
+        <item>Video</item>
+    </string-array>
+
     <string name="title_activity_login">LoginActivity</string>
 
     //Login

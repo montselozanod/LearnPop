@@ -9,7 +9,7 @@ public class Resource {
     //attributes
 
     private int id;
-    private String title;
+    private String title; //resName
     private String url;
     private String type;
     private String summary;

@@ -54,11 +54,17 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     //fb
     private LoginButton loginbutton;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //if user is logged in
+        /*
+        * startActivity(this, MainActivity.class);
+          finish();
+        * */
         //fb
         loginbutton = (LoginButton) findViewById(R.id.login_button);
         loginbutton.setUserInfoChangedCallback(new LoginButton.UserInfoChangedCallback() {
