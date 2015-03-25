@@ -12,6 +12,8 @@ import android.content.SharedPreferences.Editor;
 //tutorial based on http://www.androidhive.info/2012/08/android-session-management-using-shared-preferences/
 public class SessionManagement {
     SharedPreferences pref;
+    //private UiLifecycleHelper uiHelper;
+
 
     Editor editor;
 
@@ -60,7 +62,6 @@ public class SessionManagement {
         }else{
             i = new Intent(_context, MainActivity.class);
         }
-        
         //close all activities
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         //add flag to start new activity
@@ -94,5 +95,14 @@ public class SessionManagement {
         return pref.getBoolean(is_Login, false);
     }
 
+    //fb methods
+    public void createLoginFBSession(String name, String email){
+        editor.putBoolean(is_Login, true);
+        editor.putString(key_name, name);
+        editor.putString(key_email, email);
+
+        //commit changes
+        editor.commit();
+    }
 
 }

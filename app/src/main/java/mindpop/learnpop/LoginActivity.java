@@ -35,6 +35,7 @@ import com.facebook.widget.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
 
 
 /**
@@ -50,28 +51,57 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private AutoCompleteTextView emailTextView;
     private EditText passwordTextView;
     private TextView signUpTextView;
+    private SessionManagement sessionManager;
 
     //fb
     private LoginButton loginbutton;
+    private Session.StatusCallback statusCallback = new Session.StatusCallback() {
+        @Override
+        public void call(Session session, SessionState sessionState, Exception e) {
+            // respond to session state changes
+            onSessionStateChange(session, sessionState, e);
 
+        }
+    };
 
+    private void onSessionStateChange(Session session, SessionState state, Exception e ){
+        if(state.isOpened()){
+            Log.d("LoginActivity", "facebook session is open");
+            Request.executeMeRequestAsync(session, new Request.GraphUserCallback() {
+                @Override
+                public void onCompleted(GraphUser graphUser, Response response) {
+                    if(graphUser != null){
+                        Log.d("User", graphUser.getFirstName().toString());
+                    }
+                }
+            });
+            Intent i = new Intent(this, MainActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(i);
+            finish();
+        }else{
+            Log.d("LoginActivity", "Logged out");
+        }
+
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //if user is logged in
-        /*
-        * startActivity(this, MainActivity.class);
-          finish();
-        * */
-        //fb
-        loginbutton = (LoginButton) findViewById(R.id.login_button);
+
+        loginbutton = (LoginButton) findViewById(R.id.login_button); // get login fb button
+        loginbutton.setReadPermissions(Arrays.asList("public_profile")); //request public profile permissions
         loginbutton.setUserInfoChangedCallback(new LoginButton.UserInfoChangedCallback() {
             @Override
             public void onUserInfoFetched(GraphUser user) {
-                //MainActivity.this.user = user;
-                //handlePendingAction();
+                if(user != null){
+                    Log.d("LoginActivity", "user is logged in");
+                }else{
+                    //user is not logged in
+                    Log.d("LoginActivity", "user is not logged in");
+                }
             }
         });
 
@@ -321,5 +351,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             userLoginTask = null;
             showProgress(false);
         }
+
+        //Facebook UiHelpers
+
     }
 }
