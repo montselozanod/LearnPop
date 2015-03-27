@@ -13,7 +13,8 @@ public class Resource {
     private String url;
     private String type;
     private String summary;
-    private int gradeLevel;
+    private String gradeLevel;
+    private String subject;
     private int upVotes; //likes
     private int downVotes; //dislikes
     private Date pusblishDate;
@@ -62,19 +63,27 @@ public class Resource {
         this.summary = summ;
     }
 
-    public void getGradelevel(int grade){
+    public void setGradelevel(String grade){
         this.gradeLevel = grade;
     }
 
-    public int setGradeLevel(){
+    public String getSubject(){
+        return subject;
+    }
+
+    public void setSubject(String sub){
+        this.subject = sub;
+    }
+
+    public String getGradeLevel(){
         return gradeLevel;
     }
 
-    public void getUpVote(int votes){
+    public void setUpVote(int votes){
         this.upVotes = votes;
     }
 
-    public int setUpVote(){
+    public int getUpVote(){
         return upVotes;
     }
 

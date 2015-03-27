@@ -7,9 +7,20 @@ import com.facebook.FacebookSdk;
  */
 public class Learnpop extends Application {
 
+    User user = new User();
+
     @Override
     public void onCreate() {
         super.onCreate();
         FacebookSdk.sdkInitialize(getApplicationContext());
     }
+
+    public void setUser(User u){
+        this.user = u;
+    }
+
+    public User getUser(){
+        return user;
+    }
+
 }
