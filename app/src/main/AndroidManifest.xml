@@ -12,30 +12,31 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        android:name=".Learnpop">>
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" >
         </activity>
-        <activity
-            android:name="com.facebook.LoginActivity"
-            android:label="@string/app_name"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name="com.facebook.FacebookActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/app_id" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main" >
-        </activity>
-        <activity
-            android:name=".SpashScreen"
-            android:label="SplashScreen">
+            android:label="@string/title_activity_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".SpashScreen"
+            android:label="SplashScreen">
         </activity>
     </application>
 

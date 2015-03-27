@@ -76,7 +76,7 @@ public class SessionManagement {
     public void logoutUser(){
         // Clearing all data from Shared Preferences
         editor.clear();
-        editor.commit(); 
+        editor.commit();
 
         // After logout redirect user to Loing Activity
         Intent i = new Intent(_context, LoginActivity.class);

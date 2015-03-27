@@ -21,6 +21,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+import android.widget.TextView;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -97,18 +100,22 @@ public class NavigationDrawerFragment extends Fragment {
                 selectItem(position);
             }
         });
+        final TypedArray typedArray = getResources().obtainTypedArray(R.array.sections_icons);
         mDrawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,
-                new String[]{
-                        getString(R.string.title_section1),
-                        getString(R.string.title_section2),
-                        getString(R.string.title_section3),
-                        getString(R.string.title_section4),
-                        getString(R.string.title_section5),
-                        getString(R.string.title_section6)
-                }));
+                getResources().getStringArray(R.array.sections)
+        ) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View v = super.getView(position, convertView, parent);
+                int resourceId = typedArray.getResourceId(position, 0);
+                Drawable drawable = getResources().getDrawable(resourceId);
+                ((TextView) v).setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
+                return v;
+            }
+        });
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
     }

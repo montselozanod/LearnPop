@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Handler;
 
 import com.facebook.*;
-import com.facebook.android.Facebook;
+
 
 /**
  * Created by montselozanod on 3/23/15.

@@ -27,15 +27,23 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.facebook.*;
-import com.facebook.model.GraphObject;
-import com.facebook.model.GraphPlace;
-import com.facebook.model.GraphUser;
-import com.facebook.widget.*;
+import com.facebook.AccessToken;
+import com.facebook.AccessTokenTracker;
+import com.facebook.CallbackManager;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.internal.ImageDownloader;
+import com.facebook.internal.ImageRequest;
+import com.facebook.internal.ImageResponse;
+import com.facebook.login.widget.LoginButton;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
+
+import android.graphics.drawable.Drawable;
 
 
 /**
@@ -53,57 +61,59 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private TextView signUpTextView;
     private SessionManagement sessionManager;
 
-    //fb
+    //FB
+    private static final String NAME = "name";
+    private static final String ID = "id";
+    private static final String PICTURE = "picture";
+    private static final String FIELDS = "fields";
+
+    private static final String REQUEST_FIELDS =
+            TextUtils.join(",", new String[] {ID, NAME, PICTURE});
+
+    private AccessTokenTracker accessTokenTracker;
+    private CallbackManager callbackManager;
     private LoginButton loginbutton;
-    private Session.StatusCallback statusCallback = new Session.StatusCallback() {
-        @Override
-        public void call(Session session, SessionState sessionState, Exception e) {
-            // respond to session state changes
-            onSessionStateChange(session, sessionState, e);
+    private JSONObject user;
+    private Drawable userProfilePic;
+    private String userProficePicID;
 
-        }
-    };
+    //@Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        //super.onActivityCreated(savedInstanceState);
+        accessTokenTracker = new AccessTokenTracker() {
+            @Override
+            protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken,
+                                                       AccessToken currentAccessToken) {
+                //fetchUserInfo();
+                //updateUI();
 
-    private void onSessionStateChange(Session session, SessionState state, Exception e ){
-        if(state.isOpened()){
-            Log.d("LoginActivity", "facebook session is open");
-            Request.executeMeRequestAsync(session, new Request.GraphUserCallback() {
-                @Override
-                public void onCompleted(GraphUser graphUser, Response response) {
-                    if(graphUser != null){
-                        Log.d("User", graphUser.getFirstName().toString());
-                    }
-                }
-            });
-            Intent i = new Intent(this, MainActivity.class);
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(i);
-            finish();
-        }else{
-            Log.d("LoginActivity", "Logged out");
-        }
-
+            }
+        };
+        callbackManager = CallbackManager.Factory.create();
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        accessTokenTracker.stopTracking();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //setRetainInstance(true);
         setContentView(R.layout.activity_login);
 
 
         loginbutton = (LoginButton) findViewById(R.id.login_button); // get login fb button
         loginbutton.setReadPermissions(Arrays.asList("public_profile")); //request public profile permissions
-        loginbutton.setUserInfoChangedCallback(new LoginButton.UserInfoChangedCallback() {
-            @Override
-            public void onUserInfoFetched(GraphUser user) {
-                if(user != null){
-                    Log.d("LoginActivity", "user is logged in");
-                }else{
-                    //user is not logged in
-                    Log.d("LoginActivity", "user is not logged in");
-                }
-            }
-        });
+
 
 
         emailTextView = (AutoCompleteTextView) findViewById(R.id.email);
