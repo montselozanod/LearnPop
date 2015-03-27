@@ -1,6 +1,7 @@
 package mindpop.learnpop;
 
 import android.os.Bundle;
+import android.support.v4.app.ListFragment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,7 @@ import android.view.ViewGroup;
 /**
  * Created by montselozanod on 3/20/15.
  */
-public class Articles extends Fragment {
+public class Articles extends ListFragment {
 
 
 
