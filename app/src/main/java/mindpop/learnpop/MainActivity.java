@@ -104,11 +104,11 @@ public class MainActivity extends ActionBarActivity
                 break;
             case 1:
                 //articles
-                fragment = new Articles();
+                fragment = new Videos();
                 break;
             case 2:
                 //videos
-                fragment = new Videos();
+                fragment = new Articles();
                 break;
             case 3:
                 //favorites

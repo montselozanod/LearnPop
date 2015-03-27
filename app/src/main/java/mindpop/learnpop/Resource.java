@@ -17,7 +17,6 @@ public class Resource {
     private int upVotes; //likes
     private int downVotes; //dislikes
     private Date pusblishDate;
-    private boolean status;
 
 
     //default constructor
@@ -93,14 +92,6 @@ public class Resource {
 
     public void setPublishDate(Date pubDate){
         this.pusblishDate = pubDate;
-    }
-
-    public boolean getStatus(){
-        return status;
-    }
-
-    public void setStatus(boolean status){
-        this.status = status;
     }
 
     public int getRank(){
