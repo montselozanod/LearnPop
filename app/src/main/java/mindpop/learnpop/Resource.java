@@ -23,6 +23,18 @@ public class Resource {
     //default constructor
     public Resource(){}
 
+    public Resource(int id, String title, String url, String type, String summary, String gradeLevel, String subject, int upVotes, int downVotes, Date pusblishDate){
+        this.id = id;
+        this.title = title;
+        this.url = url;
+        this.type = type;
+        this.summary = summary;
+        this.gradeLevel = gradeLevel;
+        this.subject = subject;
+        this.upVotes = upVotes;
+        this.downVotes = downVotes;
+        this.pusblishDate = pusblishDate;
+    }
     public int getResourceId(){
         return id;
     }

@@ -2,6 +2,7 @@ package mindpop.learnpop;
 
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
+import android.widget.Toast;
 import android.util.Log;
 import android.os.Bundle;
 import android.os.AsyncTask;
@@ -40,11 +41,27 @@ public class Articles extends ListFragment {
         restorePreferences();
         //loadResource = new LoadResource(getActivity(),  ,);
         resourceArrayList = new ArrayList<Resource>();
+        //resourceArrayList.add(new Resource())
 
 
         //learnApp = ((Learnpop)getApplicationContext());
         return rootView;
 
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        // remove the dividers from the ListView of the ListFragment
+        getListView().setDivider(null);
+    }
+
+    @Override
+    public void onListItemClick(Resource l, View v, int position, long id) {
+        // retrieve theListView item
+        Resource item = mItems.get(position);
+        // do something
+        Toast.makeText(getActivity(), item.getTitle(), Toast.LENGTH_SHORT).show();
     }
 
     private void restorePreferences(){
