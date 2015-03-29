@@ -3,6 +3,7 @@ package mindpop.learnpop;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.widget.Toast;
+import android.widget.ListView;
 import android.util.Log;
 import android.os.Bundle;
 import android.os.AsyncTask;
@@ -13,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.apache.http.NameValuePair;
@@ -41,9 +44,11 @@ public class Articles extends ListFragment {
         restorePreferences();
         //loadResource = new LoadResource(getActivity(),  ,);
         resourceArrayList = new ArrayList<Resource>();
-        //resourceArrayList.add(new Resource())
+        Date d = new GregorianCalendar(2015, 3, 10).getTime();
 
+        resourceArrayList.add(new Resource(1, "I'm only 22", "http://www.readunwritten.com/2015/03/10/im-only-22-i-dont-want-someone-else-to-be-my-whole-world/", "Article", "Sum", "Elem", "art", 3, 0, d));
 
+        setListAdapter(new ListAdapter(getActivity(), resourceArrayList));
         //learnApp = ((Learnpop)getApplicationContext());
         return rootView;
 
@@ -57,9 +62,9 @@ public class Articles extends ListFragment {
     }
 
     @Override
-    public void onListItemClick(Resource l, View v, int position, long id) {
+    public void onListItemClick(ListView l, View v, int position, long id) {
         // retrieve theListView item
-        Resource item = mItems.get(position);
+        Resource item = resourceArrayList.get(position);
         // do something
         Toast.makeText(getActivity(), item.getTitle(), Toast.LENGTH_SHORT).show();
     }
