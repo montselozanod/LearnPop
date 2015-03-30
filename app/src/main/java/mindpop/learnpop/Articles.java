@@ -67,6 +67,12 @@ public class Articles extends ListFragment {
         Resource item = resourceArrayList.get(position);
         // do something
         Toast.makeText(getActivity(), item.getTitle(), Toast.LENGTH_SHORT).show();
+
+        /*
+        *     Intent mViewChaptersIntent = new Intent(this, Chapters.class);
+              mViewChaptersIntent.putExtra("BookName", mBooks[position]);
+              startActivity(mViewChaptersIntent);
+        * */
     }
 
     private void restorePreferences(){
