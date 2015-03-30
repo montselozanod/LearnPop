@@ -2,6 +2,7 @@ package mindpop.learnpop;
 
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
+import android.support.v4.app.FragmentTransaction;
 import android.widget.Toast;
 import android.widget.ListView;
 import android.util.Log;
@@ -68,8 +69,15 @@ public class Articles extends ListFragment {
         // retrieve theListView item
         Resource item = resourceArrayList.get(position);
         // do something
-        Toast.makeText(getActivity(), item.getTitle(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity(), item.getTitle(), Toast.LENGTH_SHORT).show();
 
+        WebViewFragment webFrag = new WebViewFragment();
+        webFrag.init(item.getUrl());
+
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.drawer_layout, webFrag);
+        transaction.addToBackStack(null);
+        transaction.commit();
         /*
         *     Intent mViewChaptersIntent = new Intent(this, Chapters.class);
               mViewChaptersIntent.putExtra("BookName", mBooks[position]);
