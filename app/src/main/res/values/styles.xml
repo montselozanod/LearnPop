@@ -1,5 +1,4 @@
 <resources>
-
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorControlNormal">#ffffff</item>
@@ -19,4 +18,8 @@
         <item name="android:fontFamily">sans-serif-light</item>
     </style>
     <color name="accent">#ffffff</color>
+
+    <style name="customCheckBoxStyle.Myab" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/drawablecheckbox</item>
+    </style>
 </resources>
