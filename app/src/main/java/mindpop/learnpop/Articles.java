@@ -78,11 +78,6 @@ public class Articles extends ListFragment {
         transaction.replace(R.id.drawer_layout, webFrag);
         transaction.addToBackStack(null);
         transaction.commit();
-        /*
-        *     Intent mViewChaptersIntent = new Intent(this, Chapters.class);
-              mViewChaptersIntent.putExtra("BookName", mBooks[position]);
-              startActivity(mViewChaptersIntent);
-        * */
     }
 
     private void restorePreferences(){
