@@ -1,9 +1,4 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" tools:context="mindpop.learnpop.MainActivity">
-    <item
-        android:id="@+id/add_favorite"
-        android:title="@string/add_favorite"
-        app:actionViewClass="android.widget.CheckBox"
-        app:showAsAction="ifRoom"/>
 </menu>

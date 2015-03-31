@@ -3,4 +3,5 @@
     <color name="frame">#b4b4b4</color>
     <color name="frame_solid">#eee</color>
     <color name="frame_background">#bcbcbc</color>
+    <color name="red">#ffb40e1e</color>
 </resources>

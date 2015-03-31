@@ -7,6 +7,7 @@
         <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
         <item name="android:autoCompleteTextViewStyle">@style/RobotoAutoCompleteTextViewStyle</item>
         <item name="android:editTextStyle">@style/RobotoEditTextStyle</item>
+        <item name="android:checkboxStyle">@drawable/drawablecheckbox</item>
     </style>
     <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
         <item name="android:fontFamily">sans-serif-light</item>
@@ -18,8 +19,7 @@
         <item name="android:fontFamily">sans-serif-light</item>
     </style>
     <color name="accent">#ffffff</color>
-
-    <style name="customCheckBoxStyle.Myab" parent="@android:style/Widget.CompoundButton.CheckBox">
+    <style name="customCheckBoxStyle.AppTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
         <item name="android:button">@drawable/drawablecheckbox</item>
     </style>
 </resources>
