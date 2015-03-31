@@ -21,7 +21,7 @@ import java.util.Date;
 /**
  * Created by montselozanod on 3/27/15.
  */
-public class LoadResource extends AsyncTask<String, String, String> {
+public class LoadResource extends AsyncTask<String, String,JSONObject> {
 
     private Context _context;
     private int displayType; // 0 for articles and 1 for videos
@@ -33,6 +33,7 @@ public class LoadResource extends AsyncTask<String, String, String> {
     private String grade;
     private JSONArray resources;
     private final String TAG_SUCCESS = "success";
+    private final String TAG_RES = "resources";
 
     public LoadResource(Context context, String [] subjects, String grade, int type){
         this._context = context;
@@ -50,7 +51,7 @@ public class LoadResource extends AsyncTask<String, String, String> {
         pDialog.show();
     }
 
-    protected String doInBackground(String... args){
+    protected JSONObject doInBackground(String... args){
 
         //parameters
         ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -62,12 +63,14 @@ public class LoadResource extends AsyncTask<String, String, String> {
             params.add(new BasicNameValuePair("Subject[]", subjects[i]));
         }
         JSONObject json = jsonParser.makeHttpRequest(urlResources, "GET", params);
+
         Log.d("Resources: ", json.toString());
 
         try{
             int success = json.getInt(TAG_SUCCESS);
 
             if(success == 1){
+                resources = json.getJSONArray(TAG_RES);
                 for (int i = 0; i < resources.length(); i++){
                     JSONObject c = resources.getJSONObject(i);
 
@@ -108,6 +111,7 @@ public class LoadResource extends AsyncTask<String, String, String> {
     protected  void onPostExecute(JSONObject result)
     {
         pDialog.dismiss();
+
     }
 
 }
