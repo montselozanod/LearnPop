@@ -24,7 +24,6 @@ import java.util.Date;
 public class LoadResource extends AsyncTask<String, String,JSONObject> {
 
     private Context _context;
-    private int displayType; // 0 for articles and 1 for videos
     private ProgressDialog pDialog;
     JSONParser jsonParser = new JSONParser();
     private ArrayList<Resource> resourcesArrayList;
@@ -35,11 +34,10 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
     private final String TAG_SUCCESS = "success";
     private final String TAG_RES = "resources";
 
-    public LoadResource(Context context, String [] subjects, String grade, int type){
+    public LoadResource(Context context, String [] subjects, String grade){
         this._context = context;
         this.subjects = subjects;
         this.grade = grade;
-        this.displayType = type;
     }
     @Override
     protected void onPreExecute(){
@@ -71,6 +69,7 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
 
             if(success == 1){
                 resources = json.getJSONArray(TAG_RES);
+                Log.d("JSONArray in LoadResource", resources.toString());
                 for (int i = 0; i < resources.length(); i++){
                     JSONObject c = resources.getJSONObject(i);
 
@@ -95,6 +94,7 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
                     }
                     res.setUrl(c.getString("ResURL"));
                     res.setSummary(c.getString("Summary"));
+                    Log.d("Resource", res.getPublishDate().toString());
                 }
             }else{
                 //if there are no resources

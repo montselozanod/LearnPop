@@ -20,6 +20,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -61,6 +62,7 @@ public class JSONParser {
                 DefaultHttpClient httpClient = new DefaultHttpClient();
                 String paramString = URLEncodedUtils.format(params, "utf-8");
                 url += "?" + paramString;
+                Log.d("Request URl", url);
                 HttpGet httpGet = new HttpGet(url);
 
                 HttpResponse httpResponse = httpClient.execute(httpGet);
@@ -82,6 +84,7 @@ public class JSONParser {
             StringBuilder sb = new StringBuilder();
             String line = null;
             while ((line = reader.readLine()) != null) {
+                Log.d("Buffer", "Line " + line);
                 sb.append(line + "\n");
             }
             is.close();
@@ -97,8 +100,13 @@ public class JSONParser {
                 jObj = new JSONObject();
                 jObj.put("success", 0);
             }else{
-                jObj = new JSONObject(json);
+                //change to json array
+                JSONArray arr = new JSONArray(json);
+                Log.d("JSONArray",  arr.toString());
+                jObj = new JSONObject();
                 jObj.put("success", 1);
+                jObj.put("resources", arr);
+                Log.d("JSON",  jObj.toString());
             }
 
         } catch (JSONException e) {

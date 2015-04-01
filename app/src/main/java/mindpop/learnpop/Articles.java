@@ -43,7 +43,9 @@ public class Articles extends ListFragment {
         View rootView = inflater.inflate(R.layout.fragment_article, container, false);
         //restore prefs
         restorePreferences();
-        //loadResource = new LoadResource(getActivity(),  ,);
+        String [] sub = {"Visual Art", "Science"};
+        loadResource = new LoadResource(getActivity(), sub ,"LowerElem");
+        loadResource.execute();
         resourceArrayList = new ArrayList<Resource>();
         Date d = new GregorianCalendar(2015, 3, 10).getTime();
 
@@ -51,7 +53,7 @@ public class Articles extends ListFragment {
         resourceArrayList.add(new Resource(1, "I'm only 22", "http://www.readunwritten.com/2015/03/10/im-only-22-i-dont-want-someone-else-to-be-my-whole-world/", "Article", "Sum", "Elem", "art", 3, 0, d));
         resourceArrayList.add(new Resource(1, "I'm only 22", "http://www.readunwritten.com/2015/03/10/im-only-22-i-dont-want-someone-else-to-be-my-whole-world/", "Article", "Sum", "Elem", "art", 3, 0, d));
 
-        setListAdapter(new ListAdapter(getActivity(), resourceArrayList));
+        //setListAdapter(new ListAdapter(getActivity(), resourceArrayList));
         //learnApp = ((Learnpop)getApplicationContext());
         return rootView;
 
