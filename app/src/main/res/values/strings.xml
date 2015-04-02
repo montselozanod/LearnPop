@@ -19,6 +19,7 @@
         <item>Arts Partners</item>
         <item>Share</item>
         <item>Preferences</item>
+        <item>Help</item>
         <item>Log Out</item>
     </string-array>
     <string-array name="sections_icons">
@@ -29,6 +30,7 @@
         <item>@android:drawable/ic_menu_slideshow</item>
         <item>@android:drawable/ic_menu_send</item>
         <item>@android:drawable/ic_menu_preferences</item>
+        <item>@android:drawable/ic_menu_help</item>
         <item>@android:drawable/ic_lock_power_off</item>
     </string-array>
     <string-array name="grades_array">
