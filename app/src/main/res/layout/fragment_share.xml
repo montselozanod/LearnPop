@@ -1,6 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Suggest a link"
+        android:id="@+id/texTitle"
+        android:padding="10dp"
+        android:textColor="#ff2c2c2c"
+        android:layout_gravity="center_horizontal"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Subject:"
+        android:id="@+id/texSubject"
+        android:padding="5dp"
+        android:textColor="#ff2c2c2c" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_Subjects"
+        android:spinnerMode="dropdown"
+        android:padding="5dp"
+        android:background="#ffffffff" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Grade Level:"
+        android:id="@+id/textGrades"
+        android:padding="5dp"
+        android:textColor="#ff2c2c2c" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_Grades"
+        android:layout_gravity="center_horizontal"
+        android:spinnerMode="dropdown"
+        android:padding="5dp"
+        android:clickable="false"
+        android:background="#ffffffff" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Type:"
+        android:id="@+id/textType"
+        android:padding="5dp"
+        android:textColor="#ff2c2c2c" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_Type"
+        android:layout_gravity="center_horizontal"
+        android:spinnerMode="dropdown"
+        android:padding="5dp"
+        android:clickable="false"
+        android:background="#ffffffff" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="URL:"
+        android:id="@+id/textView5"
+        android:padding="5dp"
+        android:textColor="#ff2c2c2c" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editURL"
+        android:padding="5dp"
+        android:phoneNumber="false"
+        android:textColor="#ff2c2c2c"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:background="#ffffffff"
+        android:autoText="false" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:id="@+id/btnSend"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="right"
+        android:paddingBottom="10dp"
+        android:paddingRight="20dp"
+        android:padding="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingTop="20dp" />
+
 
 </LinearLayout>

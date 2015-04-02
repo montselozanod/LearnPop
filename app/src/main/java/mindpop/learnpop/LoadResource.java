@@ -4,8 +4,6 @@ import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.content.Context;
-import android.widget.ListAdapter;
-import android.widget.SimpleAdapter;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -21,8 +19,10 @@ import java.util.Date;
 /**
  * Created by montselozanod on 3/27/15.
  */
+
 public class LoadResource extends AsyncTask<String, String,JSONObject> {
 
+    OnAsyncResult onAsyncResult;
     private Context _context;
     private ProgressDialog pDialog;
     JSONParser jsonParser = new JSONParser();
@@ -38,6 +38,11 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
         this._context = context;
         this.subjects = subjects;
         this.grade = grade;
+    }
+    public void setOnResultListener(OnAsyncResult onAsyncResult){
+        if(onAsyncResult != null){
+            this.onAsyncResult = onAsyncResult;
+        }
     }
     @Override
     protected void onPreExecute(){

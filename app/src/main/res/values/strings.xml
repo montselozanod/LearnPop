@@ -37,12 +37,18 @@
         <item>High School</item>
     </string-array>
     <string-array name="subjects_array">
-        <item>Arts</item>
-        <item>English</item>
+        <item>Art</item>
+        <item>Bilingual</item>
+        <item>Digital Media</item>
+        <item>Drama</item>
+        <item>ELA</item>
         <item>History</item>
         <item>Math</item>
+        <item>Movement</item>
+        <item>Music</item>
         <item>Science</item>
-        <item>Others</item>
+        <item>SEL</item>
+        <item>Visual Art</item>
     </string-array>
     <string-array name="type_array">
         <item>Article</item>
@@ -50,7 +56,7 @@
     </string-array>
 
     <string name="title_activity_login">LoginActivity</string>
-    //Login    <string name="prompt_email">Email</string>
+    <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Login</string>
     <string name="invalid_email">This email address is invalid</string>
