@@ -98,4 +98,9 @@ public class Articles extends ListFragment {
         String gradelevel = settings.getString("grade", "LowerElem");
     }
 
+    private void checkResponseForRequest(JSONObject resourceObj){
+
+    }
+
+
 }
