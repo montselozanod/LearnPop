@@ -122,6 +122,10 @@ public class MainActivity extends ActionBarActivity
                 //preferences
                 fragment = new Preferences();
                 break;
+            case 6:
+                //Help
+                fragment = new HelpFragment();
+                break;
         }
         fragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)
