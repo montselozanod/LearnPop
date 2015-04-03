@@ -22,6 +22,7 @@ import java.util.Date;
 
 public class LoadResource extends AsyncTask<String, String,JSONObject> {
 
+    public AsyncResponse delegate = null;
     private Context _context;
     private ProgressDialog pDialog;
     JSONParser jsonParser = new JSONParser();
@@ -32,11 +33,13 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
     private JSONArray resources;
     private final String TAG_SUCCESS = "success";
     private final String TAG_RES = "resources";
+    private int type; // 0 = articles, 1 = videos
 
-    public LoadResource(Context context, String [] subjects, String grade){
+    public LoadResource(Context context, String [] subjects, String grade, int type){
         this._context = context;
         this.subjects = subjects;
         this.grade = grade;
+        this.type = type;
     }
 
     @Override
@@ -111,6 +114,7 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
     protected  void onPostExecute(JSONObject result)
     {
         pDialog.dismiss();
+        delegate.processFinish(result);
 
     }
 

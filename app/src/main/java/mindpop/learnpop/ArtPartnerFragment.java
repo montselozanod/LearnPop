@@ -1,7 +1,14 @@
 package mindpop.learnpop;
 
-
+import org.apache.http.NameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.util.List;
+import java.util.ArrayList;
+import android.app.ProgressDialog;
 import android.content.res.Resources;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,12 +20,23 @@ import com.andtinder.view.CardContainer;
 import com.andtinder.view.SimpleCardStackAdapter;
 
 
+
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ArtPartnerFragment extends Fragment {
 
     private CardContainer mCardContainer;
+    private ProgressDialog progressDialog;
+    JSONParser parser = new JSONParser();
+    private static String url_partners = "http://austinartmap.com/CreativeTeach/PHP/getPartners.php";
+
+    private ArrayList<Partner> partnersArray;
+
+    //TAGS
+    private final String TAG_SUCCESS = "success";
+    private final String TAG_PARTNER = "partners";
 
     public ArtPartnerFragment() {
         // Required empty public constructor
@@ -42,6 +60,45 @@ public class ArtPartnerFragment extends Fragment {
         mCardContainer.setAdapter(adapter);
 
         return rootView;
+    }
+
+    class LoadPartners extends AsyncTask<String, String, JSONObject>{
+        @Override
+        protected  void onPreExecute(){
+            super.onPreExecute();
+            progressDialog = new ProgressDialog(getActivity());
+            progressDialog.setMessage("Loading partners...");
+            progressDialog.setIndeterminate(false);
+            progressDialog.setCancelable(false);
+            progressDialog.show();
+        }
+
+        @Override
+        protected JSONObject doInBackground(String... args){
+            List<NameValuePair> params = new ArrayList<NameValuePair>();
+            JSONObject jsonObject = parser.makeHttpRequest(url_partners, "GET", params);
+            try{
+                int success = jsonObject.getInt(TAG_SUCCESS);
+                if(success == 1){
+                    JSONArray parts = jsonObject.getJSONArray(TAG_PARTNER);
+
+                    for(int i = 0; i < parts.length(); i++){
+
+                    }
+
+                }else{
+
+                }
+            }catch(JSONException e){
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        protected void OnPostExecute(JSONObject result){
+            progressDialog.dismiss();
+        }
     }
 
 

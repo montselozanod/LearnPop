@@ -44,7 +44,8 @@ public class Articles extends ListFragment {
         //restore prefs
         restorePreferences();
         String [] sub = {"Visual Art", "Science"};
-        loadResource = new LoadResource(getActivity(), sub ,"LowerElem");
+        loadResource = new LoadResource(getActivity(), sub ,"LowerElem", 0);
+
         loadResource.execute();
         resourceArrayList = new ArrayList<Resource>();
         Date d = new GregorianCalendar(2015, 3, 10).getTime();
