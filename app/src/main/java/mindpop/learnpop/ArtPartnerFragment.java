@@ -112,11 +112,14 @@ public class ArtPartnerFragment extends Fragment {
             return null;
         }
 
-        protected void OnPostExecute(JSONObject result){
+        @Override
+        protected void onPostExecute(JSONObject result){
+            Log.d("PostExecute", "post");
+
+            super.onPostExecute(result);
             progressDialog.dismiss();
 
             SimpleCardStackAdapter adapter = new SimpleCardStackAdapter(getActivity());
-            Resources r = getResources();
 
             for(int i = 0; i < partnersArray.size(); i++)
             {
