@@ -83,6 +83,14 @@ public class ArtPartnerFragment extends Fragment {
                     JSONArray parts = jsonObject.getJSONArray(TAG_PARTNER);
 
                     for(int i = 0; i < parts.length(); i++){
+                        JSONObject c = parts.getJSONObject(i);
+                        Partner part = new Partner();
+                        part.setParID(c.getInt("ParID"));
+                        part.setParName(c.getString("ParName"));
+                        part.setParDescription(c.getString("ParDescription"));
+                        part.setParURL(c.getString("ParURL"));
+                        part.setImageURL(c.getString("ImageURL"));
+                        partnersArray.add(part);
 
                     }
 

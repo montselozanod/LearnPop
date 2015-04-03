@@ -10,6 +10,7 @@ public class Partner {
     private String parURL;
     private String imageURL;
 
+    public Partner(){}
     public Partner(int id, String name, String description, String parURL, String imgURL){
         this.parID = id;
         this.parName = name;
