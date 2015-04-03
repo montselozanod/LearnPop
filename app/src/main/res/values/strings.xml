@@ -25,8 +25,8 @@
     </string-array>
     <string-array name="sections_icons">
         <item>@android:drawable/ic_menu_today</item>
-        <item>@android:drawable/ic_menu_camera</item>
         <item>@android:drawable/ic_btn_speak_now</item>
+        <item>@android:drawable/ic_menu_camera</item>
         <item>@android:drawable/btn_star</item>
         <item>@android:drawable/ic_menu_slideshow</item>
         <item>@android:drawable/ic_menu_send</item>
