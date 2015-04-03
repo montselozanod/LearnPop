@@ -1,11 +1,13 @@
 package mindpop.learnpop;
 
 import android.app.Application;
+
 import com.facebook.FacebookSdk;
+
 /**
- * Created by montselozanod on 3/23/15.
+ * Created by montselozanod on 4/3/15.
  */
-public class Learnpop extends Application {
+public class CreativeTeach extends Application {
 
     User user = new User();
 
