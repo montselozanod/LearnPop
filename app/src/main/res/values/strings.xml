@@ -34,7 +34,9 @@
         <item>@android:drawable/ic_lock_power_off</item>
     </string-array>
     <string-array name="grades_array">
-        <item>Elementary</item>
+        <item>Early Childhood</item>
+        <item>Lower Elementary</item>
+        <item>Upper Elementary</item>
         <item>Middle School</item>
         <item>High School</item>
     </string-array>
