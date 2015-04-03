@@ -54,7 +54,7 @@ public class Articles extends ListFragment {
         resourceArrayList.add(new Resource(1, "I'm only 22", "http://www.readunwritten.com/2015/03/10/im-only-22-i-dont-want-someone-else-to-be-my-whole-world/", "Article", "Sum", "Elem", "art", 3, 0, d));
         resourceArrayList.add(new Resource(1, "I'm only 22", "http://www.readunwritten.com/2015/03/10/im-only-22-i-dont-want-someone-else-to-be-my-whole-world/", "Article", "Sum", "Elem", "art", 3, 0, d));
 
-        //setListAdapter(new ListAdapter(getActivity(), resourceArrayList));
+        setListAdapter(new ListAdapter(getActivity(), resourceArrayList));
         //learnApp = ((Learnpop)getApplicationContext());
         return rootView;
 

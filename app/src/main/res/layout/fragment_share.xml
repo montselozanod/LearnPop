@@ -27,7 +27,8 @@
         android:id="@+id/spinner_Subjects"
         android:spinnerMode="dropdown"
         android:padding="5dp"
-        android:background="#ffffffff" />
+        android:background="#ffffffff"
+        android:clickable="true" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,7 +45,7 @@
         android:layout_gravity="center_horizontal"
         android:spinnerMode="dropdown"
         android:padding="5dp"
-        android:clickable="false"
+        android:clickable="true"
         android:background="#ffffffff" />
     <TextView
         android:layout_width="wrap_content"
@@ -62,7 +63,7 @@
         android:layout_gravity="center_horizontal"
         android:spinnerMode="dropdown"
         android:padding="5dp"
-        android:clickable="false"
+        android:clickable="true"
         android:background="#ffffffff" />
     <TextView
         android:layout_width="wrap_content"
@@ -83,7 +84,8 @@
         android:selectAllOnFocus="false"
         android:singleLine="false"
         android:background="#ffffffff"
-        android:autoText="false" />
+        android:autoText="false"
+        android:editable="true" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
