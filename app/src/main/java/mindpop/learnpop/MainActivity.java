@@ -111,22 +111,26 @@ public class MainActivity extends ActionBarActivity
                 fragment = new Articles();
                 break;
             case 3:
+                //more fragment
+                fragment = new MoreFragment();
+                break;
+            case 4:
                 //favorites
                 fragment = new Favorites();
                 break;
-            case 4:
+            case 5:
                 //art partner
                 fragment = new ArtPartnerFragment();
                 break;
-            case 5:
+            case 6:
                 //share
                 fragment = new Share();
                 break;
-            case 6:
+            case 7:
                 //preferences
                 fragment = new Preferences();
                 break;
-            case 7:
+            case 8:
                 //Help
                 fragment = new HelpFragment();
                 break;
