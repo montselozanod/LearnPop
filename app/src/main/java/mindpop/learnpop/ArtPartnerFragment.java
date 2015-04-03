@@ -4,6 +4,8 @@ import org.apache.http.NameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.List;
 import java.util.ArrayList;
 import android.app.ProgressDialog;
@@ -11,9 +13,11 @@ import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.graphics.drawable.Drawable;
 
 import com.andtinder.model.CardModel;
 import com.andtinder.view.CardContainer;
@@ -36,10 +40,20 @@ public class ArtPartnerFragment extends Fragment {
 
     //TAGS
     private final String TAG_SUCCESS = "success";
-    private final String TAG_PARTNER = "partners";
+    private final String TAG_PARTNER = "resources";
 
     public ArtPartnerFragment() {
         // Required empty public constructor
+    }
+
+    public static Drawable LoadImageFromWebOperations(String url) {
+        try {
+            InputStream is = (InputStream) new URL(url).getContent();
+            Drawable d = Drawable.createFromStream(is, "src name");
+            return d;
+        } catch (Exception e) {
+            return null;
+        }
     }
 
 
@@ -48,16 +62,10 @@ public class ArtPartnerFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_art_partner, container, false);
-
+        partnersArray = new ArrayList<Partner>();
+        new LoadPartners().execute();
         mCardContainer = (CardContainer) rootView.findViewById(R.id.cardView);
         Resources r = getResources();
-
-        SimpleCardStackAdapter adapter = new SimpleCardStackAdapter(getActivity());
-
-        adapter.add(new CardModel("Title1", "Description goes here", r.getDrawable(R.drawable.picture1)));
-        adapter.add(new CardModel("Title2", "Description goes here", r.getDrawable(R.drawable.picture2)));
-        adapter.add(new CardModel("Title3", "Description goes here", r.getDrawable(R.drawable.picture3)));
-        mCardContainer.setAdapter(adapter);
 
         return rootView;
     }
@@ -81,6 +89,7 @@ public class ArtPartnerFragment extends Fragment {
                 int success = jsonObject.getInt(TAG_SUCCESS);
                 if(success == 1){
                     JSONArray parts = jsonObject.getJSONArray(TAG_PARTNER);
+                    Log.d("JSONArray in LoadResource", parts.toString());
 
                     for(int i = 0; i < parts.length(); i++){
                         JSONObject c = parts.getJSONObject(i);
@@ -91,11 +100,10 @@ public class ArtPartnerFragment extends Fragment {
                         part.setParURL(c.getString("ParURL"));
                         part.setImageURL(c.getString("ImageURL"));
                         partnersArray.add(part);
-
                     }
-
+                    Log.d("Finish Loading", "partnersArray");
                 }else{
-
+                    //no partners
                 }
             }catch(JSONException e){
                 e.printStackTrace();
@@ -106,6 +114,17 @@ public class ArtPartnerFragment extends Fragment {
 
         protected void OnPostExecute(JSONObject result){
             progressDialog.dismiss();
+
+            SimpleCardStackAdapter adapter = new SimpleCardStackAdapter(getActivity());
+            Resources r = getResources();
+
+            for(int i = 0; i < partnersArray.size(); i++)
+            {
+                Partner p = (Partner) partnersArray.get(i);
+                Drawable d = LoadImageFromWebOperations(p.getImageURL());
+                adapter.add(new CardModel(p.getParName(), p.getParDescription(), d));
+            }
+            mCardContainer.setAdapter(adapter);
         }
     }
 
