@@ -4,4 +4,10 @@
     <color name="frame_solid">#eee</color>
     <color name="frame_background">#bcbcbc</color>
     <color name="red">#ffb40e1e</color>
+    <color name="actionbar_background">#ffbd2430</color>
+    <color name="blue-mind">#ff0038a8</color>
+    <color name="green-mind">#ff33b42b</color>
+    <color name="purple-mind">#ff7b2a90</color>
+    <color name="orange-mind">#fff7921e</color>
+
 </resources>
