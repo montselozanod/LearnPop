@@ -1,5 +1,7 @@
 package mindpop.learnpop;
 
+import android.graphics.drawable.Drawable;
+
 /**
  * Created by montselozanod on 3/29/15.
  */
@@ -9,6 +11,7 @@ public class Partner {
     private String parDescription;
     private String parURL;
     private String imageURL;
+    private Drawable logo;
 
     public Partner(){}
     public Partner(int id, String name, String description, String parURL, String imgURL){
@@ -58,4 +61,8 @@ public class Partner {
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
     }
+
+    public Drawable getImage(){return logo; }
+
+    public void setImage(Drawable d){this.logo = d;}
 }

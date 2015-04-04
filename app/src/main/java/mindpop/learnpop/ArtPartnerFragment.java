@@ -52,6 +52,8 @@ public class ArtPartnerFragment extends Fragment {
             Drawable d = Drawable.createFromStream(is, "src name");
             return d;
         } catch (Exception e) {
+
+            Log.d("Drawable", e.toString());
             return null;
         }
     }
@@ -99,6 +101,8 @@ public class ArtPartnerFragment extends Fragment {
                         part.setParDescription(c.getString("ParDescription"));
                         part.setParURL(c.getString("ParURL"));
                         part.setImageURL(c.getString("ImageURL"));
+                        Drawable d = LoadImageFromWebOperations(part.getImageURL());
+                        part.setImage(d);
                         partnersArray.add(part);
                     }
                     Log.d("Finish Loading", "partnersArray");
@@ -124,8 +128,7 @@ public class ArtPartnerFragment extends Fragment {
             for(int i = 0; i < partnersArray.size(); i++)
             {
                 Partner p = (Partner) partnersArray.get(i);
-                Drawable d = LoadImageFromWebOperations(p.getImageURL());
-                adapter.add(new CardModel(p.getParName(), p.getParDescription(), d));
+                adapter.add(new CardModel(p.getParName(), p.getParDescription(), p.getImage()));
             }
             mCardContainer.setAdapter(adapter);
         }
