@@ -16,7 +16,7 @@
         android:paddingBottom="10dp"
         android:textColor="#ff2c2c2c" />
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/comments"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:ems="10"

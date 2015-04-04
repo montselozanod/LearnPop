@@ -128,6 +128,7 @@ public class ArtPartnerFragment extends Fragment {
             for(int i = 0; i < partnersArray.size(); i++)
             {
                 Partner p = (Partner) partnersArray.get(i);
+                CardModel card = new CardModel();
                 adapter.add(new CardModel(p.getParName(), p.getParDescription(), p.getImage()));
             }
             mCardContainer.setAdapter(adapter);
