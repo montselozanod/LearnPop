@@ -32,7 +32,7 @@ public class Articles extends ListFragment {
 
     public static final String PREFS_NAME = "UserPrefs";
     private ProgressDialog pDialog;
-    private Learnpop learnApp;
+    //private Learnpop learnApp;
     private LoadResource loadResource;
     JSONParser jsonParser = new JSONParser();
     ArrayList<Resource> resourceArrayList;
