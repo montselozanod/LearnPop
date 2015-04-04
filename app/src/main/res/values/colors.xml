@@ -5,6 +5,7 @@
     <color name="frame_background">#bcbcbc</color>
     <color name="red">#ffb40e1e</color>
     <color name="actionbar_background">#ffbd2430</color>
+    <color name="actionbar_dark">#ff82232d</color>
     <color name="blue_mind">#ff0038a8</color>
     <color name="green_mind">#ff33b42b</color>
     <color name="purple_mind">#ff7b2a90</color>
