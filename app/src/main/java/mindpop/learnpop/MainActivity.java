@@ -76,7 +76,8 @@ public class MainActivity extends ActionBarActivity
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
+
+        mTitle = getResources().getStringArray(R.array.sections)[0];
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
@@ -97,42 +98,52 @@ public class MainActivity extends ActionBarActivity
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = null;
+        String[] stringArray = getResources().getStringArray(R.array.sections);
         switch(position){
             case 0:
                 // announcements
                 fragment = new Announcements();
+                mTitle = stringArray[position];
                 break;
             case 1:
                 //articles
                 fragment = new Articles();
+                mTitle = stringArray[position];
                 break;
             case 2:
                 //videos
                 fragment = new Videos();
+                mTitle = stringArray[position];
                 break;
             case 3:
                 //more fragment
                 fragment = new MoreFragment();
+                mTitle = stringArray[position];
                 break;
             case 4:
                 //favorites
                 fragment = new Favorites();
+                mTitle = stringArray[position];
                 break;
             case 5:
                 //art partner
                 fragment = new ArtPartnerFragment();
+                mTitle = stringArray[position];
                 break;
             case 6:
                 //share
                 fragment = new Share();
+                mTitle = stringArray[position];
                 break;
             case 7:
                 //preferences
                 fragment = new Preferences();
+                mTitle = stringArray[position];
                 break;
             case 8:
                 //Help
                 fragment = new HelpFragment();
+                mTitle = stringArray[position];
                 break;
         }
         fragmentManager.beginTransaction()
