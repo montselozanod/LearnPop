@@ -29,7 +29,7 @@ public class ResourceAdapter extends RecyclerView.Adapter<RecyclerAdapter.Resour
 
     @Override
     public ResourceViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_view_announce, viewGroup, false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_view_strategy, viewGroup, false);
         ResourceViewHolder pvh = new ResourceViewHolder(v);
         return pvh;
     }
@@ -52,9 +52,12 @@ public class ResourceAdapter extends RecyclerView.Adapter<RecyclerAdapter.Resour
         TextView subject;
         ImageView icon;
 
-        ResourceViewHolder(View v){
+        ResourceViewHolder(View itemView){
             super(itemView);
-
+            res = (CardView)itemView.findViewById(R.id.card_resource);
+            title = (TextView)itemView.findViewById(R.id.res_title);
+            subject = (TextView)itemView.findViewById(R.id.res_sub);
+            icon = (ImageView)itemView.findViewById(R.id.icon_res);
         }
 
     }
