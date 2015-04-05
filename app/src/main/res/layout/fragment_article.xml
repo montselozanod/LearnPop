@@ -6,16 +6,9 @@
     android:paddingLeft="8dp"
     android:paddingRight="8dp">
 
-    <ListView android:id="@id/android:list"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_articles"
+        android:scrollbars="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#00FF00"
-        android:layout_weight="1"
-        android:drawSelectorOnTop="false"/>
-
-    <TextView android:id="@id/android:empty"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FF0000"
-        android:text="No data"/>
+        android:layout_height="match_parent"/>
 </LinearLayout>
