@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by montselozanod on 4/5/15.
  */
-public class ResourceAdapter extends RecyclerView.Adapter<RecyclerAdapter.ResourceViewHolder> {
+public class ResourceAdapter extends RecyclerView.Adapter<ResourceAdapter.ResourceViewHolder> {
 
     List<Resource> resources;
 
