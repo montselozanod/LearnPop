@@ -36,10 +36,8 @@ public class Articles extends Fragment {
     private ProgressDialog pDialog;
     //private Learnpop learnApp;
     private LoadResource loadResource;
-    JSONParser jsonParser = new JSONParser();
     ArrayList<Resource> resourceArrayList = new ArrayList<Resource>();
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
     @Override
