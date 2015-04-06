@@ -30,7 +30,7 @@ import org.json.JSONObject;
 /**
  * Created by montselozanod on 3/20/15.
  */
-public class Articles extends ListFragment {
+public class Articles extends Fragment {
 
     public static final String PREFS_NAME = "UserPrefs";
     private ProgressDialog pDialog;
@@ -68,10 +68,10 @@ public class Articles extends ListFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         // remove the dividers from the ListView of the ListFragment
-        getListView().setDivider(null);
+
     }
 
-    @Override
+    /*@Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         // retrieve theListView item
         Resource item = resourceArrayList.get(position);
@@ -85,7 +85,7 @@ public class Articles extends ListFragment {
         transaction.replace(R.id.drawer_layout, webFrag);
         transaction.addToBackStack(null);
         transaction.commit();
-    }
+    }*/
 
     private void restorePreferences(){
         SharedPreferences settings = this.getActivity().getSharedPreferences(PREFS_NAME, 0);
