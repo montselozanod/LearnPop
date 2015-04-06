@@ -48,10 +48,11 @@ public class ResourceAdapter extends RecyclerView.Adapter<ResourceAdapter.Resour
             @Override
             public void onClick(View v, int pos, boolean isLongClick){
                 Resource item = resources.get(pos);
-                WebViewFragment webFrag = new WebViewFragment();
-                webFrag.init(item.getUrl());
-
-                _activity.getSupportFragmentManager().beginTransaction().replace(R.id.container, webFrag).addToBackStack(null).commit();
+                /*WebViewFragment webFrag = new WebViewFragment();
+                webFrag.init(item.getUrl());*/
+                WebItem webItem = new WebItem();
+                webItem.init(item);
+                _activity.getSupportFragmentManager().beginTransaction().replace(R.id.container, webItem).addToBackStack(null).commit();
             }
         });
 
