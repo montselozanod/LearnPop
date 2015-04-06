@@ -27,6 +27,7 @@ public class ResourceAdapter extends RecyclerView.Adapter<ResourceAdapter.Resour
         return resources.size();
     }
 
+
     @Override
     public ResourceViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_view_strategy, viewGroup, false);
