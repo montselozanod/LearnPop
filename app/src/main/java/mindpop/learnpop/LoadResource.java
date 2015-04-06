@@ -70,8 +70,8 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
         //parameters
         ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
 
-            params.add(new BasicNameValuePair("GradeLevel[]", grade));
-            params.add(new BasicNameValuePair("ResType", getResTypeQuery()));
+            //params.add(new BasicNameValuePair("GradeLevel[]", grade));
+            //params.add(new BasicNameValuePair("ResType", getResTypeQuery()));
        
 
         for(int i = 0; i < subjects.length; i++){
@@ -105,14 +105,20 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
                     try{
                         SimpleDateFormat formatter =
                             new SimpleDateFormat("yyyy-MM-dd");
-                        Date date = formatter.parse(dateString);
-                        res.setPublishDate(date); //change to date
+                        if(dateString != "null")
+                        {
+                            Date date = formatter.parse(dateString);
+                            res.setPublishDate(date); //change to date
+                        }else{
+                            res.setPublishDate(null);
+                        }
                     }catch(ParseException e){
                         e.printStackTrace();
                     }
                     res.setUrl(c.getString("ResURL"));
                     res.setSummary(c.getString("Summary"));
-                    Log.d("Resource", res.getPublishDate().toString());
+                    //Log.d("Resource", res.getPublishDate().toString()); if date is null this breaks
+                    if(res.getType() == getResTypeQuery())
                     resourcesArrayList.add(res);
                 }
             }else{
@@ -131,6 +137,7 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
     {
         //pDialog.dismiss();
        // delegate.processFinish(result);
+        Log.d("PostExecute", "post");
         ResourceAdapter adapter = new ResourceAdapter(resourcesArrayList);
         mRecyclerView.setAdapter(adapter);
 
