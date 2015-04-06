@@ -51,7 +51,7 @@ public class ResourceAdapter extends RecyclerView.Adapter<ResourceAdapter.Resour
                 WebViewFragment webFrag = new WebViewFragment();
                 webFrag.init(item.getUrl());
 
-                _activity.getSupportFragmentManager().beginTransaction().replace(R.id.container, webFrag).commit();
+                _activity.getSupportFragmentManager().beginTransaction().replace(R.id.container, webFrag).addToBackStack(null).commit();
             }
         });
 
