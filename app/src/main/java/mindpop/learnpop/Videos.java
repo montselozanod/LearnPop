@@ -26,7 +26,7 @@ public class Videos extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_videos, container, false);
 
         String [] sub = {"Visual Art", "Science"};
-        mRecyclerView = (RecyclerView)rootView.findViewById(R.id.recycler_res);
+        mRecyclerView = (RecyclerView)rootView.findViewById(R.id.recycler_videos);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);

@@ -31,7 +31,7 @@ public class MoreFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_more, container, false);
         // Inflate the layout for this fragment
         String [] sub = {"Visual Art", "Science"};
-        mRecyclerView = (RecyclerView)rootView.findViewById(R.id.recycler_res);
+        mRecyclerView = (RecyclerView)rootView.findViewById(R.id.recycler_more);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
