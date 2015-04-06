@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="mindpop.learnpop.WebItem">
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/drawablecheckbox"
+        android:id="@+id/fav_check"
+        android:checked="false"
+        android:clickable="true"
+        android:enabled="true"
+        android:focusableInTouchMode="true"
+        android:textStyle="bold"
+        android:focusable="true"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/btnView"
+        android:layout_alignStart="@+id/btnView"
+        android:layout_marginBottom="135dp" />
+
+    <TextView
+        android:layout_width="196dp"
+        android:layout_height="130dp"
+        android:text="Summary"
+        android:id="@+id/sumTXT"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="64dp"
+        android:layout_below="@+id/titleTxt"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Title"
+        android:id="@+id/titleTxt"
+        android:layout_marginTop="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/fav_check"
+        android:layout_alignStart="@+id/fav_check" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View"
+        android:id="@+id/btnView"
+        android:layout_gravity="bottom"
+        android:layout_alignTop="@+id/fav_check"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp" />
+
+</RelativeLayout>
