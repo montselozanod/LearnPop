@@ -55,12 +55,23 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
         pDialog.show();*/
     }
 
+    private String getResTypeQuery(){
+        String query = "";
+        switch(type){
+            case 0: query = "Strategy"; break;
+            case 1: query = "Video"; break;
+            case 2: query = "OtherR"; break;
+        }
+        return query;
+    }
+
     protected JSONObject doInBackground(String... args){
 
         //parameters
         ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
 
             params.add(new BasicNameValuePair("GradeLevel[]", grade));
+            params.add(new BasicNameValuePair("ResType", getResTypeQuery()));
        
 
         for(int i = 0; i < subjects.length; i++){
