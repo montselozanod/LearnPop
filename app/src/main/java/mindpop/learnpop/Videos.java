@@ -23,10 +23,10 @@ public class Videos extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_videos, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_article, container, false);
 
         String [] sub = {"Visual Art", "Science"};
-        mRecyclerView = (RecyclerView)rootView.findViewById(R.id.recycler_videos);
+        mRecyclerView = (RecyclerView)rootView.findViewById(R.id.recycler_res);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);

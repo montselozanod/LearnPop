@@ -1,7 +1,11 @@
 package mindpop.learnpop;
 
+import android.app.Activity;
+import android.content.Context;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +22,10 @@ import java.util.List;
 public class ResourceAdapter extends RecyclerView.Adapter<ResourceAdapter.ResourceViewHolder> {
 
     List<Resource> resources;
+    private ActionBarActivity _activity;
 
-    ResourceAdapter(List<Resource> list){
+    ResourceAdapter(ActionBarActivity ac, List<Resource> list){
+        this._activity= ac;
         this.resources = list;
     }
 
@@ -37,6 +43,17 @@ public class ResourceAdapter extends RecyclerView.Adapter<ResourceAdapter.Resour
 
     @Override
     public void onBindViewHolder(ResourceViewHolder aViewHolder, int i) {
+        aViewHolder.setClickListener(new ResourceViewHolder.ClickListener(){
+            @Override
+            public void onClick(View v, int pos, boolean isLongClick){
+                Resource item = resources.get(pos);
+                WebViewFragment webFrag = new WebViewFragment();
+                webFrag.init(item.getUrl());
+
+                _activity.getSupportFragmentManager().beginTransaction().replace(R.id.container, webFrag).commit();
+            }
+        });
+
         aViewHolder.title.setText(resources.get(i).getTitle());
         aViewHolder.subject.setText(resources.get(i).getSubject());
         aViewHolder.icon.setImageResource(R.drawable.ic_like);
@@ -47,11 +64,18 @@ public class ResourceAdapter extends RecyclerView.Adapter<ResourceAdapter.Resour
         super.onAttachedToRecyclerView(recyclerView);
     }
 
-    public static class ResourceViewHolder extends RecyclerView.ViewHolder{
+    public static class ResourceViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener{
         CardView res;
         TextView title;
         TextView subject;
         ImageView icon;
+
+        private ClickListener clickListener;
+
+        public interface ClickListener{
+
+            public void onClick(View v, int position, boolean isLongClick);
+        }
 
         ResourceViewHolder(View itemView){
             super(itemView);
@@ -59,7 +83,29 @@ public class ResourceAdapter extends RecyclerView.Adapter<ResourceAdapter.Resour
             title = (TextView)itemView.findViewById(R.id.res_title);
             subject = (TextView)itemView.findViewById(R.id.res_sub);
             icon = (ImageView)itemView.findViewById(R.id.icon_res);
+            itemView.setOnClickListener(this);
+            itemView.setOnLongClickListener(this);
         }
 
-    }
+            public void setClickListener(ClickListener clickListener) {
+                this.clickListener = clickListener;
+            }
+
+            @Override
+            public void onClick(View v) {
+
+                // If not long clicked, pass last variable as false.
+                clickListener.onClick(v, getPosition(), false);
+            }
+
+            @Override
+            public boolean onLongClick(View v) {
+
+                // If long clicked, passed last variable as true.
+                clickListener.onClick(v, getPosition(), true);
+                return true;
+            }
+        }
+
 }
+

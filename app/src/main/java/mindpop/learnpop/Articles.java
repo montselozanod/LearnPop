@@ -2,28 +2,18 @@ package mindpop.learnpop;
 
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.Toast;
-import android.widget.ListView;
-import android.util.Log;
+
 import android.os.Bundle;
-import android.os.AsyncTask;
-import android.support.v4.app.ListFragment;
+
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
 
-import org.apache.http.NameValuePair;
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 
@@ -52,7 +42,7 @@ public class Articles extends Fragment {
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        loadResource = new LoadResource(getActivity(), mRecyclerView, sub ,"LowerElem", 0);
+        loadResource = new LoadResource(getActivity(), getActivity(), mRecyclerView, sub ,"LowerElem", 0);
 
         loadResource.execute();
 
