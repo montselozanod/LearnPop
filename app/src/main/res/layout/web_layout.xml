@@ -9,20 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="350dp"
         android:id="@+id/webView"
-        android:layout_weight="0.64" />
+        android:layout_weight="1.06" />
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:button="@drawable/drawablecheckbox"
-        android:id="@+id/fav_check"
-        android:checked="false"
-        android:clickable="true"
-        android:enabled="true"
-        android:focusableInTouchMode="true"
-        android:textStyle="bold"
-        android:focusable="true"
-        android:layout_gravity="center" />
+
 
 </LinearLayout>
 
