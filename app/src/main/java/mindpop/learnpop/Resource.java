@@ -15,6 +15,7 @@ public class Resource {
     private String summary;
     private String gradeLevel;
     private String subject;
+    private String author;
     private int upVotes; //likes
     private int downVotes; //dislikes
     private Date pusblishDate;
@@ -66,6 +67,10 @@ public class Resource {
     public void setType(String type){
         this.type = type;
     }
+
+    public String getAuthor(){return author;}
+
+    public void setAuthor(String auth){this.author = auth;}
 
     public String getSummary(){
         return summary;

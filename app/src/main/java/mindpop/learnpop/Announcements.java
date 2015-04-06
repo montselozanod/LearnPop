@@ -33,7 +33,6 @@ public class Announcements extends Fragment {
     private ProgressDialog progressDialog;
     private JSONParser parser = new JSONParser();
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<Announcement> list = new ArrayList<Announcement>();
     private final String announce_url = "http://austinartmap.com/CreativeTeach/PHP/getAnnouncements.php";
@@ -106,8 +105,6 @@ public class Announcements extends Fragment {
             super.onPostExecute(result);
 //            progressDialog.dismiss();
             // for performance given that changes in content do not change the layout size of the RecyclerView
-
-
             RecyclerAdapter adapter = new RecyclerAdapter(list);
             mRecyclerView.setAdapter(adapter);
 

@@ -3,6 +3,8 @@ package mindpop.learnpop;
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 import android.widget.ListView;
 import android.util.Log;
@@ -35,7 +37,10 @@ public class Articles extends ListFragment {
     //private Learnpop learnApp;
     private LoadResource loadResource;
     JSONParser jsonParser = new JSONParser();
-    ArrayList<Resource> resourceArrayList;
+    ArrayList<Resource> resourceArrayList = new ArrayList<Resource>();
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,13 +53,12 @@ public class Articles extends ListFragment {
 
         loadResource.execute();
         resourceArrayList = new ArrayList<Resource>();
-        Date d = new GregorianCalendar(2015, 3, 10).getTime();
+        mRecyclerView = (RecyclerView)rootView.findViewById(R.id.my_recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(getActivity());
+        mRecyclerView.setLayoutManager(mLayoutManager);
 
-        resourceArrayList.add(new Resource(1, "I'm only 22", "http://www.readunwritten.com/2015/03/10/im-only-22-i-dont-want-someone-else-to-be-my-whole-world/", "Article", "Sum", "Elem", "art", 3, 0, d));
-        resourceArrayList.add(new Resource(1, "I'm only 22", "http://www.readunwritten.com/2015/03/10/im-only-22-i-dont-want-someone-else-to-be-my-whole-world/", "Article", "Sum", "Elem", "art", 3, 0, d));
-        resourceArrayList.add(new Resource(1, "I'm only 22", "http://www.readunwritten.com/2015/03/10/im-only-22-i-dont-want-someone-else-to-be-my-whole-world/", "Article", "Sum", "Elem", "art", 3, 0, d));
-
-        setListAdapter(new ListAdapter(getActivity(), resourceArrayList));
+        //setListAdapter(new ListAdapter(getActivity(), resourceArrayList));
         return rootView;
 
     }

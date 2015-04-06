@@ -33,7 +33,7 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
     private JSONArray resources;
     private final String TAG_SUCCESS = "success";
     private final String TAG_RES = "resources";
-    private int type; // 0 = articles, 1 = videos
+    private int type; // 0 = articles, 1 = videos, 2 = other
 
     public LoadResource(Context context, String [] subjects, String grade, int type){
         this._context = context;
