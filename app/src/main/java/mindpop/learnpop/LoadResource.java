@@ -2,6 +2,7 @@ package mindpop.learnpop;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.content.Context;
 
@@ -26,7 +27,7 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
     private Context _context;
     private ProgressDialog pDialog;
     JSONParser jsonParser = new JSONParser();
-    private ArrayList<Resource> resourcesArrayList;
+    private ArrayList<Resource> resourcesArrayList = new ArrayList<Resource>();
     private static String urlResources = "http://austinartmap.com/CreativeTeach/PHP/getResourcesList.php";
     private String [] subjects;
     private String grade;
@@ -34,12 +35,14 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
     private final String TAG_SUCCESS = "success";
     private final String TAG_RES = "resources";
     private int type; // 0 = articles, 1 = videos, 2 = other
+    private RecyclerView mRecyclerView;
 
-    public LoadResource(Context context, String [] subjects, String grade, int type){
+    public LoadResource(Context context, RecyclerView viewer, String [] subjects, String grade, int type){
         this._context = context;
         this.subjects = subjects;
         this.grade = grade;
         this.type = type;
+        this.mRecyclerView = viewer;
     }
 
     @Override
@@ -99,6 +102,7 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
                     res.setUrl(c.getString("ResURL"));
                     res.setSummary(c.getString("Summary"));
                     Log.d("Resource", res.getPublishDate().toString());
+                    resourcesArrayList.add(res);
                 }
             }else{
                 //if there are no resources
@@ -116,6 +120,8 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
     {
         //pDialog.dismiss();
        // delegate.processFinish(result);
+        ResourceAdapter adapter = new ResourceAdapter(resourcesArrayList);
+        mRecyclerView.setAdapter(adapter);
 
     }
 

@@ -49,14 +49,15 @@ public class Articles extends ListFragment {
         //restore prefs
         restorePreferences();
         String [] sub = {"Visual Art", "Science"};
-        loadResource = new LoadResource(getActivity(), sub ,"LowerElem", 0);
-
-        loadResource.execute();
         resourceArrayList = new ArrayList<Resource>();
         mRecyclerView = (RecyclerView)rootView.findViewById(R.id.my_recycler_view);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
+        loadResource = new LoadResource(getActivity(), mRecyclerView, sub ,"LowerElem", 0);
+
+        loadResource.execute();
+        
 
         //setListAdapter(new ListAdapter(getActivity(), resourceArrayList));
         return rootView;
