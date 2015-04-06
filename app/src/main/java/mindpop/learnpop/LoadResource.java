@@ -45,6 +45,16 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
         this.mRecyclerView = viewer;
     }
 
+    private String getResTypeQuery(){
+        String query = "";
+        switch(type){
+            case 0: query = "Strategy"; break;
+            case 1: query = "Video"; break;
+            case 2: query = "OtherR"; break;
+        }
+        return query;
+    }
+
     @Override
     protected void onPreExecute(){
         super.onPreExecute();
@@ -102,6 +112,7 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
                     res.setUrl(c.getString("ResURL"));
                     res.setSummary(c.getString("Summary"));
 //                    Log.d("Resource", res.getPublishDate().toString());
+                    if(res.getType().equals(getResTypeQuery())) //add if resource type is the same
                     resourcesArrayList.add(res);
                 }
             }else{
