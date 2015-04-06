@@ -3,6 +3,7 @@ package mindpop.learnpop;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -38,9 +39,9 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
     private final String TAG_RES = "resources";
     private int type; // 0 = articles, 1 = videos, 2 = other
     private RecyclerView mRecyclerView;
-    private ActionBarActivity activity;
+    private FragmentActivity activity;
 
-    public LoadResource(ActionBarActivity ac, Context context, RecyclerView viewer, String [] subjects, String grade, int type){
+    public LoadResource(FragmentActivity ac, Context context, RecyclerView viewer, String [] subjects, String grade, int type){
         this.activity = ac;
         this._context = context;
         this.subjects = subjects;

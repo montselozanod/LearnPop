@@ -2,6 +2,7 @@ package mindpop.learnpop;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -22,9 +23,9 @@ import java.util.List;
 public class ResourceAdapter extends RecyclerView.Adapter<ResourceAdapter.ResourceViewHolder> {
 
     List<Resource> resources;
-    private ActionBarActivity _activity;
+    private FragmentActivity _activity;
 
-    ResourceAdapter(ActionBarActivity ac, List<Resource> list){
+    ResourceAdapter(FragmentActivity ac, List<Resource> list){
         this._activity= ac;
         this.resources = list;
     }
