@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
@@ -30,6 +32,8 @@ public class Share extends Fragment {
     private Spinner spinnerSubjects;
     private Spinner spinnerType;
     private Button btnSend;
+    private String request_url = "http://portfolioartstudio.com/php/insertResource.php";
+    private JSONParser jsonParser = new JSONParser();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -83,10 +87,17 @@ public class Share extends Fragment {
             params.add(new BasicNameValuePair("ResURL", url));
             params.add(new BasicNameValuePair("ResType", type));
             params.add(new BasicNameValuePair("Subject", subject));
-            params.add(new BasicNameValuePair("Grade"))
+            params.add(new BasicNameValuePair("GradeLevel", grade));
 
+            JSONObject json = jsonParser.makeHttpRequest(request_url, "POST", params);
 
+            Log.d("Create resource response", json.toString());
 
+            return null;
+        }
+
+        protected void onPostExecute(String file_url) {
+            pDialog.dismiss();
         }
     }
 }
