@@ -58,21 +58,23 @@ public class Share extends Fragment {
 
         spinnerGrades = (Spinner) view.findViewById(R.id.spinner_Grades);
         ArrayAdapter <CharSequence> adapterG = ArrayAdapter.createFromResource(getActivity(), R.array.grades_array, android.R.layout.simple_spinner_item);
+        spinnerGrades.setAdapter(adapterG);
         adapterG.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerGrades.setPromptId(R.string.grade_prompt);
-        spinnerGrades.setAdapter(adapterG);
+
 
         spinnerSubjects = (Spinner) view.findViewById(R.id.spinner_Subjects);
         ArrayAdapter <CharSequence> adapterS = ArrayAdapter.createFromResource(getActivity(), R.array.subjects_array, android.R.layout.simple_spinner_item);
+        spinnerSubjects.setAdapter(adapterS);
         adapterS.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerSubjects.setPromptId(R.string.subject_prompt);
-        spinnerSubjects.setAdapter(adapterS);
 
         spinnerType = (Spinner) view.findViewById(R.id.spinner_Type);
         ArrayAdapter <CharSequence> adapterT = ArrayAdapter.createFromResource(getActivity(), R.array.type_array, android.R.layout.simple_spinner_item);
+        spinnerType.setAdapter(adapterT);
         adapterT.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerType.setPromptId(R.string.type_prompt);
-        spinnerType.setAdapter(adapterT);
+
     }
 
     class CreateNewResource extends AsyncTask<String, String, String>{
