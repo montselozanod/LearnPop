@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -106,11 +107,9 @@ public class Share extends Fragment {
         protected void onPostExecute(String file_url) {
             pDialog.dismiss();
             //if success
-            ProgressDialog success = new ProgressDialog(getActivity());
-            success.setMessage("Resource was uploaded successfully!");
-            success.setCancelable(true);
             name.setText("");
             resUrl.setText("");
+            Toast.makeText(getActivity(), "Resource uploaded!", Toast.LENGTH_SHORT).show();
         }
     }
 }
