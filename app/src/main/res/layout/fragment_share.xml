@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:layout_width="358dp"
+        android:layout_width="match_parent"
         android:layout_height="48dp"
         android:id="@+id/resName"
         android:padding="5dp"
@@ -89,7 +89,6 @@
         android:layout_height="48dp"
         android:id="@+id/editURL"
         android:padding="5dp"
-        android:phoneNumber="false"
         android:drawableLeft="@drawable/ic_action_computer"
         android:background="@drawable/abc_edit_text_material"
         android:textColor="#ff2c2c2c"
