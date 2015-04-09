@@ -16,6 +16,16 @@ public class Resource {
     private String gradeLevel;
     private String subject;
     private String author;
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
+
+    private String imageURL;
     private int upVotes; //likes
     private int downVotes; //dislikes
     private Date pusblishDate;

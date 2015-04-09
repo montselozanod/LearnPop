@@ -101,6 +101,7 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
                     res.setUpVote(c.getInt("Likes"));
                     res.setDownVote(c.getInt("Dislikes"));
                     res.setAuthor(c.getString("Author"));
+                    res.setImageURL("ImageURL");
                     //date format
                     //2014-02-28
                     String dateString =c.getString("PublishingDate");

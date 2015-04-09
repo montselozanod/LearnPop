@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">CreativeTeach</string>
+    <string name="app_name">Creative Teach</string>
     <string name="app_id">755386924557359</string>
     <string name="title_activity_main">CreativeTeach</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -49,7 +49,6 @@
     <string name="type_prompt">Choose a type</string>
 
     <string-array name="subjects_array">
-        <item>Art</item>
         <item>Bilingual</item>
         <item>Digital Media</item>
         <item>Drama</item>
