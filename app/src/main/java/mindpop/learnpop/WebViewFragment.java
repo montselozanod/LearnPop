@@ -75,8 +75,8 @@ public class WebViewFragment extends Fragment {
 
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
-
-            return false;
+            view.loadUrl(url);
+            return true;
         }
 
         @Override

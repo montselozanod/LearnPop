@@ -35,8 +35,8 @@
         android:editable="true"
         android:inputType="text"
         android:elegantTextHeight="false"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -55,8 +55,8 @@
         android:padding="5dp"
         android:background="#ffffffff"
         android:clickable="true"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,8 +75,8 @@
         android:padding="5dp"
         android:clickable="true"
         android:background="#ffffffff"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -95,8 +95,8 @@
         android:padding="5dp"
         android:clickable="true"
         android:background="#ffffffff"
-        android:layout_marginRight="15dp"
-        android:layout_marginLeft="15dp" />
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -118,8 +118,8 @@
         android:background="#ffffffff"
         android:autoText="false"
         android:editable="true"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
