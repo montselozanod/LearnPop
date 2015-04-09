@@ -43,6 +43,14 @@ public class WebItem extends Fragment {
         title.setText(resource.getTitle());
         summary.setText(resource.getSummary());
 
+        viewButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                WebViewFragment webFrag = new WebViewFragment();
+                webFrag.init(resource.getUrl());
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, webFrag).addToBackStack(null).commit();
+            }
+        });
+
         return rootView;
     }
 
