@@ -26,7 +26,7 @@
         android:layout_height="46dp"
         android:id="@+id/resName"
         android:padding="5dp"
-        android:phoneNumber="false"
+        android:hint="@string/resource_name"
         android:textColor="#ff2c2c2c"
         android:selectAllOnFocus="false"
         android:singleLine="false"
@@ -118,6 +118,7 @@
         android:background="#ffffffff"
         android:autoText="false"
         android:editable="true"
+        android:hint="@string/url"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp" />
     <Button

@@ -73,22 +73,12 @@
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
-
     <LinearLayout
         android:id="@+id/ll3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="bottom|center_horizontal"
         android:orientation="vertical">
-        <com.facebook.widget.LoginButton
-            android:id="@+id/login_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="141dp"
-            android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@+id/section_label"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
