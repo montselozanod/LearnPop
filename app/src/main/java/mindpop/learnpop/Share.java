@@ -12,7 +12,12 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by montselozanod on 3/20/15.
@@ -73,7 +78,14 @@ public class Share extends Fragment {
             String subject = spinnerSubjects.getSelectedItem().toString();
             String grade = spinnerGrades.getSelectedItem().toString();
 
-            
+            List<NameValuePair> params = new ArrayList<NameValuePair>();
+            params.add(new BasicNameValuePair("ResName", resName));
+            params.add(new BasicNameValuePair("ResURL", url));
+            params.add(new BasicNameValuePair("ResType", type));
+            params.add(new BasicNameValuePair("Subject", subject));
+            params.add(new BasicNameValuePair("Grade"))
+
+
 
         }
     }

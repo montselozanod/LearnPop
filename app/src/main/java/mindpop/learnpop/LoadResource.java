@@ -26,7 +26,6 @@ import java.util.Date;
 
 public class LoadResource extends AsyncTask<String, String,JSONObject> {
 
-    public AsyncResponse delegate = null;
     private Context _context;
     private ProgressDialog pDialog;
     JSONParser jsonParser = new JSONParser();
