@@ -111,8 +111,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         setContentView(R.layout.activity_login);
 
 
-        loginbutton = (LoginButton) findViewById(R.id.login_button); // get login fb button
-        loginbutton.setReadPermissions(Arrays.asList("public_profile")); //request public profile permissions
+       // loginbutton = (LoginButton) findViewById(R.id.login_button); // get login fb button
+        //loginbutton.setReadPermissions(Arrays.asList("public_profile")); //request public profile permissions
 
 
 
