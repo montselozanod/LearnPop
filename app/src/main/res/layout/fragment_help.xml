@@ -27,7 +27,9 @@
         android:background="#ffffffff"
         android:longClickable="false"
         android:outlineProvider="bounds"
-        android:layout_weight="0.47">
+        android:layout_weight="0.47"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
         <requestFocus />
     </EditText>
 
