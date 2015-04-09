@@ -1,6 +1,8 @@
 package mindpop.learnpop;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.Spinner;
  * Created by montselozanod on 3/20/15.
  */
 public class Share extends Fragment {
+    ProgressDialog pDialog;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -36,5 +39,21 @@ public class Share extends Fragment {
         ArrayAdapter <CharSequence> adapterT = ArrayAdapter.createFromResource(getActivity(), R.array.type_array, android.R.layout.simple_spinner_item);
         adapterT.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerType.setAdapter(adapterT);
+    }
+
+    class CreateNewResource extends AsyncTask<String, String, String>{
+        @Override
+        protected void onPreExecute(){
+            super.onPreExecute();
+            pDialog = new ProgressDialog(getActivity());
+            pDialog.setMessage("Uploading Resource...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(true);
+            pDialog.show();
+        }
+
+        protected String doInBackground(String... args){
+            String resName =
+        }
     }
 }

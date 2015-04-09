@@ -8,11 +8,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Suggest a link"
-        android:id="@+id/texTitle"
+        android:text="Resource Name:"
+        android:id="@+id/name"
         android:padding="10dp"
+        android:textColor="#ff2c2c2c" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/resName"
+        android:padding="5dp"
+        android:phoneNumber="false"
         android:textColor="#ff2c2c2c"
-        android:layout_gravity="center_horizontal"/>
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:background="#ffffffff"
+        android:autoText="false"
+        android:editable="true"
+        android:inputType="text" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,6 +35,7 @@
         android:id="@+id/texSubject"
         android:padding="5dp"
         android:textColor="#ff2c2c2c" />
+
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
