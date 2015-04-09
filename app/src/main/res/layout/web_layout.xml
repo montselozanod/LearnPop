@@ -4,7 +4,12 @@
     android:layout_height="match_parent"
     android:weightSum="1"
     android:background="#fff8fffd">
-
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+     />
     <WebView
         android:layout_width="match_parent"
         android:layout_height="350dp"

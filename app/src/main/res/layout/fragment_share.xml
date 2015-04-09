@@ -7,6 +7,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Suggest a Link"
+        android:id="@+id/textView4"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Resource Name:"
         android:id="@+id/name"
@@ -14,8 +22,8 @@
         android:textColor="#ff2c2c2c" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="358dp"
+        android:layout_height="46dp"
         android:id="@+id/resName"
         android:padding="5dp"
         android:phoneNumber="false"
@@ -25,7 +33,10 @@
         android:background="#ffffffff"
         android:autoText="false"
         android:editable="true"
-        android:inputType="text" />
+        android:inputType="text"
+        android:elegantTextHeight="false"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -43,7 +54,9 @@
         android:spinnerMode="dropdown"
         android:padding="5dp"
         android:background="#ffffffff"
-        android:clickable="true" />
+        android:clickable="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -61,7 +74,9 @@
         android:spinnerMode="dropdown"
         android:padding="5dp"
         android:clickable="true"
-        android:background="#ffffffff" />
+        android:background="#ffffffff"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -79,7 +94,9 @@
         android:spinnerMode="dropdown"
         android:padding="5dp"
         android:clickable="true"
-        android:background="#ffffffff" />
+        android:background="#ffffffff"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -100,7 +117,9 @@
         android:singleLine="false"
         android:background="#ffffffff"
         android:autoText="false"
-        android:editable="true" />
+        android:editable="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
