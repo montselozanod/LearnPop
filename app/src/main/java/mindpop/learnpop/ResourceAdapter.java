@@ -2,8 +2,6 @@ package mindpop.learnpop;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
@@ -40,19 +38,6 @@ public class ResourceAdapter extends RecyclerView.Adapter<ResourceAdapter.Resour
         return resources.size();
     }
 
-    public static Drawable LoadImageFromWebOperations(String url) {
-        try {
-            InputStream is = (InputStream) new URL(url).getContent();
-            Drawable d = Drawable.createFromStream(is, "src name");
-            return d;
-        } catch (Exception e) {
-
-            Log.d("Drawable", e.toString());
-            return null;
-        }
-    }
-
-
     @Override
     public ResourceViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_view_strategy, viewGroup, false);
@@ -76,15 +61,7 @@ public class ResourceAdapter extends RecyclerView.Adapter<ResourceAdapter.Resour
 
         aViewHolder.title.setText(resources.get(i).getTitle());
         aViewHolder.subject.setText(resources.get(i).getSubject());
-        try{
-            URL url = new URL("http://www.flowerwallpapers.org/wallpapers/image/Purple-Flowers-Wallpaper.jpg");
-            Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-            aViewHolder.icon.setImageBitmap(bmp);
-        }catch(Exception e){
-
-        }
-        //Drawable d = LoadImageFromWebOperations(resources.get(i).getImageURL());
-        //aViewHolder.icon.setImageResource(d);
+        aViewHolder.icon.setImageResource(R.drawable.ic_like);
     }
 
     @Override
