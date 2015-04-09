@@ -27,6 +27,7 @@
         android:id="@+id/resName"
         android:padding="5dp"
         android:hint="@string/resource_name"
+        android:drawableLeft="@drawable/ic_action_about"
         android:textColor="#ff2c2c2c"
         android:selectAllOnFocus="false"
         android:singleLine="true"
