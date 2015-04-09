@@ -113,6 +113,7 @@
         android:id="@+id/editURL"
         android:padding="5dp"
         android:phoneNumber="false"
+        android:drawableLeft="@drawable/ic_action_computer"
         android:textColor="#ff2c2c2c"
         android:selectAllOnFocus="false"
         android:singleLine="true"
