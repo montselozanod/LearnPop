@@ -23,6 +23,7 @@
         <item>Help</item>
         <item>Log Out</item>
     </string-array>
+
     <string-array name="sections_icons">
         <item>@android:drawable/ic_menu_today</item>
         <item>@android:drawable/ic_btn_speak_now</item>
@@ -42,6 +43,11 @@
         <item>Middle School</item>
         <item>High School</item>
     </string-array>
+
+    <string name="subject_prompt">Choose a subject</string>
+    <string name="grade_prompt">Choose a grade level</string>
+    <string name="type_prompt">Choose a type</string>
+
     <string-array name="subjects_array">
         <item>Art</item>
         <item>Bilingual</item>

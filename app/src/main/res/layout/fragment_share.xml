@@ -24,65 +24,49 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Subject:"
-        android:id="@+id/texSubject"
-        android:padding="5dp"
-        android:textColor="#ff2c2c2c" />
-
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spinner_Subjects"
+        android:prompt="@string/subject_prompt"
         android:spinnerMode="dropdown"
         android:padding="5dp"
         android:background="@drawable/abc_spinner_mtrl_am_alpha"
         android:clickable="true"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Grade Level:"
-        android:id="@+id/textGrades"
-        android:padding="5dp"
-        android:textColor="#ff2c2c2c" />
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spinner_Grades"
+        android:prompt="@string/grade_prompt"
         android:layout_gravity="center_horizontal"
         android:spinnerMode="dropdown"
         android:padding="5dp"
         android:clickable="true"
         android:background="#ffffffff"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Type:"
-        android:id="@+id/textType"
-        android:padding="5dp"
-        android:textColor="#ff2c2c2c" />
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spinner_Type"
+        android:prompt="@string/type_prompt"
         android:layout_gravity="center_horizontal"
         android:spinnerMode="dropdown"
         android:padding="5dp"
         android:clickable="true"
         android:background="#ffffffff"
         android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
 
     <EditText
         android:layout_width="match_parent"
