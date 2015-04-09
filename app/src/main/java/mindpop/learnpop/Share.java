@@ -105,6 +105,12 @@ public class Share extends Fragment {
 
         protected void onPostExecute(String file_url) {
             pDialog.dismiss();
+            //if success
+            ProgressDialog success = new ProgressDialog(getActivity());
+            success.setMessage("Resource was uploaded successfully!");
+            success.setCancelable(true);
+            name.setText("");
+            resUrl.setText("");
         }
     }
 }
