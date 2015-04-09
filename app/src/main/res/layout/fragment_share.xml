@@ -23,7 +23,7 @@
 
     <EditText
         android:layout_width="358dp"
-        android:layout_height="46dp"
+        android:layout_height="48dp"
         android:id="@+id/resName"
         android:padding="5dp"
         android:hint="@string/resource_name"
@@ -108,7 +108,7 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:id="@+id/editURL"
         android:padding="5dp"
         android:phoneNumber="false"
