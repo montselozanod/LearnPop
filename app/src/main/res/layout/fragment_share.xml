@@ -4,23 +4,6 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Suggest a Link"
-        android:id="@+id/textView4"
-        android:layout_gravity="center_horizontal" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Resource Name:"
-        android:id="@+id/name"
-        android:padding="10dp"
-        android:textColor="#ff2c2c2c" />
-
     <EditText
         android:layout_width="358dp"
         android:layout_height="48dp"
@@ -37,7 +20,9 @@
         android:inputType="text"
         android:elegantTextHeight="false"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp" />
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -98,14 +83,6 @@
         android:background="#ffffffff"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="URL:"
-        android:id="@+id/textView5"
-        android:padding="5dp"
-        android:textColor="#ff2c2c2c" />
 
     <EditText
         android:layout_width="match_parent"
@@ -122,7 +99,9 @@
         android:editable="true"
         android:hint="@string/url"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp" />
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
