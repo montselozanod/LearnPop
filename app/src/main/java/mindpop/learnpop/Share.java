@@ -43,6 +43,13 @@ public class Share extends Fragment {
         name = (TextView)rootView.findViewById(R.id.resName);
         resUrl = (TextView)rootView.findViewById(R.id.editURL);
         btnSend = (Button)rootView.findViewById(R.id.btnSend);
+
+        btnSend.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                new CreateNewResource().execute();
+            }
+        });
         return rootView;
     }
 
