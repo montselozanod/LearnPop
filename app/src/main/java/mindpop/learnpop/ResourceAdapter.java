@@ -71,7 +71,7 @@ public class ResourceAdapter extends RecyclerView.Adapter<ResourceAdapter.Resour
             case "ELA": resID = R.drawable.ic_like; break;
             case "History": resID = R.drawable.ic_like; break;
             case "Math": resID = R.drawable.ic_like; break;
-            case "Movement": resID = R.drawable.ic_like; break;
+            case "Movement": resID = R.drawable.move; break;
             case "Music": resID = R.drawable.music; break;
             case "Science": resID = R.drawable.science; break;
             case "SEL": resID = R.drawable.ic_like; break;
