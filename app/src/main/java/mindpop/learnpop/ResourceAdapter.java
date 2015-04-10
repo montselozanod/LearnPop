@@ -60,8 +60,24 @@ public class ResourceAdapter extends RecyclerView.Adapter<ResourceAdapter.Resour
         });
 
         aViewHolder.title.setText(resources.get(i).getTitle());
-        aViewHolder.subject.setText(resources.get(i).getSubject());
-        aViewHolder.icon.setImageResource(R.drawable.ic_like);
+        String sub = resources.get(i).getSubject();
+        aViewHolder.subject.setText(sub);
+        int resID = 0;
+        switch(sub){
+            case "Bilingual": resID = R.drawable.bilingual; break;
+
+            case "Digital Media": resID = R.drawable.media; break;
+            case "Drama": resID = R.drawable.drama; break;
+            case "ELA": resID = R.drawable.ic_like; break;
+            case "History": resID = R.drawable.ic_like; break;
+            case "Math": resID = R.drawable.ic_like; break;
+            case "Movement": resID = R.drawable.ic_like; break;
+            case "Music": resID = R.drawable.music; break;
+            case "Science": resID = R.drawable.science; break;
+            case "SEL": resID = R.drawable.ic_like; break;
+            case "Visual Art": resID = R.drawable.art; break;
+        }
+        aViewHolder.icon.setImageResource(resID);
     }
 
     @Override
