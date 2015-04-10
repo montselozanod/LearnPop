@@ -74,7 +74,7 @@ public class ResourceAdapter extends RecyclerView.Adapter<ResourceAdapter.Resour
             case "Movement": resID = R.drawable.move; break;
             case "Music": resID = R.drawable.music; break;
             case "Science": resID = R.drawable.science; break;
-            case "SEL": resID = R.drawable.ic_like; break;
+            case "SEL": resID = R.drawable.sel; break;
             case "Visual Art": resID = R.drawable.art; break;
         }
         aViewHolder.icon.setImageResource(resID);
