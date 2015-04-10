@@ -60,7 +60,7 @@ public class ResourceAdapter extends RecyclerView.Adapter<ResourceAdapter.Resour
         });
 
         aViewHolder.title.setText(resources.get(i).getTitle());
-        String sub = resources.get(i).getSubject();
+        String sub = "Visual Art";//resources.get(i).getSubject();
         aViewHolder.subject.setText(sub);
         int resID = 0;
         switch(sub){
