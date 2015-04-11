@@ -65,7 +65,6 @@ public class ResourceAdapter extends RecyclerView.Adapter<ResourceAdapter.Resour
         int resID = 0;
         switch(sub){
             case "Bilingual": resID = R.drawable.bilingual; break;
-
             case "Digital Media": resID = R.drawable.media; break;
             case "Drama": resID = R.drawable.drama; break;
             case "ELA": resID = R.drawable.ela; break;

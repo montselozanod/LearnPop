@@ -82,8 +82,8 @@ public class Announcements extends Fragment {
                     for(int i = 0; i < parts.length(); i++){
                         JSONObject c = parts.getJSONObject(i);
                         Announcement ann = new Announcement();
-                        ann.setMessage(c.getString("Message"));
-                        ann.setEnd(c.getString("EndDate"));
+                        ann.setMessage(c.getString("Message").trim());
+                        ann.setEnd(c.getString("EndDate").trim());
                         ann.setImg(R.drawable.ann_icon);
                         list.add(ann);
                     }

@@ -94,13 +94,13 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
                     JSONObject c = resources.getJSONObject(i);
 
                     Resource res = new Resource();
-                    res.setTitle(c.getString("ResName"));
+                    res.setTitle(c.getString("ResName").trim());
                     res.setResourceId(c.getInt("ResID"));
-                    res.setSubject(c.getString("Subject"));
-                    res.setType(c.getString("ResType"));
+                    res.setSubject(c.getString("Subject").trim());
+                    res.setType(c.getString("ResType").trim());
                     res.setUpVote(c.getInt("Likes"));
                     res.setDownVote(c.getInt("Dislikes"));
-                    res.setAuthor(c.getString("Author"));
+                    res.setAuthor(c.getString("Author").trim());
                     res.setImageURL("ImageURL");
                     //date format
                     //2014-02-28
