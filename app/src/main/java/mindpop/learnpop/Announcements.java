@@ -84,7 +84,7 @@ public class Announcements extends Fragment {
                         Announcement ann = new Announcement();
                         ann.setMessage(c.getString("Message"));
                         ann.setEnd(c.getString("EndDate"));
-                        ann.setImg(R.drawable.camera);
+                        ann.setImg(R.drawable.ann_icon);
                         list.add(ann);
                     }
 
