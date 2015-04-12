@@ -12,7 +12,7 @@
     <string name="hello_world">Hello world!</string>
 
     <string-array name="sections">
-        <item>Announcments</item>
+        <item>Announcements</item>
         <item>Strategies</item>
         <item>Videos</item>
         <item>More</item>
