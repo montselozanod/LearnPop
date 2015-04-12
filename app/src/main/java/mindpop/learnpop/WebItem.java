@@ -21,6 +21,8 @@ public class WebItem extends Fragment {
     private Resource resource;
     private TextView title;
     private TextView summary;
+    private TextView likesTxt;
+    private TextView unlikesTxt;
     private Button viewButton;
 
     public WebItem() {
@@ -39,9 +41,15 @@ public class WebItem extends Fragment {
         title = (TextView)rootView.findViewById(R.id.titleTxt);
         summary = (TextView)rootView.findViewById(R.id.sumTXT);
         viewButton = (Button) rootView.findViewById(R.id.btnView);
+        likesTxt = (TextView) rootView.findViewById(R.id.numLikes);
+        unlikesTxt = (TextView) rootView.findViewById(R.id.numDislikes);
+
+
 
         title.setText(resource.getTitle());
         summary.setText(resource.getSummary());
+        likesTxt.setText(resource.getUpVote());
+        unlikesTxt.setText(resource.getDownVote());
 
         viewButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
