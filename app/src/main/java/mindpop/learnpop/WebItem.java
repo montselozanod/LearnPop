@@ -72,6 +72,7 @@ public class WebItem extends Fragment {
                 if(unlike_button.isChecked()){
                     unlike_button.setChecked(false);
                     resource.setDownVote(resource.getDownVote() -1);
+                    resource.setUpVote(resource.getUpVote() + 1);
                 }else{
                     if(like_button.isChecked()) {
                         resource.setUpVote(resource.getUpVote() + 1);
@@ -92,6 +93,7 @@ public class WebItem extends Fragment {
                 if(like_button.isChecked()){
                     like_button.setChecked(false);
                     resource.setUpVote(resource.getUpVote() -1);
+                    resource.setDownVote(resource.getDownVote() + 1);
                 }else{
                     if(unlike_button.isChecked()){
                         //addd 1 to resource
