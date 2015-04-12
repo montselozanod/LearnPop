@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:weightSum="1"
         android:background="#ff018adf"
-        android:layout_weight="0.34">
+        android:layout_weight="0.38">
 
         <CheckBox
             android:layout_width="wrap_content"
@@ -54,7 +54,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_weight="0.19"
+            android:layout_weight="0.27"
             android:textColor="#fff8fffd"
             android:textStyle="bold" />
 
@@ -65,7 +65,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.30"
+        android:layout_weight="0.18"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp">
@@ -145,7 +145,7 @@
         android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="53dp"
+        android:layout_marginBottom="20dp"
             android:layout_marginTop="16dp" />
 
 </LinearLayout>
