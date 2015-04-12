@@ -31,18 +31,18 @@ public class LoginFragment extends Fragment {
     private TextView mTextDetails;
     private CallbackManager mCallbackManager;
     private AccessTokenTracker mTokenTracker;
+    private Profile userProfile;
     private ProfileTracker mProfileTracker;
     private FacebookCallback<LoginResult> mFacebookCallback = new FacebookCallback<LoginResult>() {
         @Override
         public void onSuccess(LoginResult loginResult) {
             Log.d("VIVZ", "onSuccess");
             AccessToken accessToken = loginResult.getAccessToken();
-            Profile profile = Profile.getCurrentProfile();
-
-            Log.d("VIVZ", profile.getFirstName());
-            mTextDetails.setText(constructWelcomeMessage(profile));
-            Intent intent = new Intent(getActivity(), MainActivity.class);
-            startActivity(intent);
+            userProfile = Profile.getCurrentProfile();
+            userProfile.getProfilePictureUri(90,90);
+            Log.d("VIVZ", userProfile.getFirstName());
+            mTextDetails.setText(constructWelcomeMessage(userProfile));
+            changeActivity();
 
         }
 
@@ -72,6 +72,16 @@ public class LoginFragment extends Fragment {
 
         mTokenTracker.startTracking();
         mProfileTracker.startTracking();
+
+        if(userProfile != null){
+            Log.d("not null", "not null");
+            changeActivity();
+        }
+    }
+
+    private void changeActivity(){
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        startActivity(intent);
     }
 
 

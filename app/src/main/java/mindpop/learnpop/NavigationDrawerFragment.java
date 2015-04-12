@@ -11,6 +11,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -24,6 +25,8 @@ import android.widget.Toast;
 import android.widget.TextView;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+
+import com.facebook.Profile;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -77,6 +80,10 @@ public class NavigationDrawerFragment extends Fragment {
             mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
             mFromSavedInstanceState = true;
         }
+
+        CreativeTeach ct = (CreativeTeach)getActivity().getApplicationContext();
+        Profile pf = ct.getUserProfile();
+        Log.d("Profile", pf.getFirstName());
 
         // Select either the default item (0) or the last selected item.
         selectItem(mCurrentSelectedPosition);
