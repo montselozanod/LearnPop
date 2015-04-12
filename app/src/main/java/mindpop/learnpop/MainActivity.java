@@ -1,6 +1,7 @@
 package mindpop.learnpop;
 
 import android.app.Activity;
+import android.content.pm.Signature;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Base64;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -25,6 +28,11 @@ import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.appevents.AppEventsLogger;
 import android.widget.ListView;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class MainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -50,28 +58,19 @@ public class MainActivity extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        callbackManager = CallbackManager.Factory.create();
-        accessTokenTracker = new AccessTokenTracker() {
-            @Override
-            protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken,
-                                                       AccessToken currentAccessToken) {
-                if (isResumed) {
-                    /*FragmentManager manager = getSupportFragmentManager();
-                    int backStackSize = manager.getBackStackEntryCount();
-                    for (int i = 0; i < backStackSize; i++) {
-                        manager.popBackStack();
-                    }*/
-                    if (currentAccessToken != null) {
-                        //showFragment(SELECTION, false);
-                    } else {
-                        //showFragment(SPLASH, false);
-                        showLoginActivity();
-                    }
-                }else{
-                    showLoginActivity();
-                }
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo(
+                    getPackageName(), PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("KeyHash:",
+                        Base64.encodeToString(md.digest(), Base64.DEFAULT));
             }
-        };
+        } catch (PackageManager.NameNotFoundException e) {
+        } catch (NoSuchAlgorithmException e) {
+        }
+      
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -84,14 +83,6 @@ public class MainActivity extends ActionBarActivity
                 (DrawerLayout) findViewById(R.id.drawer_layout));
     }
 
-    private void showLoginActivity(){
-        Intent i = new Intent(this, LoginActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        //add flag to start new activity
-        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        //start activity
-        startActivity(i);
-    }
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
