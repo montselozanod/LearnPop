@@ -72,7 +72,7 @@ public class LoginFragment extends Fragment {
 
         mTokenTracker.startTracking();
         mProfileTracker.startTracking();
-
+        userProfile = Profile.getCurrentProfile();
         if(userProfile != null){
             Log.d("not null", "not null");
             changeActivity();

@@ -14,10 +14,9 @@
         android:textStyle="bold"
         android:focusable="true"
         android:layout_gravity="bottom"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/btnView"
-        android:layout_alignStart="@+id/btnView"
-        android:layout_marginBottom="135dp" />
+        android:layout_below="@+id/sumTXT"
+        android:layout_toRightOf="@+id/sumTXT"
+        android:layout_toEndOf="@+id/sumTXT" />
 
     <TextView
         android:layout_width="196dp"
@@ -35,19 +34,22 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Title"
         android:id="@+id/titleTxt"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="34dp"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/fav_check"
-        android:layout_alignStart="@+id/fav_check" />
+        android:layout_alignLeft="@+id/btnView"
+        android:layout_alignStart="@+id/btnView" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="View"
+        android:textColor="@color/frame_solid"
+        android:background="@color/red"
         android:id="@+id/btnView"
         android:layout_gravity="bottom"
-        android:layout_alignTop="@+id/fav_check"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="49dp" />
+        android:layout_marginBottom="53dp" />
 
 </RelativeLayout>
