@@ -15,7 +15,8 @@
         android:layout_alignStart="@+id/btnView"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textStyle="bold" />
 
 
     <LinearLayout
@@ -54,11 +55,41 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_weight="0.19"
-            android:textColor="#fff8fffd" />
+            android:textColor="#fff8fffd"
+            android:textStyle="bold" />
 
 
         </LinearLayout>
-        <Button
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.30"
+        android:layout_marginTop="16dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/icon_like"
+            android:background="@drawable/ic_like"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/icon_dislike"
+            android:background="@drawable/ic_like"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp" />
+        </LinearLayout>
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="View"
