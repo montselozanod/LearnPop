@@ -102,7 +102,7 @@ public class Share extends Fragment {
             params.add(new BasicNameValuePair("Subject", subject));
             params.add(new BasicNameValuePair("GradeLevel", grade));
 
-            JSONObject json = jsonParser.makeHttpRequest(request_url, "GET", params);
+            JSONObject json = jsonParser.makeHttpRequest(request_url, "POST", params);
 
             Log.d("Create resource response", json.toString());
 

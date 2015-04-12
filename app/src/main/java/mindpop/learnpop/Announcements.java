@@ -72,7 +72,7 @@ public class Announcements extends Fragment {
             Log.d("AsyncTask", "doInBackground");
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             params.add(new BasicNameValuePair("StartDate", "20150101"));
-            JSONObject jsonObject = parser.makeHttpRequest(announce_url, "POST", params);
+            JSONObject jsonObject = parser.makeHttpRequest(announce_url, "GET", params);
             try{
                 int success = jsonObject.getInt(TAG_SUCCESS);
                 if(success == 1){
