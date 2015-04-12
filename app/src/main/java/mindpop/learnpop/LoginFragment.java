@@ -38,20 +38,23 @@ public class LoginFragment extends Fragment {
             Log.d("VIVZ", "onSuccess");
             AccessToken accessToken = loginResult.getAccessToken();
             Profile profile = Profile.getCurrentProfile();
+
             Log.d("VIVZ", profile.getFirstName());
             mTextDetails.setText(constructWelcomeMessage(profile));
+            Intent intent = new Intent(getActivity(), MainActivity.class);
+            startActivity(intent);
 
         }
 
 
         @Override
         public void onCancel() {
-            Log.d("VIVZ", "onCancel");
+            Log.d("Login", "onCancel");
         }
 
         @Override
         public void onError(FacebookException e) {
-            Log.d("VIVZ", "onError " + e);
+            Log.d("Login", "onError " + e);
         }
     };
 
@@ -130,7 +133,7 @@ public class LoginFragment extends Fragment {
     private void setupLoginButton(View view) {
         LoginButton mButtonLogin = (LoginButton) view.findViewById(R.id.login_button);
         mButtonLogin.setFragment(this);
-        mButtonLogin.setReadPermissions("user_friends");
+        mButtonLogin.setReadPermissions("public_profile");
         mButtonLogin.registerCallback(mCallbackManager, mFacebookCallback);
     }
 
