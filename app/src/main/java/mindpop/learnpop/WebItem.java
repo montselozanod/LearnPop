@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -24,6 +25,9 @@ public class WebItem extends Fragment {
     private TextView likesTxt;
     private TextView unlikesTxt;
     private Button viewButton;
+    private CheckBox fav_button;
+    private CheckBox like_button;
+    private CheckBox unlike_button;
 
     public WebItem() {
         // Required empty public constructor
@@ -43,6 +47,9 @@ public class WebItem extends Fragment {
         viewButton = (Button) rootView.findViewById(R.id.btnView);
         likesTxt = (TextView) rootView.findViewById(R.id.numLikes);
         unlikesTxt = (TextView) rootView.findViewById(R.id.numDislikes);
+        fav_button = (CheckBox) rootView.findViewById(R.id.fav_check);
+        like_button = (CheckBox) rootView.findViewById(R.id.check_like);
+        unlike_button = (CheckBox) rootView.findViewById(R.id.check_dislike);
 
 
 
