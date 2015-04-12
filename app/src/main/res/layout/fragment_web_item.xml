@@ -67,26 +67,34 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.30"
         android:layout_marginTop="16dp">
-        <ImageView
+        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/icon_like"
-            android:background="@drawable/ic_like"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp" />
-        <ImageView
+            android:button="@drawable/like_checkbox"
+            android:id="@+id/check_like"
+            android:checked="false"
+            android:clickable="true"
+            android:enabled="true"
+            android:focusableInTouchMode="true"
+            android:textStyle="bold"
+            android:focusable="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp" />
+        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/icon_dislike"
-            android:background="@drawable/ic_like"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp" />
+            android:button="@drawable/unlike_checkbox"
+            android:id="@+id/check_dislike"
+            android:checked="false"
+            android:clickable="true"
+            android:enabled="true"
+            android:focusableInTouchMode="true"
+            android:textStyle="bold"
+            android:focusable="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp" />
         </LinearLayout>
 
     <Button
