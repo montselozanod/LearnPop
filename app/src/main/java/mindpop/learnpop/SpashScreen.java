@@ -22,6 +22,6 @@ public class SpashScreen extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_spash);
 
-       
+
     }
 }
