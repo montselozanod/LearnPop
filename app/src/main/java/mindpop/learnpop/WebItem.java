@@ -55,8 +55,7 @@ public class WebItem extends Fragment {
 
         title.setText(resource.getTitle());
         summary.setText(resource.getSummary());
-        likesTxt.setText(String.valueOf(resource.getUpVote()));
-        unlikesTxt.setText(String.valueOf(resource.getDownVote()));
+        updateLikeValues();
 
         viewButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -72,9 +71,12 @@ public class WebItem extends Fragment {
                 //check if unlike button is pressed and eliminate press
                 if(unlike_button.isChecked()){
                     unlike_button.setChecked(false);
+                    resource.setDownVote(resource.getDownVote() -1);
                 }
+
                 //addd 1 to resource
                 resource.setUpVote(resource.getUpVote() + 1);
+                updateLikeValues();
 
             }
         });
@@ -85,9 +87,11 @@ public class WebItem extends Fragment {
                 //check if unlike button is pressed and eliminate press
                 if(like_button.isChecked()){
                     like_button.setChecked(false);
+                    resource.setUpVote(resource.getUpVote() -1);
                 }
                 //addd 1 to resource
                 resource.setDownVote(resource.getDownVote() + 1);
+                updateLikeValues();
 
             }
         });
@@ -95,5 +99,9 @@ public class WebItem extends Fragment {
         return rootView;
     }
 
+    private void updateLikeValues(){
+        like_button.setText(String.valueOf(resource.getUpVote()));
+        unlikesTxt.setText(String.valueOf(resource.getDownVote()));
+    }
 
 }
