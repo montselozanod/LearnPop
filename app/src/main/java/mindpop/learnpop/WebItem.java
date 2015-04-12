@@ -72,10 +72,14 @@ public class WebItem extends Fragment {
                 if(unlike_button.isChecked()){
                     unlike_button.setChecked(false);
                     resource.setDownVote(resource.getDownVote() -1);
+                }else if(like_button.isChecked()){
+                    //check if it was already checked to take away vote
+                    resource.setUpVote(resource.getUpVote() -1);
+                }else{
+                    //addd 1 to resource
+                    resource.setUpVote(resource.getUpVote() + 1);
                 }
 
-                //addd 1 to resource
-                resource.setUpVote(resource.getUpVote() + 1);
                 updateLikeValues();
 
             }
@@ -88,9 +92,13 @@ public class WebItem extends Fragment {
                 if(like_button.isChecked()){
                     like_button.setChecked(false);
                     resource.setUpVote(resource.getUpVote() -1);
+                }else if(unlike_button.isChecked()){
+                    //check if it was already checked to take away vote
+                    resource.setDownVote(resource.getDownVote() -1);
+                }else{
+                    //addd 1 to resource
+                    resource.setDownVote(resource.getDownVote() + 1);
                 }
-                //addd 1 to resource
-                resource.setDownVote(resource.getDownVote() + 1);
                 updateLikeValues();
 
             }
