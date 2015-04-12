@@ -15,8 +15,8 @@
         android:focusable="true"
         android:layout_gravity="bottom"
         android:layout_below="@+id/sumTXT"
-        android:layout_toRightOf="@+id/sumTXT"
-        android:layout_toEndOf="@+id/sumTXT" />
+        android:layout_toLeftOf="@+id/sumTXT"
+        android:layout_toStartOf="@+id/sumTXT" />
 
     <TextView
         android:layout_width="196dp"

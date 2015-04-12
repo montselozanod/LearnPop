@@ -33,7 +33,7 @@ public class Share extends Fragment {
     private Spinner spinnerSubjects;
     private Spinner spinnerType;
     private Button btnSend;
-    private String request_url = "http://portfolioartstudio.com/php/InsertResource_v2.php";
+    private String request_url = "http://portfolioartstudio.com/php/insertResource_v2.php";
     private JSONParser jsonParser = new JSONParser();
 
     @Override
@@ -102,7 +102,7 @@ public class Share extends Fragment {
             params.add(new BasicNameValuePair("Subject", subject));
             params.add(new BasicNameValuePair("GradeLevel", grade));
 
-            JSONObject json = jsonParser.makeHttpRequest(request_url, "POST", params);
+            JSONObject json = jsonParser.makeHttpRequest(request_url, "GET", params);
 
             Log.d("Create resource response", json.toString());
 
