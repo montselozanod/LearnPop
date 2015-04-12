@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:weightSum="1"
         android:background="#ff018adf"
-        android:layout_weight="0.21">
+        android:layout_weight="0.34">
 
         <CheckBox
             android:layout_width="wrap_content"
@@ -46,7 +46,7 @@
 
         <TextView
             android:layout_width="239dp"
-            android:layout_height="130dp"
+            android:layout_height="142dp"
             android:text="Summary"
             android:id="@+id/sumTXT"
             android:layout_marginTop="16dp"
@@ -66,36 +66,73 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.30"
-        android:layout_marginTop="16dp">
-        <CheckBox
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:button="@drawable/like_checkbox"
-            android:id="@+id/check_like"
-            android:checked="false"
-            android:clickable="true"
-            android:enabled="true"
-            android:focusableInTouchMode="true"
-            android:textStyle="bold"
-            android:focusable="true"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:button="@drawable/unlike_checkbox"
-            android:id="@+id/check_dislike"
-            android:checked="false"
-            android:clickable="true"
-            android:enabled="true"
-            android:focusableInTouchMode="true"
-            android:textStyle="bold"
-            android:focusable="true"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" />
+            android:layout_height="match_parent"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="16dp">
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/like_checkbox"
+                android:id="@+id/check_like"
+                android:checked="false"
+                android:clickable="true"
+                android:enabled="true"
+                android:focusableInTouchMode="true"
+                android:textStyle="bold"
+                android:focusable="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/numLikes"
+                android:textAlignment="center"
+                android:textStyle="bold" />
         </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="60dp"
+            android:baselineAligned="false">
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/unlike_checkbox"
+                android:id="@+id/check_dislike"
+                android:checked="false"
+                android:clickable="true"
+                android:enabled="true"
+                android:focusableInTouchMode="true"
+                android:textStyle="bold"
+                android:focusable="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp" />
+
+            <TextView
+                android:layout_width="116dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/numDislikes"
+                android:textStyle="bold"
+                android:textAlignment="center" />
+        </LinearLayout>
+    </LinearLayout>
 
     <Button
         android:layout_width="wrap_content"
