@@ -30,7 +30,7 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
     private ProgressDialog pDialog;
     JSONParser jsonParser = new JSONParser();
     private ArrayList<Resource> resourcesArrayList = new ArrayList<Resource>();
-    private static String urlResources = "http://austinartmap.com/CreativeTeach/PHP/getResourcesList.php";
+    private static String urlResources = "http://austinartmap.com/CreativeTeach/PHP/getResourcesList_v2.php";
     private String [] subjects;
     private String grade;
     private JSONArray resources;

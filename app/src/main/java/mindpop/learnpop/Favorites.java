@@ -31,7 +31,7 @@ public class Favorites extends Fragment {
     private final String TAG_SUCCESS = "success";
     private final String TAG_RES = "resources";
     private RecyclerView.LayoutManager mLayoutManager;
-    private final String favURL = "http://austinartmap.com/CreativeTeach/PHP/getFavorites.php";
+    private final String favURL = "http://austinartmap.com/CreativeTeach/PHP/getFavoriteResources.php";
     private JSONParser jsonParser = new JSONParser();
     ArrayList<Resource> list = new ArrayList<Resource>();
 

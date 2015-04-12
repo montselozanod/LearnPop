@@ -33,7 +33,7 @@ public class Share extends Fragment {
     private Spinner spinnerSubjects;
     private Spinner spinnerType;
     private Button btnSend;
-    private String request_url = "http://portfolioartstudio.com/php/insertResource.php";
+    private String request_url = "http://portfolioartstudio.com/php/InsertResource_v2.php";
     private JSONParser jsonParser = new JSONParser();
 
     @Override
