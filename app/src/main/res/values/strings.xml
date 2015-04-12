@@ -3,7 +3,7 @@
 
     <string name="app_name">Creative Teach</string>
     <string name="app_id">755386924557359</string>
-    <string name="title_activity_main">CreativeTeach</string>
+    <string name="title_activity_main">Creative Teach</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="add_favorite">Favorite</string>
