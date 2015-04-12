@@ -80,6 +80,8 @@ public class LoginFragment extends Fragment {
     }
 
     private void changeActivity(){
+        CreativeTeach ct = (CreativeTeach)getActivity().getApplicationContext();
+        ct.setUserProfile(userProfile);
         Intent intent = new Intent(getActivity(), MainActivity.class);
         startActivity(intent);
     }
