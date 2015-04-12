@@ -1,32 +1,7 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="mindpop.learnpop.WebItem">
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:button="@drawable/drawablecheckbox"
-        android:id="@+id/fav_check"
-        android:checked="false"
-        android:clickable="true"
-        android:enabled="true"
-        android:focusableInTouchMode="true"
-        android:textStyle="bold"
-        android:focusable="true"
-        android:layout_gravity="bottom"
-        android:layout_below="@+id/sumTXT"
-        android:layout_toLeftOf="@+id/sumTXT"
-        android:layout_toStartOf="@+id/sumTXT" />
-
-    <TextView
-        android:layout_width="196dp"
-        android:layout_height="130dp"
-        android:text="Summary"
-        android:id="@+id/sumTXT"
-        android:layout_gravity="center_vertical"
-        android:layout_marginTop="64dp"
-        android:layout_below="@+id/titleTxt"
-        android:layout_centerHorizontal="true" />
+    android:layout_height="match_parent" android:orientation="vertical" tools:context="mindpop.learnpop.WebItem"
+    android:weightSum="1">
 
     <TextView
         android:layout_width="wrap_content"
@@ -37,19 +12,65 @@
         android:layout_marginTop="34dp"
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/btnView"
-        android:layout_alignStart="@+id/btnView" />
+        android:layout_alignStart="@+id/btnView"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:textAlignment="center" />
 
-    <Button
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:background="#ff018adf"
+        android:layout_weight="0.21">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/drawablecheckbox"
+            android:id="@+id/fav_check"
+            android:checked="false"
+            android:clickable="true"
+            android:enabled="true"
+            android:focusableInTouchMode="true"
+            android:textStyle="bold"
+            android:focusable="true"
+            android:layout_below="@+id/sumTXT"
+            android:layout_toLeftOf="@+id/sumTXT"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp" />
+
+        <TextView
+            android:layout_width="239dp"
+            android:layout_height="130dp"
+            android:text="Summary"
+            android:id="@+id/sumTXT"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/titleTxt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="0.19"
+            android:textColor="#fff8fffd" />
+
+
+        </LinearLayout>
+        <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="View"
         android:textColor="@color/frame_solid"
         android:background="@color/red"
         android:id="@+id/btnView"
-        android:layout_gravity="bottom"
+        android:layout_gravity="center_horizontal"
         android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="53dp" />
+        android:layout_marginBottom="53dp"
+            android:layout_marginTop="16dp" />
 
-</RelativeLayout>
+</LinearLayout>
+
