@@ -55,8 +55,8 @@ public class WebItem extends Fragment {
 
         title.setText(resource.getTitle());
         summary.setText(resource.getSummary());
-        likesTxt.setText(resource.getUpVote());
-        unlikesTxt.setText(resource.getDownVote());
+        likesTxt.setText(String.valueOf(resource.getUpVote()));
+        unlikesTxt.setText(String.valueOf(resource.getDownVote()));
 
         viewButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
