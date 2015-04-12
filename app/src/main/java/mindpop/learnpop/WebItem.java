@@ -66,6 +66,32 @@ public class WebItem extends Fragment {
             }
         });
 
+        like_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //check if unlike button is pressed and eliminate press
+                if(unlike_button.isChecked()){
+                    unlike_button.setChecked(false);
+                }
+                //addd 1 to resource
+                resource.setUpVote(resource.getUpVote() + 1);
+
+            }
+        });
+
+        unlike_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //check if unlike button is pressed and eliminate press
+                if(like_button.isChecked()){
+                    like_button.setChecked(false);
+                }
+                //addd 1 to resource
+                resource.setDownVote(resource.getDownVote() + 1);
+
+            }
+        });
+
         return rootView;
     }
 
