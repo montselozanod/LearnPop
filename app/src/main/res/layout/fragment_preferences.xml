@@ -27,7 +27,8 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -41,13 +42,15 @@
                 android:text="@string/sub1"
                 android:id="@+id/check_bilingual"
                 android:checked="false"
-                android:enabled="true" />
+                android:enabled="true"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"/>
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -66,7 +69,8 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -85,7 +89,8 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -104,7 +109,8 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -123,7 +129,8 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -142,7 +149,8 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -155,13 +163,15 @@
                 android:layout_height="wrap_content"
                 android:text="@string/sub7"
                 android:id="@+id/check_movement"
-                android:enabled="true" />
+                android:enabled="true"
+                android:layout_marginBottom="5dp" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -180,7 +190,8 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -199,7 +210,8 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -218,7 +230,8 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -248,5 +261,6 @@
         android:id="@+id/spinner_Grades"
         android:prompt="@string/grade_prompt"
         android:layout_gravity="center_horizontal"
-        android:spinnerMode="dialog" />
+        android:spinnerMode="dialog"
+        android:entries="@array/grades_array"/>
 </LinearLayout>
