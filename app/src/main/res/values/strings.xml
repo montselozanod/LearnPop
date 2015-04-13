@@ -47,22 +47,37 @@
     </string-array>
 
     <string name="subject_prompt">Choose a subject</string>
+    <string name="sub_prefs_prompt">Choose subject interests</string>
     <string name="grade_prompt">Choose a grade level</string>
     <string name="type_prompt">Choose a type</string>
 
     <string-array name="subjects_array">
-        <item>Bilingual</item>
-        <item>Digital Media</item>
-        <item>Drama</item>
-        <item>ELA</item>
-        <item>History</item>
-        <item>Math</item>
-        <item>Movement</item>
-        <item>Music</item>
-        <item>Science</item>
-        <item>SEL</item>
-        <item>Visual Art</item>
+        <item>@string/sub1</item>
+        <item>@string/sub2</item>
+        <item>@string/sub3</item>
+        <item>@string/sub4</item>
+        <item>@string/sub5</item>
+        <item>@string/sub6</item>
+        <item>@string/sub7</item>
+        <item>@string/sub8</item>
+        <item>@string/sub9</item>
+        <item>@string/sub10</item>
+        <item>@string/sub11</item>
     </string-array>
+
+    <string name="sub1">Bilingual</string>
+    <string name="sub2">Digital Media</string>
+    <string name="sub3">Drama</string>
+    <string name="sub4">ELA</string>
+    <string name="sub5">History</string>
+    <string name="sub6">Math</string>
+    <string name="sub7">Movement</string>
+    <string name="sub8">Music</string>
+    <string name="sub9">Science</string>
+    <string name="sub10">SEL</string>
+    <string name="sub11">Visual Art</string>
+
+
     <string-array name="type_array">
         <item>Strategy</item>
         <item>Video</item>
