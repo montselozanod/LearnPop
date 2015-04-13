@@ -70,5 +70,5 @@
         android:layout_height="wrap_content"
         android:id="@+id/spinner_Grades"
         android:layout_gravity="center_horizontal"
-        android:spinnerMode="dropdown" />
+        android:spinnerMode="dialog" />
 </LinearLayout>
