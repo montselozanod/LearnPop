@@ -46,7 +46,7 @@
 
         <TextView
             android:layout_width="239dp"
-            android:layout_height="142dp"
+            android:layout_height="215dp"
             android:text="Summary"
             android:id="@+id/sumTXT"
             android:layout_marginTop="16dp"
