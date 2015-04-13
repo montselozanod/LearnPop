@@ -39,7 +39,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub1"
-                android:id="@+id/check_bilingual" />
+                android:id="@+id/check_bilingual"
+                android:checked="false"
+                android:enabled="true" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -57,7 +59,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub2"
-                android:id="@+id/check_media" />
+                android:id="@+id/check_media"
+                android:enabled="true" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -75,7 +78,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub3"
-                android:id="@+id/check_drama" />
+                android:id="@+id/check_drama"
+                android:enabled="true" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -93,7 +97,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub4"
-                android:id="@+id/check_ela" />
+                android:id="@+id/check_ela"
+                android:enabled="true" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -111,7 +116,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub5"
-                android:id="@+id/check_history" />
+                android:id="@+id/check_history"
+                android:enabled="true" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -129,7 +135,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub6"
-                android:id="@+id/check_math" />
+                android:id="@+id/check_math"
+                android:enabled="true" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -147,7 +154,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub7"
-                android:id="@+id/check_movement" />
+                android:id="@+id/check_movement"
+                android:enabled="true" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -165,7 +173,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub8"
-                android:id="@+id/check_music" />
+                android:id="@+id/check_music"
+                android:enabled="true" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -183,7 +192,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub9"
-                android:id="@+id/check_science" />
+                android:id="@+id/check_science"
+                android:enabled="true" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -201,7 +211,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub10"
-                android:id="@+id/check_sel" />
+                android:id="@+id/check_sel"
+                android:enabled="true" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -219,7 +230,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub11"
-                android:id="@+id/check_art" />
+                android:id="@+id/check_art"
+                android:enabled="true" />
         </LinearLayout>
     </LinearLayout>
 
