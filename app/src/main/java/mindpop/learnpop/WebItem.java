@@ -55,7 +55,7 @@ public class WebItem extends Fragment {
 
         title.setText(resource.getTitle());
         summary.setText(resource.getSummary());
-        updateLikeValues();
+        //updateLikeValues();
 
         viewButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -96,7 +96,7 @@ public class WebItem extends Fragment {
                     resource.setDownVote(resource.getDownVote() + 1);
                 }else{
                     if(unlike_button.isChecked()){
-                        //addd 1 to resource
+                        //add 1 to resource
                         resource.setDownVote(resource.getDownVote() + 1);
                     }else{
                         resource.setDownVote(resource.getDownVote() - 1);
