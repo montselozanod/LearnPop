@@ -235,6 +235,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spinner_Grades"
+        android:prompt="@string/grade_prompt"
         android:layout_gravity="center_horizontal"
         android:spinnerMode="dialog" />
 </LinearLayout>
