@@ -60,11 +60,11 @@ public class Announcements extends Fragment {
         protected  void onPreExecute(){
             super.onPreExecute();
             Log.e("AsyncTask", "onPreExecute");
-     /*       progressDialog = new ProgressDialog(getActivity());
+            progressDialog = new ProgressDialog(getActivity());
             progressDialog.setMessage("Loading partners...");
             progressDialog.setIndeterminate(false);
             progressDialog.setCancelable(false);
-            progressDialog.show();*/
+            progressDialog.show();
         }
 
         @Override
@@ -103,7 +103,7 @@ public class Announcements extends Fragment {
         protected void onPostExecute(JSONObject result){
             Log.d("PostExecute", "post");
             super.onPostExecute(result);
-//            progressDialog.dismiss();
+            progressDialog.dismiss();
             // for performance given that changes in content do not change the layout size of the RecyclerView
             RecyclerAdapter adapter = new RecyclerAdapter(list);
             mRecyclerView.setAdapter(adapter);
