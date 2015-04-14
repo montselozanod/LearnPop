@@ -14,6 +14,16 @@ import android.widget.Spinner;
  */
 public class Preferences extends Fragment {
     private CheckedTextView bilingual_check;
+    private CheckedTextView media_check;
+    private CheckedTextView drama_check;
+    private CheckedTextView ela_check;
+    private CheckedTextView history_check;
+    private CheckedTextView math_check;
+    private CheckedTextView movement_check;
+    private CheckedTextView music_check;
+    private CheckedTextView science_check;
+    private CheckedTextView sle_check;
+    private CheckedTextView art_check;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
