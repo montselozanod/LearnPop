@@ -1,5 +1,7 @@
 package mindpop.learnpop;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,6 +16,7 @@ import android.widget.Spinner;
  */
 public class Preferences extends Fragment {
 
+    private SharedPreferences sharedPreferences;
     public static final String USER_PREFERENCES = "MyPrefs" ;
     public static final String bilingual = "bilingualKey";
     public static final String media = "mediaKey";
@@ -42,10 +45,16 @@ public class Preferences extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_preferences, container, false);
+        setSharedPreferences(rootView);
         setSpinnerContent(rootView);
         setCheckTextViews(rootView);
 
         return rootView;
+    }
+
+    private void setSharedPreferences(View v){
+        sharedPreferences = getActivity().getSharedPreferences(USER_PREFERENCES, Context.MODE_PRIVATE);
+
     }
 
     private void setCheckTextViews(View v){
