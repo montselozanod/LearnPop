@@ -13,6 +13,20 @@ import android.widget.Spinner;
  * Created by montselozanod on 3/20/15.
  */
 public class Preferences extends Fragment {
+
+    public static final String USER_PREFERENCES = "MyPrefs" ;
+    public static final String bilingual = "bilingualKey";
+    public static final String media = "mediaKey";
+    public static final String drama = "dramaKey";
+    public static final String ela = "elaKey";
+    public static final String history = "historyKey";
+    public static final String math = "mathKey";
+    public static final String movement = "moveKey";
+    public static final String music = "musicKey";
+    public static final String science = "scienceKey";
+    public static final String sel = "selKey";
+    public static final String art = "artKey";
+
     private CheckedTextView bilingual_check;
     private CheckedTextView media_check;
     private CheckedTextView drama_check;
