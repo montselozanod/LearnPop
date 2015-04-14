@@ -62,11 +62,11 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
     @Override
     protected void onPreExecute(){
         super.onPreExecute();
-        /*pDialog = new ProgressDialog(_context);
+        pDialog = new ProgressDialog(_context);
         pDialog.setMessage("Loading resources...");
         pDialog.setIndeterminate(false);
         pDialog.setCancelable(false);
-        pDialog.show();*/
+        pDialog.show();
     }
 
     protected JSONObject doInBackground(String... args){
@@ -134,7 +134,7 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
 
     protected  void onPostExecute(JSONObject result)
     {
-        //pDialog.dismiss();
+        pDialog.dismiss();
        // delegate.processFinish(result);
         ResourceAdapter adapter = new ResourceAdapter(activity, resourcesArrayList);
         mRecyclerView.setAdapter(adapter);
