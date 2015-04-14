@@ -61,7 +61,7 @@ public class Announcements extends Fragment {
             super.onPreExecute();
             Log.e("AsyncTask", "onPreExecute");
             progressDialog = new ProgressDialog(getActivity());
-            progressDialog.setMessage("Loading partners...");
+            progressDialog.setMessage("Loading...");
             progressDialog.setIndeterminate(false);
             progressDialog.setCancelable(false);
             progressDialog.show();
