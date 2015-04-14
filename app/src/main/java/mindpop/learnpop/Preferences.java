@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckedTextView;
 import android.widget.Spinner;
 
@@ -41,6 +42,8 @@ public class Preferences extends Fragment {
     private CheckedTextView science_check;
     private CheckedTextView sel_check;
     private CheckedTextView art_check;
+
+    private Button btnSave;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -49,6 +52,26 @@ public class Preferences extends Fragment {
         setSpinnerContent(rootView);
         setCheckTextViews(rootView);
 
+        btnSave = (Button)rootView.findViewById(R.id.btnSave);
+        btnSave.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean(bilingual, bilingual_check.isChecked());
+                editor.putBoolean(media, media_check.isChecked());
+                editor.putBoolean(drama, drama_check.isChecked());
+                editor.putBoolean(ela, ela_check.isChecked());
+                editor.putBoolean(history, history_check.isChecked());
+                editor.putBoolean(math, math_check.isChecked());
+                editor.putBoolean(movement, movement_check.isChecked());
+                editor.putBoolean(music, music_check.isChecked());
+                editor.putBoolean(science, science_check.isChecked());
+                editor.putBoolean(sel, sel_check.isChecked());
+                editor.putBoolean(art, art_check.isChecked());
+                editor.commit();
+            }
+        });
+        
         return rootView;
     }
 
@@ -99,6 +122,8 @@ public class Preferences extends Fragment {
             art_check.setChecked(sharedPreferences.getBoolean(art, false));
         }
     }
+
+
 
     private void setCheckTextViews(View v){
         bilingual_check = (CheckedTextView)v.findViewById(R.id.check_bilingual);
