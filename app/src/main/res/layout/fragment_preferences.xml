@@ -36,14 +36,17 @@
                 android:id="@+id/imageView"
                 android:background="@drawable/bilingual"/>
 
-            <CheckBox
+            <CheckedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub1"
                 android:id="@+id/check_bilingual"
                 android:checked="false"
                 android:enabled="true"
-                android:checkMark="?android:attr/listChoiceIndicatorMultiple"/>
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:clickable="true"
+                android:focusableInTouchMode="true"
+                android:focusable="true" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -58,12 +61,15 @@
                 android:id="@+id/imageView2"
                 android:background="@drawable/media"/>
 
-            <CheckBox
+            <CheckedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub2"
                 android:id="@+id/check_media"
-                android:enabled="true" />
+                android:checked="false"
+                android:enabled="true"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:clickable="true" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -78,12 +84,15 @@
                 android:id="@+id/imageView3"
                 android:background="@drawable/drama"/>
 
-            <CheckBox
+            <CheckedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub3"
                 android:id="@+id/check_drama"
-                android:enabled="true" />
+                android:checked="false"
+                android:enabled="true"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:clickable="true"/>
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -98,12 +107,15 @@
                 android:id="@+id/imageView4"
                 android:background="@drawable/ela"/>
 
-            <CheckBox
+            <CheckedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub4"
                 android:id="@+id/check_ela"
-                android:enabled="true" />
+                android:checked="false"
+                android:enabled="true"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:clickable="true" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -118,12 +130,15 @@
                 android:id="@+id/imageView5"
                 android:background="@drawable/history"/>
 
-            <CheckBox
+            <CheckedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub5"
                 android:id="@+id/check_history"
-                android:enabled="true" />
+                android:checked="false"
+                android:enabled="true"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:clickable="true" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -138,12 +153,15 @@
                 android:id="@+id/imageView6"
                 android:background="@drawable/math"/>
 
-            <CheckBox
+            <CheckedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub6"
                 android:id="@+id/check_math"
-                android:enabled="true" />
+                android:checked="false"
+                android:enabled="true"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:clickable="true" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -158,12 +176,15 @@
                 android:id="@+id/imageView7"
                 android:background="@drawable/move"/>
 
-            <CheckBox
+            <CheckedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub7"
                 android:id="@+id/check_movement"
+                android:checked="false"
                 android:enabled="true"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:clickable="true"
                 android:layout_marginBottom="5dp" />
         </LinearLayout>
         <LinearLayout
@@ -179,12 +200,17 @@
                 android:id="@+id/imageView8"
                 android:background="@drawable/music"/>
 
-            <CheckBox
+            <CheckedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub8"
                 android:id="@+id/check_music"
-                android:enabled="true" />
+                android:focusableInTouchMode="true"
+                android:focusable="true"
+                android:checked="false"
+                android:enabled="true"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:clickable="true"/>
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -199,12 +225,15 @@
                 android:id="@+id/imageView9"
                 android:background="@drawable/science"/>
 
-            <CheckBox
+            <CheckedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub9"
                 android:id="@+id/check_science"
-                android:enabled="true" />
+                android:checked="false"
+                android:enabled="true"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:clickable="true" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -219,12 +248,15 @@
                 android:id="@+id/imageView10"
                 android:background="@drawable/sel"/>
 
-            <CheckBox
+            <CheckedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub10"
                 android:id="@+id/check_sel"
-                android:enabled="true" />
+                android:checked="false"
+                android:enabled="true"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:clickable="true" />
         </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
@@ -239,12 +271,15 @@
                 android:id="@+id/imageView11"
                 android:background="@drawable/art"/>
 
-            <CheckBox
+            <CheckedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sub11"
                 android:id="@+id/check_art"
-                android:enabled="true" />
+                android:checked="false"
+                android:enabled="true"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:clickable="true" />
         </LinearLayout>
     </LinearLayout>
 
