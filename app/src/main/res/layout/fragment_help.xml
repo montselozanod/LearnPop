@@ -38,6 +38,8 @@
         android:layout_height="wrap_content"
         android:text="Send"
         android:id="@+id/btnSend"
+        android:background="@color/red"
+        android:textColor="@color/frame_solid"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"

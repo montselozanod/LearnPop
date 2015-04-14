@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +49,7 @@ public class Preferences extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_preferences, container, false);
+        sharedPreferences = getActivity().getSharedPreferences(USER_PREFERENCES, Context.MODE_PRIVATE);
         setSharedPreferences(rootView);
         setSpinnerContent(rootView);
         setCheckTextViews(rootView);
@@ -76,7 +78,6 @@ public class Preferences extends Fragment {
     }
 
     private void setSharedPreferences(View v){
-        sharedPreferences = getActivity().getSharedPreferences(USER_PREFERENCES, Context.MODE_PRIVATE);
 
         if(sharedPreferences.contains(bilingual)){
            bilingual_check.setChecked(sharedPreferences.getBoolean(bilingual, false));
