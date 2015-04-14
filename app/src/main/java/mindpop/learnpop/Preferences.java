@@ -22,21 +22,95 @@ public class Preferences extends Fragment {
     private CheckedTextView movement_check;
     private CheckedTextView music_check;
     private CheckedTextView science_check;
-    private CheckedTextView sle_check;
+    private CheckedTextView sel_check;
     private CheckedTextView art_check;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_preferences, container, false);
         setSpinnerContent(rootView);
-        bilingual_check = (CheckedTextView)rootView.findViewById(R.id.check_bilingual);
+        setCheckTextViews(rootView);
+
+        return rootView;
+    }
+
+    private void setCheckTextViews(View v){
+        bilingual_check = (CheckedTextView)v.findViewById(R.id.check_bilingual);
         bilingual_check.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 ((CheckedTextView) v).toggle();
             }
         });
 
-        return rootView;
+        media_check = (CheckedTextView)v.findViewById(R.id.check_media);
+        media_check.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                ((CheckedTextView) v).toggle();
+            }
+        });
+
+        drama_check = (CheckedTextView)v.findViewById(R.id.check_drama);
+        drama_check.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                ((CheckedTextView) v).toggle();
+            }
+        });
+
+        ela_check = (CheckedTextView)v.findViewById(R.id.check_ela);
+        ela_check.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                ((CheckedTextView) v).toggle();
+            }
+        });
+
+        history_check = (CheckedTextView)v.findViewById(R.id.check_history);
+        history_check.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                ((CheckedTextView) v).toggle();
+            }
+        });
+
+        math_check = (CheckedTextView)v.findViewById(R.id.check_math);
+        math_check.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                ((CheckedTextView) v).toggle();
+            }
+        });
+
+        movement_check = (CheckedTextView)v.findViewById(R.id.check_movement);
+        movement_check.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                ((CheckedTextView) v).toggle();
+            }
+        });
+
+        music_check = (CheckedTextView)v.findViewById(R.id.check_music);
+        music_check.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                ((CheckedTextView) v).toggle();
+            }
+        });
+
+        science_check = (CheckedTextView)v.findViewById(R.id.check_science);
+        science_check.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                ((CheckedTextView) v).toggle();
+            }
+        });
+
+        sel_check = (CheckedTextView)v.findViewById(R.id.check_sel);
+        sel_check.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                ((CheckedTextView) v).toggle();
+            }
+        });
+
+        art_check = (CheckedTextView)v.findViewById(R.id.check_art);
+        art_check.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                ((CheckedTextView) v).toggle();
+            }
+        });
     }
 
     private void setSpinnerContent(View view){
