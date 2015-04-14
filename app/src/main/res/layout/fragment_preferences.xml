@@ -360,6 +360,7 @@
         android:id="@+id/btnSave"
         android:background="@color/red"
         android:textColor="@color/frame_solid"
+        android:onClick="run"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp" />
 </LinearLayout>

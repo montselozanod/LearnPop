@@ -55,6 +55,49 @@ public class Preferences extends Fragment {
     private void setSharedPreferences(View v){
         sharedPreferences = getActivity().getSharedPreferences(USER_PREFERENCES, Context.MODE_PRIVATE);
 
+        if(sharedPreferences.contains(bilingual)){
+           bilingual_check.setChecked(sharedPreferences.getBoolean(bilingual, false));
+        }
+
+        if(sharedPreferences.contains(media)){
+            media_check.setChecked(sharedPreferences.getBoolean(media, false));
+        }
+
+        if(sharedPreferences.contains(drama)){
+            drama_check.setChecked(sharedPreferences.getBoolean(drama, false));
+        }
+
+        if(sharedPreferences.contains(ela)){
+            ela_check.setChecked(sharedPreferences.getBoolean(ela, false));
+        }
+
+        if(sharedPreferences.contains(history)){
+            history_check.setChecked(sharedPreferences.getBoolean(history, false));
+        }
+
+        if(sharedPreferences.contains(math)){
+            math_check.setChecked(sharedPreferences.getBoolean(math, false));
+        }
+
+        if(sharedPreferences.contains(movement)){
+            movement_check.setChecked(sharedPreferences.getBoolean(movement, false));
+        }
+
+        if(sharedPreferences.contains(music)){
+            music_check.setChecked(sharedPreferences.getBoolean(music, false));
+        }
+
+        if(sharedPreferences.contains(science)){
+            science_check.setChecked(sharedPreferences.getBoolean(science, false));
+        }
+
+        if(sharedPreferences.contains(sel)){
+            sel_check.setChecked(sharedPreferences.getBoolean(sel, false));
+        }
+
+        if(sharedPreferences.contains(art)){
+            art_check.setChecked(sharedPreferences.getBoolean(art, false));
+        }
     }
 
     private void setCheckTextViews(View v){
