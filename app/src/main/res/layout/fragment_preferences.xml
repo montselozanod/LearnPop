@@ -22,10 +22,15 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.26"
         android:layout_margin="16dp">
-
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="169dp"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_marginBottom="5dp">
@@ -72,9 +77,16 @@
                 android:clickable="true"
                 android:focusable="true"/>
         </LinearLayout>
+        </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="164dp"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_marginBottom="5dp">
@@ -120,9 +132,16 @@
                 android:clickable="true"
                 android:focusable="true"/>
         </LinearLayout>
+        </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="178dp"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_marginBottom="5dp">
@@ -168,9 +187,16 @@
                 android:clickable="true"
                 android:focusable="true"/>
         </LinearLayout>
+            </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="183dp"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_marginBottom="5dp">
@@ -218,9 +244,16 @@
                 android:checkMark="?android:attr/listChoiceIndicatorMultiple"
                 android:clickable="true"/>
         </LinearLayout>
+            </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="5dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="178dp"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_marginBottom="5dp">
@@ -266,6 +299,7 @@
                 android:clickable="true"
                 android:focusable="true"/>
         </LinearLayout>
+            </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
