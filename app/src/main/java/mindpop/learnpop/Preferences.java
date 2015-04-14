@@ -71,7 +71,7 @@ public class Preferences extends Fragment {
                 editor.commit();
             }
         });
-        
+
         return rootView;
     }
 
