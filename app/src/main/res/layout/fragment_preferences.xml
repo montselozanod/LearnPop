@@ -331,7 +331,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Grade Level:"
-        android:id="@+id/textView3" />
+        android:id="@+id/textView3"
+        android:layout_margin="16dp" />
 
     <Spinner
         android:layout_width="match_parent"
@@ -340,5 +341,16 @@
         android:prompt="@string/grade_prompt"
         android:layout_gravity="center_horizontal"
         android:spinnerMode="dialog"
-        android:entries="@array/grades_array"/>
+        android:entries="@array/grades_array"
+        android:layout_margin="16dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:id="@+id/btnSave"
+        android:background="@color/red"
+        android:textColor="@color/frame_solid"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp" />
 </LinearLayout>
