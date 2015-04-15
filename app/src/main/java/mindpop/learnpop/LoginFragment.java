@@ -28,6 +28,14 @@ public class LoginFragment extends Fragment {
     private CallbackManager mCallbackManager;
     private AccessTokenTracker mTokenTracker;
     private ProfileTracker mProfileTracker;
+
+    private void changeActivity(Profile userProfile){
+        CreativeTeach ct = (CreativeTeach)getActivity().getApplicationContext();
+        ct.setUserProfile(userProfile);
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        startActivity(intent);
+    }
+
     private FacebookCallback<LoginResult> mFacebookCallback = new FacebookCallback<LoginResult>() {
         @Override
         public void onSuccess(LoginResult loginResult) {
@@ -35,6 +43,7 @@ public class LoginFragment extends Fragment {
             AccessToken accessToken = loginResult.getAccessToken();
             Profile profile = Profile.getCurrentProfile();
             mTextDetails.setText(constructWelcomeMessage(profile));
+            changeActivity(profile);
 
         }
 
@@ -132,7 +141,7 @@ public class LoginFragment extends Fragment {
     private String constructWelcomeMessage(Profile profile) {
         StringBuffer stringBuffer = new StringBuffer();
         if (profile != null) {
-            stringBuffer.append("Welcome " + profile.getName());
+            stringBuffer.append("Hi, " + profile.getName());
         }
         return stringBuffer.toString();
     }
