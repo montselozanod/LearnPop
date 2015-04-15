@@ -32,6 +32,7 @@ public class Preferences extends Fragment {
     public static final String sel = "selKey";
     public static final String art = "artKey";
 
+    private Spinner spinner;
     private CheckedTextView bilingual_check;
     private CheckedTextView media_check;
     private CheckedTextView drama_check;
@@ -207,7 +208,7 @@ public class Preferences extends Fragment {
     }
 
     private void setSpinnerContent(View view){
-        Spinner spinner = (Spinner) view.findViewById(R.id.spinner_Grades);
+        spinner = (Spinner) view.findViewById(R.id.spinner_Grades);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.grades_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
