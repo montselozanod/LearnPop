@@ -44,7 +44,7 @@ public class LoginFragment extends Fragment {
                 Log.d("VIVZ", "is null");
             }
             //userProfile.getProfilePictureUri(90,90);
-            //Log.d("VIVZ", userProfile.getFirstName());
+            Log.d("VIVZ", userProfile.getFirstName());
             changeActivity();
         }
 
@@ -77,7 +77,8 @@ public class LoginFragment extends Fragment {
         userProfile = Profile.getCurrentProfile();
         if(userProfile != null){
             Log.d("not null", "not null");
-            changeActivity();
+            Log.d("user profile", userProfile.getFirstName());
+            //changeActivity();
         }
     }
 
@@ -97,7 +98,7 @@ public class LoginFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        setupTextDetails(view);
+        //setupTextDetails(view);
         setupLoginButton(view);
     }
 
@@ -105,7 +106,6 @@ public class LoginFragment extends Fragment {
     public void onResume() {
         super.onResume();
         Profile profile = Profile.getCurrentProfile();
-        mTextDetails.setText(constructWelcomeMessage(profile));
     }
 
     @Override
@@ -119,10 +119,6 @@ public class LoginFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         mCallbackManager.onActivityResult(requestCode, resultCode, data);
-    }
-
-    private void setupTextDetails(View view) {
-        mTextDetails = (TextView) view.findViewById(R.id.login_text);
     }
 
     private void setupTokenTracker() {
@@ -139,7 +135,6 @@ public class LoginFragment extends Fragment {
             @Override
             protected void onCurrentProfileChanged(Profile oldProfile, Profile currentProfile) {
                 Log.d("VIVZ", "" + currentProfile);
-                mTextDetails.setText(constructWelcomeMessage(currentProfile));
             }
         };
     }

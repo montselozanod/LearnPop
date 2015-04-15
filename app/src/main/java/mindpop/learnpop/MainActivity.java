@@ -27,6 +27,7 @@ import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookSdk;
+import com.facebook.Profile;
 import com.facebook.appevents.AppEventsLogger;
 import android.widget.ListView;
 import android.content.pm.PackageInfo;
@@ -124,6 +125,11 @@ public class MainActivity extends ActionBarActivity
                 fragment = new HelpFragment();
                 mTitle = stringArray[position];
                 break;
+            case 9:
+                //LOG OFF
+                fragment = new LoginFragment();
+                CreativeTeach ct = (CreativeTeach)getApplicationContext();
+
         }
         fragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)
