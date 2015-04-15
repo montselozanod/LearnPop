@@ -129,6 +129,7 @@ public class MainActivity extends ActionBarActivity
                 //LOG OFF
                 fragment = new LoginFragment();
                 CreativeTeach ct = (CreativeTeach)getApplicationContext();
+                mTitle = getString(R.string.app_name);
 
         }
         fragmentManager.beginTransaction()
