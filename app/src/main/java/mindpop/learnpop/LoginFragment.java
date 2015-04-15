@@ -39,11 +39,13 @@ public class LoginFragment extends Fragment {
             Log.d("VIVZ", "onSuccess");
             AccessToken accessToken = loginResult.getAccessToken();
             userProfile = Profile.getCurrentProfile();
-            userProfile.getProfilePictureUri(90,90);
-            Log.d("VIVZ", userProfile.getFirstName());
-            mTextDetails.setText(constructWelcomeMessage(userProfile));
+            if(userProfile == null)
+            {
+                Log.d("VIVZ", "is null");
+            }
+            //userProfile.getProfilePictureUri(90,90);
+            //Log.d("VIVZ", userProfile.getFirstName());
             changeActivity();
-
         }
 
 

@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckedTextView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 /**
  * Created by montselozanod on 3/20/15.
@@ -75,6 +76,8 @@ public class Preferences extends Fragment {
                 editor.putBoolean(art, art_check.isChecked());
                 editor.putInt(grade, spinner.getSelectedItemPosition());
                 editor.commit();
+
+                Toast.makeText(getActivity(), "Preferences saved!", Toast.LENGTH_SHORT).show();
             }
         });
 
