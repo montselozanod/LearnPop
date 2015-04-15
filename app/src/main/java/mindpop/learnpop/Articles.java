@@ -59,22 +59,6 @@ public class Articles extends Fragment {
 
     }
 
-    /*@Override
-    public void onListItemClick(ListView l, View v, int position, long id) {
-        // retrieve theListView item
-        Resource item = resourceArrayList.get(position);
-        // do something
-        //Toast.makeText(getActivity(), item.getTitle(), Toast.LENGTH_SHORT).show();
-
-        WebViewFragment webFrag = new WebViewFragment();
-        webFrag.init(item.getUrl());
-
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.replace(R.id.drawer_layout, webFrag);
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }*/
-
     private void restorePreferences(){
         SharedPreferences settings = this.getActivity().getSharedPreferences(PREFS_NAME, 0);
         boolean visual = settings.getBoolean("visual", false);
