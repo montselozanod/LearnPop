@@ -1,6 +1,4 @@
 package mindpop.learnpop;
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,7 +13,6 @@ import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
 import com.facebook.Profile;
 import com.facebook.ProfileTracker;
 import com.facebook.login.LoginResult;
@@ -23,40 +20,33 @@ import com.facebook.login.widget.LoginButton;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * A placeholder fragment containing a simple view.
  */
 public class LoginFragment extends Fragment {
-
 
     private TextView mTextDetails;
     private CallbackManager mCallbackManager;
     private AccessTokenTracker mTokenTracker;
-    private Profile userProfile;
     private ProfileTracker mProfileTracker;
     private FacebookCallback<LoginResult> mFacebookCallback = new FacebookCallback<LoginResult>() {
         @Override
         public void onSuccess(LoginResult loginResult) {
             Log.d("VIVZ", "onSuccess");
             AccessToken accessToken = loginResult.getAccessToken();
-            userProfile = Profile.getCurrentProfile();
-            if(userProfile == null)
-            {
-                Log.d("VIVZ", "is null");
-            }
-            //userProfile.getProfilePictureUri(90,90);
-            Log.d("VIVZ", userProfile.getFirstName());
-            changeActivity();
+            Profile profile = Profile.getCurrentProfile();
+            mTextDetails.setText(constructWelcomeMessage(profile));
+
         }
 
 
         @Override
         public void onCancel() {
-            Log.d("Login", "onCancel");
+            Log.d("VIVZ", "onCancel");
         }
 
         @Override
         public void onError(FacebookException e) {
-            Log.d("Login", "onError " + e);
+            Log.d("VIVZ", "onError " + e);
         }
     };
 
@@ -74,19 +64,6 @@ public class LoginFragment extends Fragment {
 
         mTokenTracker.startTracking();
         mProfileTracker.startTracking();
-        userProfile = Profile.getCurrentProfile();
-        if(userProfile != null){
-            Log.d("not null", "not null");
-            Log.d("user profile", userProfile.getFirstName());
-            //changeActivity();
-        }
-    }
-
-    private void changeActivity(){
-        CreativeTeach ct = (CreativeTeach)getActivity().getApplicationContext();
-        ct.setUserProfile(userProfile);
-        Intent intent = new Intent(getActivity(), MainActivity.class);
-        startActivity(intent);
     }
 
 
@@ -98,7 +75,7 @@ public class LoginFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        //setupTextDetails(view);
+        setupTextDetails(view);
         setupLoginButton(view);
     }
 
@@ -106,6 +83,7 @@ public class LoginFragment extends Fragment {
     public void onResume() {
         super.onResume();
         Profile profile = Profile.getCurrentProfile();
+        mTextDetails.setText(constructWelcomeMessage(profile));
     }
 
     @Override
@@ -119,6 +97,10 @@ public class LoginFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         mCallbackManager.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void setupTextDetails(View view) {
+        mTextDetails = (TextView) view.findViewById(R.id.login_text);
     }
 
     private void setupTokenTracker() {
@@ -135,6 +117,7 @@ public class LoginFragment extends Fragment {
             @Override
             protected void onCurrentProfileChanged(Profile oldProfile, Profile currentProfile) {
                 Log.d("VIVZ", "" + currentProfile);
+                mTextDetails.setText(constructWelcomeMessage(currentProfile));
             }
         };
     }
@@ -142,7 +125,7 @@ public class LoginFragment extends Fragment {
     private void setupLoginButton(View view) {
         LoginButton mButtonLogin = (LoginButton) view.findViewById(R.id.login_button);
         mButtonLogin.setFragment(this);
-        mButtonLogin.setReadPermissions("public_profile");
+        mButtonLogin.setReadPermissions("user_friends");
         mButtonLogin.registerCallback(mCallbackManager, mFacebookCallback);
     }
 
@@ -153,4 +136,5 @@ public class LoginFragment extends Fragment {
         }
         return stringBuffer.toString();
     }
+
 }
