@@ -50,9 +50,10 @@ public class Preferences extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_preferences, container, false);
         sharedPreferences = getActivity().getSharedPreferences(USER_PREFERENCES, Context.MODE_PRIVATE);
-        setSharedPreferences(rootView);
+
         setSpinnerContent(rootView);
         setCheckTextViews(rootView);
+        setSharedPreferences();
 
         btnSave = (Button)rootView.findViewById(R.id.btnSave);
         btnSave.setOnClickListener(new View.OnClickListener(){
@@ -77,7 +78,7 @@ public class Preferences extends Fragment {
         return rootView;
     }
 
-    private void setSharedPreferences(View v){
+    private void setSharedPreferences(){
 
         if(sharedPreferences.contains(bilingual)){
            bilingual_check.setChecked(sharedPreferences.getBoolean(bilingual, false));
