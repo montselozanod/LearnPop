@@ -31,6 +31,7 @@ public class Preferences extends Fragment {
     public static final String science = "scienceKey";
     public static final String sel = "selKey";
     public static final String art = "artKey";
+    public static final String grade ="gradeKey";
 
     private Spinner spinner;
     private CheckedTextView bilingual_check;
@@ -72,6 +73,7 @@ public class Preferences extends Fragment {
                 editor.putBoolean(science, science_check.isChecked());
                 editor.putBoolean(sel, sel_check.isChecked());
                 editor.putBoolean(art, art_check.isChecked());
+                editor.putInt(grade, spinner.getSelectedItemPosition());
                 editor.commit();
             }
         });
@@ -123,6 +125,11 @@ public class Preferences extends Fragment {
 
         if(sharedPreferences.contains(art)){
             art_check.setChecked(sharedPreferences.getBoolean(art, false));
+        }
+
+        if(sharedPreferences.contains(grade)){
+            Log.d("Grade preference", String.valueOf(sharedPreferences.getInt(grade, 0)));
+            spinner.setSelection(sharedPreferences.getInt(grade, 0));
         }
     }
 
