@@ -35,7 +35,7 @@ public class MoreFragment extends Fragment {
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        loadResource = new LoadResource(getActivity(), getActivity(), mRecyclerView, sub ,"LowerElem", 2);
+        loadResource = new LoadResource(getActivity(), getActivity(), mRecyclerView, 2);
 
         loadResource.execute();
         return rootView;
