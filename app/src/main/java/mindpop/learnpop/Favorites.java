@@ -68,7 +68,7 @@ public class Favorites extends Fragment {
         }else{
             Toast.makeText(getActivity(), "No favorites saved!", Toast.LENGTH_LONG).show();
         }
-        
+
 
         return rootView;
     }
