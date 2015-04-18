@@ -91,6 +91,10 @@ public class WebItem extends Fragment {
             favorites = new ArrayList<Resource>();
             favorites = gson.fromJson(favs, type);
 
+            if(favorites.contains(resource)){
+                fav_button.setChecked(true);
+            }
+
         }else{
             //create list
             favorites = new ArrayList<Resource>();
