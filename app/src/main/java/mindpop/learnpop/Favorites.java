@@ -63,8 +63,14 @@ public class Favorites extends Fragment {
             Type type = new TypeToken<ArrayList<Resource>>(){}.getType();
             list = new ArrayList<Resource>();
             list = gson.fromJson(favs, type);
-            ResourceAdapter adapter = new ResourceAdapter(getActivity(), list);
-            mRecyclerView.setAdapter(adapter);
+            if(list.isEmpty()){
+                Toast.makeText(getActivity(), "No favorites saved!", Toast.LENGTH_LONG).show();
+
+            }else{
+                ResourceAdapter adapter = new ResourceAdapter(getActivity(), list);
+                mRecyclerView.setAdapter(adapter);
+            }
+
         }else{
             Toast.makeText(getActivity(), "No favorites saved!", Toast.LENGTH_LONG).show();
         }
