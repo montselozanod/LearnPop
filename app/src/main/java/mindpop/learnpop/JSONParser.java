@@ -55,6 +55,7 @@ public class JSONParser {
                 Log.d("Share URl", url);
 
                 HttpResponse httpResponse = httpClient.execute(httpPost);
+                Log.d("HTTP RESPONESE", String.valueOf(httpResponse.getStatusLine()));
                 HttpEntity httpEntity = httpResponse.getEntity();
                 is = httpEntity.getContent();
 
