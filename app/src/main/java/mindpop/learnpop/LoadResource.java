@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.content.Context;
+import android.widget.Toast;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -198,8 +199,12 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
     {
         pDialog.dismiss();
        // delegate.processFinish(result);
-        ResourceAdapter adapter = new ResourceAdapter(activity, resourcesArrayList);
-        mRecyclerView.setAdapter(adapter);
+        if(resourcesArrayList.isEmpty()){
+            Toast.makeText(_context, "No resources found", Toast.LENGTH_LONG).show();
+        }else{
+            ResourceAdapter adapter = new ResourceAdapter(activity, resourcesArrayList);
+            mRecyclerView.setAdapter(adapter);
+        }
 
     }
 
