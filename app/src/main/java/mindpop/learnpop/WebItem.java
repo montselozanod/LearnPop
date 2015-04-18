@@ -36,6 +36,7 @@ public class WebItem extends Fragment {
 
 
     private Resource resource;
+    private int index = 0;
     private TextView title;
     private TextView summary;
     private TextView likesTxt;
@@ -90,12 +91,13 @@ public class WebItem extends Fragment {
             Type type = new TypeToken<ArrayList<Resource>>(){}.getType();
             favorites = new ArrayList<Resource>();
             favorites = gson.fromJson(favs, type);
-
-            if(favorites.contains(resource)){
-                Log.d("resource", "is in array");
-                fav_button.setChecked(true);
-            }else{
-                Log.d("resource", "is not in array");
+            for(int i = 0; i < favorites.size(); i++){
+                if(favorites.get(0).getUrl().equals(resource.getUrl())){
+                    Log.d("resource", "is in array");
+                    fav_button.setChecked(true);
+                    index = i;
+                    break;
+                }
             }
 
         }else{
@@ -108,8 +110,11 @@ public class WebItem extends Fragment {
             public void onClick(View v){
                 if(fav_button.isChecked()){
                     favorites.add(resource);
+                    index = favorites.indexOf(resource);
+                    Log.d("index of", String.valueOf(index));
                 }else{
-                    favorites.remove(resource);
+
+                    favorites.remove(index);
                 }
                 Log.d("inside click listener", "yes");
                 //create editor
