@@ -192,7 +192,13 @@ public class WebItem extends Fragment {
         unlikesTxt.setText(String.valueOf(resource.getDownVote()));
     }
 
-/*   class UpdateResource extends AsyncTask<String, String, JSONObject>{
+  class UpdateResource extends AsyncTask<String, String, String>{
+      private final String LIKE_TAG = "Likes";
+      private final String DISLIKE_TAG = "Dislikes";
+      int type; //like = 0, dislike = 1
+      UpdateResource(int i){
+        type = i;
+      }
        @Override
        protected void onPreExecute(){
            super.onPreExecute();
@@ -201,7 +207,11 @@ public class WebItem extends Fragment {
        protected String doInBackground(String... args){
 
            List<NameValuePair> params = new ArrayList<NameValuePair>();
-
+           if(type == 0){
+               params.add(new BasicNameValuePair(LIKE_TAG, String.valueOf(resource.getUpVote())));
+           }else{
+               params.add(new BasicNameValuePair(DISLIKE_TAG, String.valueOf(resource.getDownVote())));
+           }
 
            //JSONObject json = jsonParser.makeHttpRequest(request_url, "POST", params);
 
@@ -209,6 +219,6 @@ public class WebItem extends Fragment {
 
            return null;
        }
-   }*/
+   }
 
 }
