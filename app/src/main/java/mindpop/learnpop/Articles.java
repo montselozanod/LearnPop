@@ -48,7 +48,6 @@ public class Articles extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_article, container, false);
         //restore prefs
-        restorePreferences();
         resourceArrayList = new ArrayList<Resource>();
         mRecyclerView = (RecyclerView)rootView.findViewById(R.id.recycler_res);
         mRecyclerView.setHasFixedSize(true);
@@ -58,8 +57,6 @@ public class Articles extends Fragment {
 
         loadResource.execute();
 
-
-        //setListAdapter(new ListAdapter(getActivity(), resourceArrayList));
         return rootView;
 
     }
@@ -67,31 +64,6 @@ public class Articles extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        // remove the dividers from the ListView of the ListFragment
-
-    }
-
-    private void restorePreferences(){
-        SharedPreferences settings = this.getActivity().getSharedPreferences(PREFS_NAME, 0);
-        CreativeTeach ct = (CreativeTeach)getActivity().getApplicationContext();
-        User user = ct.getUser();
-
-        boolean visual = settings.getBoolean("visual", false);
-        boolean drama = settings.getBoolean("drama", false);
-        boolean socials = settings.getBoolean("socials", false);
-        boolean science = settings.getBoolean("science", false);
-        boolean math = settings.getBoolean("math", false);
-        boolean movement = settings.getBoolean("movement", false);
-        boolean digital = settings.getBoolean("digital", false);
-        boolean bilingual = settings.getBoolean("bilingual", false);
-        boolean ela = settings.getBoolean("ela", false);
-        boolean music = settings.getBoolean("music", false);
-
-        String gradelevel = settings.getString("grade", "LowerElem");
-    }
-
-    private void checkResponseForRequest(JSONObject resourceObj){
-
     }
 
 
