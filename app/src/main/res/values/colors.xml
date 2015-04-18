@@ -11,5 +11,7 @@
     <color name="purple_mind">#ff7b2a90</color>
     <color name="orange_mind">#fff7921e</color>
     <color name="fb_blue">#ff344883</color>
+    <color name="shadow">#555555</color>
+    <color name="title">#777777</color>
 
 </resources>
