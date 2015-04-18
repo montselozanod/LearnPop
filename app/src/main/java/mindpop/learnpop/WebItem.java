@@ -92,7 +92,10 @@ public class WebItem extends Fragment {
             favorites = gson.fromJson(favs, type);
 
             if(favorites.contains(resource)){
+                Log.d("resource", "is in array");
                 fav_button.setChecked(true);
+            }else{
+                Log.d("resource", "is not in array");
             }
 
         }else{

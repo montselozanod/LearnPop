@@ -134,4 +134,18 @@ public class Resource {
         return upVotes-downVotes;
     }
 
+    @Override
+    public boolean equals(Object obj){
+        if(obj == this){
+            return true;
+        }
+
+        if(!(obj instanceof  Resource)){
+            return false;
+        }
+
+        Resource other = (Resource)obj;
+        return url == other.getUrl();
+    }
+
 }
