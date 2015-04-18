@@ -110,7 +110,7 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
 
         if(sharedPreferences.contains(grade))
         {
-            params.add(new BasicNameValuePair("GradeLevel[]", sharedPreferences.getString(grade, "")));
+            params.add(new BasicNameValuePair("GradeLevel[]", getGradeParamName(sharedPreferences.getString(grade, ""))));
         }
     }
 
