@@ -99,11 +99,16 @@ public class WebItem extends Fragment {
         fav_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                if(fav_button.isChecked()){
+                    favorites.add(resource);
+                }else{
+                    favorites.remove(resource);
+                }
                 Log.d("inside click listener", "yes");
                 //create editor
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 //add resource to favorites array
-                favorites.add(resource);
+
                 //convert to string
                 String jsonFavs = gson.toJson(favorites);
                 Log.d("Saving json", jsonFavs);
