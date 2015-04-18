@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.util.Log;
@@ -57,7 +58,7 @@ public class WebViewFragment extends Fragment {
             Log.d("URL to render", renderURL);
             WebView wv = (WebView) v.findViewById(R.id.webView);
             wv.getSettings().setJavaScriptEnabled(true);
-            wv.setWebViewClient(new SwAWebClient());
+            wv.setWebChromeClient(new MyWebViewClient());
             wv.loadUrl(renderURL);
         }
         return v;
@@ -77,28 +78,12 @@ public class WebViewFragment extends Fragment {
         this.progress.setProgress(progress);
     }
 
-    private class SwAWebClient extends WebViewClient {
-
+    private class MyWebViewClient extends WebChromeClient {
         @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            view.loadUrl(url);
-            return true;
+        public void onProgressChanged(WebView view, int newProgress) {
+            setValue(newProgress);
+            super.onProgressChanged(view, newProgress);
         }
-
-        @Override
-        public void onPageFinished(WebView view, String url) {
-            progress.setVisibility(View.GONE);
-            progress.setProgress(100);
-            super.onPageFinished(view, url);
-        }
-
-        @Override
-        public void onPageStarted(WebView view, String url, Bitmap favicon) {
-            progress.setVisibility(View.VISIBLE);
-            progress.setProgress(0);
-            super.onPageStarted(view, url, favicon);
-        }
-
     }
 
 }
