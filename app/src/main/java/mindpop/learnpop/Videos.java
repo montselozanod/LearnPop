@@ -30,7 +30,7 @@ public class Videos extends Fragment {
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        loadResource = new LoadResource(getActivity(), getActivity(), mRecyclerView, sub ,"LowerElem", 1);
+        loadResource = new LoadResource(getActivity(), getActivity(), mRecyclerView, 1);
 
         loadResource.execute();
 
