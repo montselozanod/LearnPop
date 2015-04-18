@@ -22,21 +22,6 @@ import org.json.JSONObject;
  */
 public class Articles extends Fragment {
 
-    public static final String PREFS_NAME = "MyPrefs";
-    public static final String USER_PREFERENCES = "MyPrefs" ;
-    public static final String bilingual = "bilingualKey";
-    public static final String media = "mediaKey";
-    public static final String drama = "dramaKey";
-    public static final String ela = "elaKey";
-    public static final String history = "historyKey";
-    public static final String math = "mathKey";
-    public static final String movement = "moveKey";
-    public static final String music = "musicKey";
-    public static final String science = "scienceKey";
-    public static final String sel = "selKey";
-    public static final String art = "artKey";
-    public static final String grade ="gradeKey";
-
     //private Learnpop learnApp;
     private LoadResource loadResource;
     ArrayList<Resource> resourceArrayList = new ArrayList<Resource>();
