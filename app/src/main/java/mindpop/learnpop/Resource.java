@@ -16,6 +16,7 @@ public class Resource {
     private String gradeLevel;
     private String subject;
     private String author;
+    private String strategy;
 
     public String getImageURL() {
         return imageURL;
@@ -129,6 +130,10 @@ public class Resource {
     public void setPublishDate(Date pubDate){
         this.pusblishDate = pubDate;
     }
+
+    public String getStrategy(){return strategy;}
+
+    public void setStrategy(String strat){this.strategy = strat;}
 
     public int getRank(){
         return upVotes-downVotes;
