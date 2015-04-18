@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.google.gson.Gson;
@@ -159,6 +160,7 @@ public class WebItem extends Fragment {
                 }
 
                 updateLikeValues();
+                new UpdateResource(0).execute();
 
             }
         });
@@ -180,6 +182,7 @@ public class WebItem extends Fragment {
                     }
                 }
                 updateLikeValues();
+                new UpdateResource(1).execute();
 
             }
         });
@@ -195,6 +198,7 @@ public class WebItem extends Fragment {
   class UpdateResource extends AsyncTask<String, String, String>{
       private final String LIKE_TAG = "Likes";
       private final String DISLIKE_TAG = "Dislikes";
+      private final String ID_TAG = "ResID";
       int type; //like = 0, dislike = 1
       UpdateResource(int i){
         type = i;
@@ -207,18 +211,25 @@ public class WebItem extends Fragment {
        protected String doInBackground(String... args){
 
            List<NameValuePair> params = new ArrayList<NameValuePair>();
+
+           params.add(new BasicNameValuePair(ID_TAG, String.valueOf(resource.getResourceId())));
+
            if(type == 0){
                params.add(new BasicNameValuePair(LIKE_TAG, String.valueOf(resource.getUpVote())));
            }else{
                params.add(new BasicNameValuePair(DISLIKE_TAG, String.valueOf(resource.getDownVote())));
            }
 
-           //JSONObject json = jsonParser.makeHttpRequest(request_url, "POST", params);
+           JSONObject json = jsonParser.makeHttpRequest(update_URL, "POST", params);
 
            //Log.d("Create resource response", json.toString());
 
            return null;
        }
+
+      protected void onPostExecute(String file_url) {
+          Toast.makeText(getActivity(), "Updated", Toast.LENGTH_SHORT).show();
+      }
    }
 
 }
