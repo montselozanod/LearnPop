@@ -179,7 +179,7 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
                     }
                     res.setUrl(c.getString("ResURL"));
                     res.setSummary(c.getString("Summary"));
-//                    Log.d("Resource", res.getPublishDate().toString());
+                    Log.d("Resource", c.getString("ResURL"));
                     if(res.getType().equals(getResTypeQuery())) //add if resource type is the same
                     resourcesArrayList.add(res);
                 }

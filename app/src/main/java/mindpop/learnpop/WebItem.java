@@ -51,7 +51,7 @@ public class WebItem extends Fragment {
     private ArrayList<Resource> favorites;
     private SharedPreferences sharedPreferences;
     public static final String USER_PREFERENCES = "MyPrefs" ;
-
+    private final String update_URL= "http://creativeteach.austinartmap.com/PHP/UpdateResrc_v2.php";
     public WebItem() {
         // Required empty public constructor
     }
@@ -78,10 +78,15 @@ public class WebItem extends Fragment {
         like_button = (CheckBox) rootView.findViewById(R.id.check_like);
         unlike_button = (CheckBox) rootView.findViewById(R.id.check_dislike);
 
-
-
         title.setText(resource.getTitle());
-        summary.setText(resource.getSummary());
+        Log.d("Resource URL", resource.getUrl());
+        if(resource.getUrl() == ""){
+
+            viewButton.setVisibility(View.GONE);
+            summary.setText(resource.getStrategy());
+        }else{
+            summary.setText(resource.getSummary());
+        }
         //updateLikeValues();
 
         //get list of favs
