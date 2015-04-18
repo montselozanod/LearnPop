@@ -49,13 +49,12 @@ public class Articles extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_article, container, false);
         //restore prefs
         restorePreferences();
-        String [] sub = {"Visual Art", "Science"};
         resourceArrayList = new ArrayList<Resource>();
         mRecyclerView = (RecyclerView)rootView.findViewById(R.id.recycler_res);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        loadResource = new LoadResource(getActivity(), getActivity(), mRecyclerView, sub ,"LowerElem", 0);
+        loadResource = new LoadResource(getActivity(), getActivity(), mRecyclerView, 0);
 
         loadResource.execute();
 
