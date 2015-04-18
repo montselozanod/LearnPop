@@ -29,4 +29,6 @@ dependencies {
     compile 'com.github.kikoso:SwipeableCards:1.1-RELEASE@aar'
     compile 'com.android.support:cardview-v7:21.0.+'
     compile 'com.android.support:recyclerview-v7:21.0.+'
+    compile 'com.google.code.gson:gson:2.2.4'
+
 }

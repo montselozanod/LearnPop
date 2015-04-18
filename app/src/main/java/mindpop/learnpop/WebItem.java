@@ -39,6 +39,7 @@ public class WebItem extends Fragment {
     private CheckBox like_button;
     private CheckBox unlike_button;
     private JSONParser jsonParser = new JSONParser();
+    private Gson
 
     public WebItem() {
         // Required empty public constructor
@@ -133,7 +134,7 @@ public class WebItem extends Fragment {
         unlikesTxt.setText(String.valueOf(resource.getDownVote()));
     }
 
-   /*class UpdateResource extends AsyncTask<String, String, JSONObject>{
+/*   class UpdateResource extends AsyncTask<String, String, JSONObject>{
        @Override
        protected void onPreExecute(){
            super.onPreExecute();
