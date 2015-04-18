@@ -49,6 +49,8 @@
         <item>High School</item>
     </string-array>
 
+    <string name="grade1">Early Childhood</string>
+
     <string name="subject_prompt">Choose a subject</string>
     <string name="sub_prefs_prompt">Choose subject interests</string>
     <string name="grade_prompt">Choose a grade level</string>

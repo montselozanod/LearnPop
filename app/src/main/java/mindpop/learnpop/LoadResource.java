@@ -114,6 +114,28 @@ public class LoadResource extends AsyncTask<String, String,JSONObject> {
         }
     }
 
+    private String getGradeParamName(String completeGrade){
+       String param = "";
+        switch (completeGrade){
+            case "Early Childhood":
+                param = "Childhood";
+                break;
+            case "Lower Elementary":
+                param = "LowerElem";
+                break;
+            case "Upper Elementary":
+                param = "UpperElem";
+                break;
+            case "Middle School":
+                param = "Middle";
+                break;
+            case "High School":
+                param ="High";
+                break;
+        }
+        return param;
+    }
+
     protected JSONObject doInBackground(String... args){
 
     //
