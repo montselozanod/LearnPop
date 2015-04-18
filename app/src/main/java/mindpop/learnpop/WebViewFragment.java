@@ -18,6 +18,7 @@ import android.widget.ProgressBar;
  */
 public class WebViewFragment extends Fragment {
     private String resourceURL;
+    private String renderURL;
     private ProgressBar progress;
 
     public void init(String url){
@@ -48,11 +49,16 @@ public class WebViewFragment extends Fragment {
         progress.setMax(100);
         if (resourceURL != null) {
             Log.d("SwA", "Current URL  1["+resourceURL+"]");
-
+            if(resourceURL.endsWith(".pdf")){
+                renderURL = "https://docs.google.com/gview?embedded=true&url=" + resourceURL;
+            }else{
+                renderURL = resourceURL;
+            }
+            Log.d("URL to render", renderURL);
             WebView wv = (WebView) v.findViewById(R.id.webView);
             wv.getSettings().setJavaScriptEnabled(true);
             wv.setWebViewClient(new SwAWebClient());
-            wv.loadUrl(resourceURL);
+            wv.loadUrl(renderURL);
         }
         return v;
     }

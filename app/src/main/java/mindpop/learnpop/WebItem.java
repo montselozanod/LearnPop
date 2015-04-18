@@ -1,16 +1,26 @@
 package mindpop.learnpop;
 
 
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONObject;
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -28,6 +38,7 @@ public class WebItem extends Fragment {
     private CheckBox fav_button;
     private CheckBox like_button;
     private CheckBox unlike_button;
+    private JSONParser jsonParser = new JSONParser();
 
     public WebItem() {
         // Required empty public constructor
@@ -121,5 +132,24 @@ public class WebItem extends Fragment {
         like_button.setText(String.valueOf(resource.getUpVote()));
         unlikesTxt.setText(String.valueOf(resource.getDownVote()));
     }
+
+   /*class UpdateResource extends AsyncTask<String, String, JSONObject>{
+       @Override
+       protected void onPreExecute(){
+           super.onPreExecute();
+       }
+
+       protected String doInBackground(String... args){
+
+           List<NameValuePair> params = new ArrayList<NameValuePair>();
+
+
+           //JSONObject json = jsonParser.makeHttpRequest(request_url, "POST", params);
+
+           //Log.d("Create resource response", json.toString());
+
+           return null;
+       }
+   }*/
 
 }
