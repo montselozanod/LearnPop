@@ -1,5 +1,7 @@
 package mindpop.learnpop;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,6 +11,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -16,6 +22,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -34,6 +41,10 @@ public class Favorites extends Fragment {
     private final String favURL = "http://austinartmap.com/CreativeTeach/PHP/getFavoriteResources.php";
     private JSONParser jsonParser = new JSONParser();
     ArrayList<Resource> list = new ArrayList<Resource>();
+    private SharedPreferences sharedPreferences;
+    public static final String USER_PREFERENCES = "MyPrefs" ;
+    private String FAV_TAG = "favorites";
+    private Gson gson = new Gson();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,82 +54,23 @@ public class Favorites extends Fragment {
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
+        sharedPreferences = getActivity().getSharedPreferences(USER_PREFERENCES, Context.MODE_PRIVATE);
+
+        //get favorites
+        if(sharedPreferences.contains(FAV_TAG)){
+            String favs = sharedPreferences.getString(FAV_TAG, "");
+            Log.d("favorites", favs);
+            Type type = new TypeToken<ArrayList<Resource>>(){}.getType();
+            list = new ArrayList<Resource>();
+            list = gson.fromJson(favs, type);
+            ResourceAdapter adapter = new ResourceAdapter(getActivity(), list);
+            mRecyclerView.setAdapter(adapter);
+        }else{
+            Toast.makeText(getActivity(), "No favorites saved!", Toast.LENGTH_LONG).show();
+        }
+        
+
         return rootView;
     }
 
-    class LoadFavs extends AsyncTask<String, String, JSONObject> {
-            @Override
-            protected  void onPreExecute(){
-                super.onPreExecute();
-                Log.e("AsyncTask", "onPreExecute");
-     /*         progressDialog = new ProgressDialog(getActivity());
-                progressDialog.setMessage("Loading partners...");
-                progressDialog.setIndeterminate(false);
-                progressDialog.setCancelable(false);
-                progressDialog.show();*/
-            }
-
-            @Override
-            protected JSONObject doInBackground(String... args){
-                Log.d("AsyncTask", "doInBackground");
-                List<NameValuePair> params = new ArrayList<NameValuePair>();
-                params.add(new BasicNameValuePair("UserID", "20150101"));
-                JSONObject jsonObject = jsonParser.makeHttpRequest(favURL, "GET", params);
-                try{
-                    int success = jsonObject.getInt(TAG_SUCCESS);
-                    if(success == 1){
-                        JSONArray parts = jsonObject.getJSONArray(TAG_RES);
-                        Log.d("JSONArray in LoadResource", parts.toString());
-
-                        for(int i = 0; i < parts.length(); i++){
-                            JSONObject c = parts.getJSONObject(i);
-                            Resource res = new Resource();
-                            res.setTitle(c.getString("ResName").trim());
-                            res.setResourceId(c.getInt("ResID"));
-                            res.setSubject(c.getString("Subject").trim());
-                            res.setType(c.getString("ResType").trim());
-                            res.setUpVote(c.getInt("Likes"));
-                            res.setDownVote(c.getInt("Dislikes"));
-                            res.setAuthor(c.getString("Author").trim());
-                            res.setImageURL("ImageURL");
-                            //date format
-                            //2014-02-28
-                            String dateString =c.getString("PublishingDate");
-
-                            try{
-                                SimpleDateFormat formatter =
-                                        new SimpleDateFormat("yyyy-MM-dd");
-                                Date date = formatter.parse(dateString);
-                                res.setPublishDate(date); //change to date
-                            }catch(ParseException e){
-                                e.printStackTrace();
-                            }
-                            res.setUrl(c.getString("ResURL"));
-                            res.setSummary(c.getString("Summary"));
-                            list.add(res);
-                        }
-
-                        Log.d("Finish Loading", "partnersArray");
-                    }else{
-                        //no partners
-                    }
-                }catch(JSONException e){
-                    e.printStackTrace();
-                }
-
-                return null;
-            }
-
-            @Override
-            protected void onPostExecute(JSONObject result){
-                Log.d("PostExecute", "post");
-                super.onPostExecute(result);
-//            progressDialog.dismiss();
-                // for performance given that changes in content do not change the layout size of the RecyclerView
-                ResourceAdapter adapter = new ResourceAdapter(getActivity(), list);
-                mRecyclerView.setAdapter(adapter);
-
-            }
-
-    }
 }
