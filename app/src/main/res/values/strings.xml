@@ -13,6 +13,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="fb_signin">Sign in with Facebook</string>
 
+    <string name="btn_skip_intro">Skip</string>
     <string name="error_player">There was an error initializing the YouTubePlayer (%1$s)</string>
 
     <string-array name="sections">
