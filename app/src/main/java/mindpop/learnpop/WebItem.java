@@ -2,6 +2,8 @@ package mindpop.learnpop;
 
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,11 +16,15 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,13 +45,20 @@ public class WebItem extends Fragment {
     private CheckBox like_button;
     private CheckBox unlike_button;
     private JSONParser jsonParser = new JSONParser();
-    private Gson
+    private Gson gson;
+    private String FAV_TAG = "favorites";
+    private ArrayList<Resource> favorites;
+    private SharedPreferences sharedPreferences;
+    public static final String USER_PREFERENCES = "MyPrefs" ;
 
     public WebItem() {
         // Required empty public constructor
     }
 
-    public void init(Resource res){this.resource = res;}
+    public void init(Resource res){
+        this.resource = res;
+        gson = new Gson();
+    }
 
 
     @Override
@@ -53,7 +66,8 @@ public class WebItem extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_web_item, container, false);
-
+        sharedPreferences = getActivity().getSharedPreferences(USER_PREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
         title = (TextView)rootView.findViewById(R.id.titleTxt);
         summary = (TextView)rootView.findViewById(R.id.sumTXT);
         viewButton = (Button) rootView.findViewById(R.id.btnView);
@@ -68,6 +82,35 @@ public class WebItem extends Fragment {
         title.setText(resource.getTitle());
         summary.setText(resource.getSummary());
         //updateLikeValues();
+
+        //get list of favs
+        if(sharedPreferences.contains(FAV_TAG)){
+            String favs = sharedPreferences.getString(FAV_TAG, "");
+            Log.d("favorites", favs);
+            Type type = new TypeToken<ArrayList<Resource>>(){}.getType();
+            favorites = new ArrayList<Resource>();
+            favorites = gson.fromJson(favs, type);
+
+        }else{
+            //create list
+            favorites = new ArrayList<Resource>();
+        }
+
+        fav_button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Log.d("inside click listener", "yes");
+                //create editor
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                //add resource to favorites array
+                favorites.add(resource);
+                //convert to string
+                String jsonFavs = gson.toJson(favorites);
+                Log.d("Saving json", jsonFavs);
+                editor.putString(FAV_TAG, jsonFavs);
+                editor.commit();
+            }
+        });
 
         viewButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -115,13 +158,6 @@ public class WebItem extends Fragment {
                     }
                 }
                 updateLikeValues();
-
-            }
-        });
-
-        fav_button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
 
             }
         });
