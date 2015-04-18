@@ -81,7 +81,7 @@ public class WebItem extends Fragment {
 
         title.setText(resource.getTitle());
         Log.d("Resource URL", resource.getUrl());
-        if(resource.getUrl() == ""){
+        if(resource.getUrl() == "null"){
 
             viewButton.setVisibility(View.GONE);
             summary.setText(resource.getStrategy());
