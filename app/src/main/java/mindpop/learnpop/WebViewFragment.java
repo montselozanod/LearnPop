@@ -55,6 +55,7 @@ public class WebViewFragment extends Fragment {
             }else{
                 renderURL = resourceURL;
             }
+
             Log.d("URL to render", renderURL);
             WebView wv = (WebView) v.findViewById(R.id.webView);
             wv.getSettings().setJavaScriptEnabled(true);
