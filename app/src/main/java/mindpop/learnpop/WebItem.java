@@ -59,6 +59,7 @@ public class WebItem extends Fragment {
 
     public void init(Resource res){
         this.resource = res;
+        Log.d("Resource likes", String.valueOf(res.getUpVote()));
         gson = new Gson();
     }
 
@@ -198,7 +199,7 @@ public class WebItem extends Fragment {
   class UpdateResource extends AsyncTask<String, String, String>{
       private final String LIKE_TAG = "Likes";
       private final String DISLIKE_TAG = "Dislikes";
-      private final String ID_TAG = "ResID";
+      private final String ID_TAG = "editResID";
       int type; //like = 0, dislike = 1
       UpdateResource(int i){
         type = i;
