@@ -52,7 +52,7 @@ public class WebItem extends Fragment {
     private ArrayList<Resource> favorites;
     private SharedPreferences sharedPreferences;
     public static final String USER_PREFERENCES = "MyPrefs" ;
-    private final String update_URL= "http://creativeteach.austinartmap.com/PHP/UpdateResrc_v2.php";
+    private final String update_URL= "http://creativeteach.austinartmap.com/PHP/UpdateResrc_v3.php";
     public WebItem() {
         // Required empty public constructor
     }
@@ -82,7 +82,7 @@ public class WebItem extends Fragment {
         title.setText(resource.getTitle());
         Log.d("Resource URL", resource.getUrl());
         if(resource.getUrl() == "null"){
-
+            Log.d("Resource URL", "is null for equality");
             viewButton.setVisibility(View.GONE);
             summary.setText(resource.getStrategy());
         }else{
