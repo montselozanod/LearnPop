@@ -88,6 +88,28 @@ public class Share extends Fragment {
             pDialog.show();
         }
 
+        private String getGradeParamName(String completeGrade){
+            String param = "";
+            switch (completeGrade){
+                case "Early Childhood":
+                    param = "Childhood";
+                    break;
+                case "Lower Elementary":
+                    param = "LowerElem";
+                    break;
+                case "Upper Elementary":
+                    param = "UpperElem";
+                    break;
+                case "Middle School":
+                    param = "Middle";
+                    break;
+                case "High School":
+                    param ="High";
+                    break;
+            }
+            return param;
+        }
+
         protected String doInBackground(String... args){
             String resName = name.getText().toString();
             String url = resUrl.getText().toString();
@@ -99,8 +121,8 @@ public class Share extends Fragment {
             params.add(new BasicNameValuePair("ResName", resName));
             params.add(new BasicNameValuePair("ResURL", url));
             params.add(new BasicNameValuePair("ResType", type));
-            params.add(new BasicNameValuePair("Subject", subject));
-            params.add(new BasicNameValuePair("GradeLevel", grade));
+            params.add(new BasicNameValuePair("Subject[]", subject));
+            params.add(new BasicNameValuePair("GradeLevel[]", getGradeParamName(grade)));
 
             JSONObject json = jsonParser.makeHttpRequest(request_url, "POST", params);
 
