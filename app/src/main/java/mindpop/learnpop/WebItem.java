@@ -80,6 +80,7 @@ public class WebItem extends Fragment {
         unlike_button = (CheckBox) rootView.findViewById(R.id.check_dislike);
 
         title.setText(resource.getTitle());
+
         Log.d("Resource URL", resource.getUrl());
         if(resource.getUrl() == "null"){
             Log.d("Resource URL", "is null for equality");
@@ -88,7 +89,7 @@ public class WebItem extends Fragment {
         }else{
             summary.setText(resource.getSummary());
         }
-        //updateLikeValues();
+        updateLikeValues();
 
         //get list of favs
         if(sharedPreferences.contains(FAV_TAG)){
