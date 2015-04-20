@@ -9,6 +9,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ArrayList;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -18,6 +19,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.graphics.drawable.Drawable;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.andtinder.model.CardModel;
 import com.andtinder.view.CardContainer;
@@ -151,6 +155,4 @@ public class ArtPartnerFragment extends Fragment {
             mCardContainer.setAdapter(adapter);
         }
     }
-
-
 }
