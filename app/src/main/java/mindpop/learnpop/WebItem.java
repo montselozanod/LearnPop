@@ -59,7 +59,6 @@ public class WebItem extends Fragment {
 
     public void init(Resource res){
         this.resource = res;
-        Log.d("Resource likes", String.valueOf(res.getUpVote()));
         gson = new Gson();
     }
 
