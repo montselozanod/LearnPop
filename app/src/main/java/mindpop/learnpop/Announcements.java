@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.andtinder.model.CardModel;
 import com.andtinder.view.SimpleCardStackAdapter;
@@ -115,8 +116,13 @@ public class Announcements extends Fragment {
             super.onPostExecute(result);
             progressDialog.dismiss();
             // for performance given that changes in content do not change the layout size of the RecyclerView
-            RecyclerAdapter adapter = new RecyclerAdapter(list);
-            mRecyclerView.setAdapter(adapter);
+            if(list.isEmpty())
+            {
+                Toast.makeText(getActivity(),"No announcements right now", Toast.LENGTH_LONG).show();
+            }else{
+                RecyclerAdapter adapter = new RecyclerAdapter(list);
+                mRecyclerView.setAdapter(adapter);
+            }
 
         }
     }
