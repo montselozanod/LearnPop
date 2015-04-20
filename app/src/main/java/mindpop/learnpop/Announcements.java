@@ -22,7 +22,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -67,11 +70,18 @@ public class Announcements extends Fragment {
             progressDialog.show();
         }
 
+        private String getDate(){
+            DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
+            Calendar cal = Calendar.getInstance();
+            return dateFormat.format(cal.getTime());
+        }
+
         @Override
         protected JSONObject doInBackground(String... args){
             Log.d("AsyncTask", "doInBackground");
             List<NameValuePair> params = new ArrayList<NameValuePair>();
-            params.add(new BasicNameValuePair("StartDate", "20150101"));
+            getDate();
+            params.add(new BasicNameValuePair("StartDate", getDate()));
             JSONObject jsonObject = parser.makeHttpRequest(announce_url, "GET", params);
             try{
                 int success = jsonObject.getInt(TAG_SUCCESS);
