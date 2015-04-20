@@ -129,7 +129,7 @@ public class ArtPartnerFragment extends Fragment {
             for(int i = 0; i < partnersArray.size(); i++)
             {
                 final Partner p = (Partner) partnersArray.get(i);
-                CardModel card = new CardModel();
+                CardModel card = new CardModel(p.getParName(), p.getParDescription(), p.getImage());
                 card.setOnClickListener(new CardModel.OnClickListener() {
                     @Override
                     public void OnClickListener() {
@@ -137,9 +137,11 @@ public class ArtPartnerFragment extends Fragment {
                         PartnerItem item = new PartnerItem();
                         item.init(p);
                         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, item).addToBackStack(null).commit();
+
                     }
                 });
-                adapter.add(new CardModel(p.getParName(), p.getParDescription(), p.getImage()));
+
+                adapter.add(card);
             }
             mCardContainer.setAdapter(adapter);
         }
