@@ -83,7 +83,6 @@ public class NavigationDrawerFragment extends Fragment {
 
         CreativeTeach ct = (CreativeTeach)getActivity().getApplicationContext();
         Profile pf = ct.getUserProfile();
-        //Log.d("Profile", pf.getFirstName());
 
         // Select either the default item (0) or the last selected item.
         selectItem(mCurrentSelectedPosition);
