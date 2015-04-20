@@ -14,6 +14,8 @@ import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,9 +31,8 @@ import android.widget.Toast;
  */
 public class ArtPartnerFragment extends Fragment {
 
-    GridViewAdapter mAdapter;
-    GridView gridView;
-    //private CardContainer mCardContainer;
+    private RecyclerView mRecyclerView;
+    private RecyclerView.LayoutManager mLayoutManager;
     private ProgressDialog progressDialog;
     JSONParser parser = new JSONParser();
     private static String url_partners = "http://austinartmap.com/CreativeTeach/PHP/getPartners.php";
@@ -59,26 +60,18 @@ public class ArtPartnerFragment extends Fragment {
         }
     }
 
-/*    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position,
-                            long id) {
-        // retrieve the GridView item
-        Partner item = (Partner) partnersArray.get(position);
-
-        // do something
-        Toast.makeText(getActivity(), item.getParName(), Toast.LENGTH_SHORT).show();
-    }*/
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_art_partner, container, false);
-        gridView = (GridView) rootView.findViewById(R.id.gridView);
-
-
         partnersArray = new ArrayList<Partner>();
+
+        mRecyclerView = (RecyclerView)rootView.findViewById(R.id.list_partners);
+        mRecyclerView.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(getActivity());
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
         new LoadPartners().execute();
         Resources r = getResources();
 
@@ -135,9 +128,13 @@ public class ArtPartnerFragment extends Fragment {
 
             super.onPostExecute(result);
             progressDialog.dismiss();
-            mAdapter = new GridViewAdapter(getActivity(), partnersArray);
-            gridView.setAdapter(mAdapter);
-
+            if(partnersArray.isEmpty())
+            {
+                Toast.makeText(getActivity(),"No partners right now", Toast.LENGTH_LONG).show();
+            }else{
+                PartnerAdapter adapter = new PartnerAdapter(getActivity(),partnersArray);
+                mRecyclerView.setAdapter(adapter);
+            }
         }
     }
 }
