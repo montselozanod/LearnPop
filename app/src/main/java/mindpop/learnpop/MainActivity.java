@@ -207,21 +207,6 @@ public class MainActivity extends ActionBarActivity
         AppEventsLogger.deactivateApp(this);
     }
 
-    //@Override
-    /*protected void onResumeFragments() {
-        super.onResumeFragments();
-
-        if (AccessToken.getCurrentAccessToken() != null) {
-            // if the user already logged in, try to show the selection fragment
-            showFragment(SELECTION, false);
-
-        } else {
-            // otherwise present the splash screen and ask the user to login,
-            // unless the user explicitly skipped.
-            showFragment(SPLASH, false);
-        }
-    }*/
-
     @Override
     public void onDestroy() {
         super.onDestroy();
