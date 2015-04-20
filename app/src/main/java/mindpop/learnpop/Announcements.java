@@ -63,7 +63,6 @@ public class Announcements extends Fragment {
         @Override
         protected  void onPreExecute(){
             super.onPreExecute();
-            Log.e("AsyncTask", "onPreExecute");
             progressDialog = new ProgressDialog(getActivity());
             progressDialog.setMessage("Loading...");
             progressDialog.setIndeterminate(false);
@@ -79,7 +78,6 @@ public class Announcements extends Fragment {
 
         @Override
         protected JSONObject doInBackground(String... args){
-            Log.d("AsyncTask", "doInBackground");
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             getDate();
             params.add(new BasicNameValuePair("StartDate", getDate()));
@@ -88,7 +86,6 @@ public class Announcements extends Fragment {
                 int success = jsonObject.getInt(TAG_SUCCESS);
                 if(success == 1){
                     JSONArray parts = jsonObject.getJSONArray(TAG_PARTNER);
-                    Log.d("JSONArray in LoadResource", parts.toString());
 
                     for(int i = 0; i < parts.length(); i++){
                         JSONObject c = parts.getJSONObject(i);
@@ -99,7 +96,6 @@ public class Announcements extends Fragment {
                         list.add(ann);
                     }
 
-                    Log.d("Finish Loading", "partnersArray");
                 }else{
                     //no partners
                 }
@@ -112,7 +108,6 @@ public class Announcements extends Fragment {
 
         @Override
         protected void onPostExecute(JSONObject result){
-            Log.d("PostExecute", "post");
             super.onPostExecute(result);
             progressDialog.dismiss();
             // for performance given that changes in content do not change the layout size of the RecyclerView
