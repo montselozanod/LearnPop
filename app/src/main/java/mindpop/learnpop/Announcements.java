@@ -80,7 +80,7 @@ public class Announcements extends Fragment {
         protected JSONObject doInBackground(String... args){
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             getDate();
-            params.add(new BasicNameValuePair("StartDate", getDate()));
+            //params.add(new BasicNameValuePair("StartDate", getDate()));
             JSONObject jsonObject = parser.makeHttpRequest(announce_url, "GET", params);
             try{
                 int success = jsonObject.getInt(TAG_SUCCESS);
