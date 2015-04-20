@@ -73,7 +73,7 @@ public class WebItem extends Fragment {
         title = (TextView)rootView.findViewById(R.id.titleTxt);
         summary = (TextView)rootView.findViewById(R.id.sumTXT);
         viewButton = (Button) rootView.findViewById(R.id.btnView);
-        likesTxt = (TextView) rootView.findViewById(R.id.numberOfLikes);
+        likesTxt = (TextView) rootView.findViewById(R.id.numlikes);
         unlikesTxt = (TextView) rootView.findViewById(R.id.numDislikes);
         fav_button = (CheckBox) rootView.findViewById(R.id.fav_check);
         like_button = (CheckBox) rootView.findViewById(R.id.check_like);
@@ -186,7 +186,7 @@ public class WebItem extends Fragment {
     }
 
     private void updateLikeValues(){
-        like_button.setText(String.valueOf(resource.getUpVote()));
+        likesTxt.setText(String.valueOf(resource.getUpVote()));
         unlikesTxt.setText(String.valueOf(resource.getDownVote()));
     }
 
