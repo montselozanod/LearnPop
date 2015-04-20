@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -80,7 +81,7 @@ public class WebItem extends Fragment {
         unlike_button = (CheckBox) rootView.findViewById(R.id.check_dislike);
 
         title.setText(resource.getTitle());
-
+        summary.setMovementMethod(new ScrollingMovementMethod());
         if(resource.getUrl().equals("null") || resource.getUrl() == null){
             viewButton.setVisibility(View.GONE);
             summary.setText(resource.getStrategy());

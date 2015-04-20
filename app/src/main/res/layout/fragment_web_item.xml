@@ -50,6 +50,8 @@
             android:text="Summary"
             android:id="@+id/sumTXT"
             android:layout_marginTop="16dp"
+            android:maxLines = "15"
+            android:scrollbars = "vertical"
             android:layout_below="@+id/titleTxt"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="16dp"

@@ -60,6 +60,7 @@ public class WebViewFragment extends Fragment {
             WebView wv = (WebView) v.findViewById(R.id.webView);
             wv.getSettings().setJavaScriptEnabled(true);
             wv.setWebChromeClient(new MyWebViewClient());
+            wv.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
             wv.loadUrl(renderURL);
         }
         return v;
