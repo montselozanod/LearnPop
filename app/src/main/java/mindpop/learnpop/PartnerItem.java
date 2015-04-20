@@ -21,7 +21,7 @@ public class PartnerItem extends Fragment {
 
     public PartnerItem(){}
 
-    public PartnerItem(Partner r) {
+    public void init(Partner r) {
         // Required empty public constructor
         this.partner = r;
     }

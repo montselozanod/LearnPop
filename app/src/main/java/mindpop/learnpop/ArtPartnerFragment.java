@@ -130,6 +130,14 @@ public class ArtPartnerFragment extends Fragment {
             {
                 Partner p = (Partner) partnersArray.get(i);
                 CardModel card = new CardModel();
+                card.setOnClickListener(new CardModel.OnClickListener() {
+                    @Override
+                    public void OnClickListener() {
+                        Log.i("Swipeable Cards","I am pressing the card");
+                        PartnerItem item = new PartnerItem(p);
+                        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, item).addToBackStack(null).commit();
+                    }
+                });
                 adapter.add(new CardModel(p.getParName(), p.getParDescription(), p.getImage()));
             }
             mCardContainer.setAdapter(adapter);
