@@ -19,15 +19,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.graphics.drawable.Drawable;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import com.andtinder.model.CardModel;
-import com.andtinder.view.CardContainer;
-import com.andtinder.view.SimpleCardStackAdapter;
-
-
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.Toast;
 
 
 /**
@@ -35,7 +29,9 @@ import com.andtinder.view.SimpleCardStackAdapter;
  */
 public class ArtPartnerFragment extends Fragment {
 
-    private CardContainer mCardContainer;
+    GridViewAdapter mAdapter;
+    GridView gridView;
+    //private CardContainer mCardContainer;
     private ProgressDialog progressDialog;
     JSONParser parser = new JSONParser();
     private static String url_partners = "http://austinartmap.com/CreativeTeach/PHP/getPartners.php";
@@ -63,15 +59,27 @@ public class ArtPartnerFragment extends Fragment {
         }
     }
 
+/*    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position,
+                            long id) {
+        // retrieve the GridView item
+        Partner item = (Partner) partnersArray.get(position);
+
+        // do something
+        Toast.makeText(getActivity(), item.getParName(), Toast.LENGTH_SHORT).show();
+    }*/
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_art_partner, container, false);
+        gridView = (GridView) rootView.findViewById(R.id.gridView);
+
+
         partnersArray = new ArrayList<Partner>();
         new LoadPartners().execute();
-        mCardContainer = (CardContainer) rootView.findViewById(R.id.cardView);
         Resources r = getResources();
 
         return rootView;
@@ -127,32 +135,9 @@ public class ArtPartnerFragment extends Fragment {
 
             super.onPostExecute(result);
             progressDialog.dismiss();
+            mAdapter = new GridViewAdapter(getActivity(), partnersArray);
+            gridView.setAdapter(mAdapter);
 
-            SimpleCardStackAdapter adapter = new SimpleCardStackAdapter(getActivity());
-
-            for(int i = 0; i < partnersArray.size(); i++)
-            {
-                final Partner p = (Partner) partnersArray.get(i);
-                CardModel card = new CardModel(p.getParName(), p.getParDescription(), p.getImage());
-                card.setOnCardDimissedListener(new CardModel.OnCardDimissedListener() {
-                    @Override
-                    public void onLike() {
-                        Log.d("Swipeable Card", "I liked it");
-                        PartnerItem item = new PartnerItem();
-                        item.init(p);
-                        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, item).addToBackStack(null).commit();
-
-                    }
-
-                    @Override
-                    public void onDislike() {
-                        Log.d("Swipeable Card", "I did not liked it");
-                    }
-                });
-
-                adapter.add(card);
-            }
-            mCardContainer.setAdapter(adapter);
         }
     }
 }

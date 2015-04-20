@@ -3,15 +3,6 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Created by: \n Angelica Velez\n Michelle Mindieta\n Maria Lozano Dieck\n Tyler Lawson"
-        android:id="@+id/textView4"
-        android:layout_gravity="center_horizontal"
-        android:textSize="20dp" />
-
     <GridView android:id="@+id/gridView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -20,5 +11,6 @@
         android:verticalSpacing="10dp"
         android:horizontalSpacing="1dp"
         android:stretchMode="columnWidth"
-        android:gravity="center" />
+        android:gravity="center"
+        android:layout_margin="16dp" />
 </LinearLayout>

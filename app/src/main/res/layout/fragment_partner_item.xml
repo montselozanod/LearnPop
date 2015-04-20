@@ -25,12 +25,12 @@
         android:layout_height="wrap_content"
         android:weightSum="1"
         android:background="#ff018adf"
-        android:layout_weight="0.71">
+        android:layout_weight="0.22">
 
 
         <TextView
-            android:layout_width="239dp"
-            android:layout_height="238dp"
+            android:layout_width="354dp"
+            android:layout_height="226dp"
             android:text="Summary"
             android:id="@+id/sumPartner"
             android:layout_marginTop="16dp"
@@ -38,7 +38,6 @@
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_weight="0.27"
             android:textColor="#fff8fffd"
             android:textStyle="bold"
             android:textAlignment="center" />

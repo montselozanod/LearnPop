@@ -64,12 +64,6 @@ class GridViewAdapter extends BaseAdapter {
         return convertView;
     }
 
-    /**
-     * The view holder design pattern prevents using findViewById()
-     * repeatedly in the getView() method of the adapter.
-     *
-     * @see http://developer.android.com/training/improving-layouts/smooth-scrolling.html#ViewHolder
-     */
     private static class ViewHolder {
         ImageView ivIcon;
         TextView tvTitle;
