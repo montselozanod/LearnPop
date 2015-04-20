@@ -29,6 +29,8 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookSdk;
 import com.facebook.Profile;
 import com.facebook.appevents.AppEventsLogger;
+import com.facebook.login.LoginManager;
+
 import android.widget.ListView;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -84,57 +86,85 @@ public class MainActivity extends ActionBarActivity
                 // announcements
                 fragment = new Announcements();
                 mTitle = stringArray[position];
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, fragment)
+                        .commit();
                 break;
             case 1:
                 //articles
                 fragment = new Articles();
                 mTitle = stringArray[position];
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, fragment)
+                        .commit();
                 break;
             case 2:
                 //videos
                 fragment = new Videos();
                 mTitle = stringArray[position];
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, fragment)
+                        .commit();
                 break;
             case 3:
                 //more fragment
                 fragment = new MoreFragment();
                 mTitle = stringArray[position];
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, fragment)
+                        .commit();
                 break;
             case 4:
                 //favorites
                 fragment = new Favorites();
                 mTitle = stringArray[position];
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, fragment)
+                        .commit();
                 break;
             case 5:
                 //art partner
                 fragment = new ArtPartnerFragment();
                 mTitle = stringArray[position];
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, fragment)
+                        .commit();
                 break;
             case 6:
                 //share
                 fragment = new Share();
                 mTitle = stringArray[position];
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, fragment)
+                        .commit();
                 break;
             case 7:
                 //preferences
                 fragment = new Preferences();
                 mTitle = stringArray[position];
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, fragment)
+                        .commit();
                 break;
             case 8:
                 //Help
                 fragment = new HelpFragment();
                 mTitle = stringArray[position];
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, fragment)
+                        .commit();
                 break;
             case 9:
                 //LOG OFF
-                fragment = new LoginFragment();
-                CreativeTeach ct = (CreativeTeach)getApplicationContext();
-                mTitle = getString(R.string.app_name);
+                LoginManager.getInstance().logOut();
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+                break;
+                //fragment = new LoginFragment();
+                //CreativeTeach ct = (CreativeTeach)getApplicationContext();
+                //mTitle = getString(R.string.app_name);
 
         }
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, fragment)
-                .commit();
     }
 
     public void restoreActionBar() {
