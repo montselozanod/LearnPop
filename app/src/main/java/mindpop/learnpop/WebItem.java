@@ -118,19 +118,16 @@ public class WebItem extends Fragment {
                 if(fav_button.isChecked()){
                     favorites.add(resource);
                     index = favorites.indexOf(resource);
-                    Log.d("index of", String.valueOf(index));
                 }else{
 
                     favorites.remove(index);
                 }
-                Log.d("inside click listener", "yes");
                 //create editor
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 //add resource to favorites array
 
                 //convert to string
                 String jsonFavs = gson.toJson(favorites);
-                Log.d("Saving json", jsonFavs);
                 editor.putString(FAV_TAG, jsonFavs);
                 editor.commit();
             }
@@ -222,8 +219,6 @@ public class WebItem extends Fragment {
            }
 
            JSONObject json = jsonParser.makeHttpRequest(update_URL, "POST", params);
-
-           //Log.d("Create resource response", json.toString());
 
            return null;
        }
