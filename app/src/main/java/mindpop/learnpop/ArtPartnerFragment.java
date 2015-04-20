@@ -47,6 +47,7 @@ public class ArtPartnerFragment extends Fragment {
     }
 
     public static Drawable LoadImageFromWebOperations(String url) {
+        Log.d("URL of LOGO", url);
         try {
             InputStream is = (InputStream) new URL(url).getContent();
             Drawable d = Drawable.createFromStream(is, "src name");
@@ -99,8 +100,8 @@ public class ArtPartnerFragment extends Fragment {
                         part.setParID(c.getInt("ParID"));
                         part.setParName(c.getString("ParName"));
                         part.setParDescription(c.getString("ParDescription"));
-                        part.setParURL(c.getString("ParURL"));
-                        part.setImageURL(c.getString("ImageURL"));
+                        part.setParURL(c.getString("ParURL").trim());
+                        part.setImageURL(c.getString("ImageURL").trim());
                         Drawable d = LoadImageFromWebOperations(part.getImageURL());
                         part.setImage(d);
                         partnersArray.add(part);
