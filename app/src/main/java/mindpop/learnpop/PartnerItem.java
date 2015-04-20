@@ -36,8 +36,15 @@ public class PartnerItem extends Fragment {
         TextView summary = (TextView)rootView.findViewById(R.id.sumPartner);
         Button btnView = (Button) rootView.findViewById(R.id.btnViewPartner);
 
-
-
+        title.setText(partner.getParName());
+        summary.setText(partner.getParDescription());
+        btnView.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                WebViewFragment webFrag = new WebViewFragment();
+                webFrag.init(partner.getParURL());
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, webFrag).addToBackStack(null).commit();
+            }
+        });
         return rootView;
     }
 
