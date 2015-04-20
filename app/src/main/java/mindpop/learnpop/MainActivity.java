@@ -160,10 +160,6 @@ public class MainActivity extends ActionBarActivity
                 Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
                 break;
-                //fragment = new LoginFragment();
-                //CreativeTeach ct = (CreativeTeach)getApplicationContext();
-                //mTitle = getString(R.string.app_name);
-
         }
     }
 
