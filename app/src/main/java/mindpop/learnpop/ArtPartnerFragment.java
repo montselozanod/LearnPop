@@ -130,14 +130,19 @@ public class ArtPartnerFragment extends Fragment {
             {
                 final Partner p = (Partner) partnersArray.get(i);
                 CardModel card = new CardModel(p.getParName(), p.getParDescription(), p.getImage());
-                card.setOnClickListener(new CardModel.OnClickListener() {
+                card.setOnCardDimissedListener(new CardModel.OnCardDimissedListener() {
                     @Override
-                    public void OnClickListener() {
-                        Log.i("Swipeable Cards","I am pressing the card");
+                    public void onLike() {
+                        Log.d("Swipeable Card", "I liked it");
                         PartnerItem item = new PartnerItem();
                         item.init(p);
                         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, item).addToBackStack(null).commit();
 
+                    }
+
+                    @Override
+                    public void onDislike() {
+                        Log.d("Swipeable Card", "I did not liked it");
                     }
                 });
 
