@@ -100,7 +100,6 @@ public class WebItem extends Fragment {
             favorites = gson.fromJson(favs, type);
             for(int i = 0; i < favorites.size(); i++){
                 if(favorites.get(i).getUrl().equals(resource.getUrl())){
-                    Log.d("resource", "is in array");
                     fav_button.setChecked(true);
                     index = i;
                     break;
