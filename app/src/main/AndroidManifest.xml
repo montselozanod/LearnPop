@@ -30,10 +30,6 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".SpashScreen"
-            android:label="SplashScreen" >
-        </activity>
-        <activity
             android:name=".LoginActivity"
             android:label="@string/app_name" >
             <intent-filter>
