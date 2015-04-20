@@ -228,27 +228,5 @@ public class MainActivity extends ActionBarActivity
         accessTokenTracker.stopTracking();
     }
 
-
-    public interface ChangeLinkListener{
-        public void onLinkChange(String link);
-    }
-
-
-    /*private void showFragment(int fragmentIndex, boolean addToBackStack) {
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction transaction = fm.beginTransaction();
-        for (int i = 0; i < fragments.length; i++) {
-            if (i == fragmentIndex) {
-                transaction.show(fragments[i]);
-            } else {
-                transaction.hide(fragments[i]);
-            }
-        }
-        if (addToBackStack) {
-            transaction.addToBackStack(null);
-        }
-        transaction.commit();
-    }*/
-
 }
 
