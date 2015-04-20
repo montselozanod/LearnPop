@@ -94,7 +94,6 @@ public class WebItem extends Fragment {
         //get list of favs
         if(sharedPreferences.contains(FAV_TAG)){
             String favs = sharedPreferences.getString(FAV_TAG, "");
-            Log.d("favorites", favs);
             Type type = new TypeToken<ArrayList<Resource>>(){}.getType();
             favorites = new ArrayList<Resource>();
             favorites = gson.fromJson(favs, type);
