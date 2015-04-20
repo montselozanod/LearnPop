@@ -107,6 +107,7 @@ public class NavigationDrawerFragment extends Fragment {
                 selectItem(position);
             }
         });
+        mDrawerListView.setBackgroundColor(getResources().getColor(R.color.frame_solid));
         final TypedArray typedArray = getResources().obtainTypedArray(R.array.sections_icons);
         mDrawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
