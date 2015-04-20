@@ -91,16 +91,16 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp" />
-
             <TextView
                 android:layout_width="93dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="0"
-                android:id="@+id/numLikes"
+                android:id="@+id/numlikes"
                 android:textStyle="bold"
                 android:textAlignment="center"
                 android:gravity="center_horizontal" />
+
         </LinearLayout>
 
         <LinearLayout

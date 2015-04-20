@@ -74,7 +74,7 @@ public class WebItem extends Fragment {
         title = (TextView)rootView.findViewById(R.id.titleTxt);
         summary = (TextView)rootView.findViewById(R.id.sumTXT);
         viewButton = (Button) rootView.findViewById(R.id.btnView);
-        likesTxt = (TextView) rootView.findViewById(R.id.numLikes);
+        likesTxt = (TextView) rootView.findViewById(R.id.numlikes);
         unlikesTxt = (TextView) rootView.findViewById(R.id.numDislikes);
         fav_button = (CheckBox) rootView.findViewById(R.id.fav_check);
         like_button = (CheckBox) rootView.findViewById(R.id.check_like);
@@ -229,7 +229,13 @@ public class WebItem extends Fragment {
        }
 
       protected void onPostExecute(String file_url) {
-          Toast.makeText(getActivity(), "Updated", Toast.LENGTH_SHORT).show();
+          String message = "";
+          if(type == 0){
+              message = "Liked!";
+          }else{
+              message = "Disliked!";
+          }
+          Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
       }
    }
 
