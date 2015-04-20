@@ -61,7 +61,7 @@ public class PartnerAdapter extends RecyclerView.Adapter<PartnerAdapter.PartnerV
         });
 
         aViewHolder.title.setText(resources.get(i).getParName());
-        aViewHolder.icon.setImageResource(R.drawable.camera);
+        aViewHolder.icon.setImageDrawable(resources.get(i).getImage());
     }
 
     @Override
