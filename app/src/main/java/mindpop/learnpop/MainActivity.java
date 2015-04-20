@@ -48,10 +48,6 @@ public class MainActivity extends ActionBarActivity
     private NavigationDrawerFragment mNavigationDrawerFragment;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerListView;
-    //FB LOGIN
-    private CallbackManager callbackManager;
-    private boolean isResumed = false;
-    private AccessTokenTracker accessTokenTracker;
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
