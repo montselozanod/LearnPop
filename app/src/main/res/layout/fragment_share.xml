@@ -75,7 +75,7 @@
 
         <Spinner
         android:layout_width="match_parent"
-        android:layout_height="51dp"
+        android:layout_height="45dp"
         android:id="@+id/spinner_Grades"
         android:prompt="@string/grade_prompt"
         android:drawableLeft="@drawable/ic_action_about"
