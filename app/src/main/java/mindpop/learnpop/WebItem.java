@@ -160,9 +160,6 @@ public class WebItem extends Fragment {
 
                 updateLikeValues();
                 new UpdateResource(0).execute();
-                String message = "Liked!";
-
-                Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -179,7 +176,6 @@ public class WebItem extends Fragment {
                     Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
                 }else{
                     if(unlike_button.isChecked()){
-                        //add 1 to resource
                         resource.setDownVote(resource.getDownVote() + 1);
                         String message = "Disliked!";
                         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
