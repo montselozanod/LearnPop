@@ -146,9 +146,13 @@ public class WebItem extends Fragment {
                     unlike_button.setChecked(false);
                     resource.setDownVote(resource.getDownVote() -1);
                     resource.setUpVote(resource.getUpVote() + 1);
+                    String message = "Liked!";
+                    Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
                 }else{
                     if(like_button.isChecked()) {
                         resource.setUpVote(resource.getUpVote() + 1);
+                        String message = "Liked!";
+                        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
                     }else{
                         resource.setUpVote(resource.getUpVote() - 1);
                     }
@@ -156,6 +160,9 @@ public class WebItem extends Fragment {
 
                 updateLikeValues();
                 new UpdateResource(0).execute();
+                String message = "Liked!";
+
+                Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -168,16 +175,21 @@ public class WebItem extends Fragment {
                     like_button.setChecked(false);
                     resource.setUpVote(resource.getUpVote() -1);
                     resource.setDownVote(resource.getDownVote() + 1);
+                    String message = "Disliked!";
+                    Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
                 }else{
                     if(unlike_button.isChecked()){
                         //add 1 to resource
                         resource.setDownVote(resource.getDownVote() + 1);
+                        String message = "Disliked!";
+                        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
                     }else{
                         resource.setDownVote(resource.getDownVote() - 1);
                     }
                 }
                 updateLikeValues();
                 new UpdateResource(1).execute();
+
 
             }
         });
@@ -221,13 +233,7 @@ public class WebItem extends Fragment {
        }
 
       protected void onPostExecute(String file_url) {
-          String message = "";
-          if(type == 0){
-              message = "Liked!";
-          }else{
-              message = "Disliked!";
-          }
-          Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+
       }
    }
 
