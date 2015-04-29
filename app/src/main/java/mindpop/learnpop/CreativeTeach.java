@@ -25,6 +25,7 @@ public class CreativeTeach extends Application {
     public void onCreate() {
         super.onCreate();
         FacebookSdk.sdkInitialize(getApplicationContext());
+        printKeyHash();
     }
 
     public Profile getUserProfile(){return userProfile;}
@@ -39,7 +40,7 @@ public class CreativeTeach extends Application {
 
     public void printKeyHash() {
         try {
-            PackageInfo info = getPackageManager().getPackageInfo("vivz.slidenerd.facebookv40helloworld", PackageManager.GET_SIGNATURES);
+            PackageInfo info = getPackageManager().getPackageInfo("mindpop.learnpop", PackageManager.GET_SIGNATURES);
             for (Signature signature : info.signatures) {
                 MessageDigest md = MessageDigest.getInstance("SHA");
                 md.update(signature.toByteArray());
