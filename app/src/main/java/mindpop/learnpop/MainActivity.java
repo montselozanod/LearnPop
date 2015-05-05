@@ -87,6 +87,7 @@ public class MainActivity extends ActionBarActivity
                 mTitle = stringArray[position];
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, fragment)
+                        .addToBackStack(null)
                         .commit();
                 break;
             case 1:
@@ -95,6 +96,7 @@ public class MainActivity extends ActionBarActivity
                 mTitle = stringArray[position];
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, fragment)
+                        .addToBackStack(null)
                         .commit();
                 break;
             case 2:
@@ -103,6 +105,7 @@ public class MainActivity extends ActionBarActivity
                 mTitle = stringArray[position];
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, fragment)
+                        .addToBackStack(null)
                         .commit();
                 break;
             case 3:
@@ -111,6 +114,7 @@ public class MainActivity extends ActionBarActivity
                 mTitle = stringArray[position];
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, fragment)
+                        .addToBackStack(null)
                         .commit();
                 break;
             case 4:
@@ -119,6 +123,7 @@ public class MainActivity extends ActionBarActivity
                 mTitle = stringArray[position];
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, fragment)
+                        .addToBackStack(null)
                         .commit();
                 break;
             case 5:
@@ -127,6 +132,7 @@ public class MainActivity extends ActionBarActivity
                 mTitle = stringArray[position];
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, fragment)
+                        .addToBackStack(null)
                         .commit();
                 break;
             case 6:
