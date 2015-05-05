@@ -143,6 +143,7 @@ public class MainActivity extends ActionBarActivity
                 mTitle = stringArray[position];
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, fragment)
+                        .addToBackStack(null)
                         .commit();
                 break;
             case 8:
@@ -151,6 +152,7 @@ public class MainActivity extends ActionBarActivity
                 mTitle = stringArray[position];
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, fragment)
+                        .addToBackStack(null)
                         .commit();
                 break;
             case 9:
@@ -210,6 +212,7 @@ public class MainActivity extends ActionBarActivity
     public void onDestroy() {
         super.onDestroy();
         accessTokenTracker.stopTracking();
+
     }
 
 }
