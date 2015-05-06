@@ -88,7 +88,7 @@ public class MainActivity extends ActionBarActivity
                 fragment = new Announcements();
                 mTitle = stringArray[position];
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, fragment)
+                        .add(R.id.container, fragment)
                         .addToBackStack(null)
                         .commit();
                 break;
@@ -97,7 +97,7 @@ public class MainActivity extends ActionBarActivity
                 fragment = new Articles();
                 mTitle = stringArray[position];
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, fragment)
+                        .add(R.id.container, fragment)
                         .addToBackStack(null)
                         .commit();
                 break;
@@ -124,7 +124,7 @@ public class MainActivity extends ActionBarActivity
                 fragment = new Favorites();
                 mTitle = stringArray[position];
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, fragment)
+                        .add(R.id.container, fragment)
                         .addToBackStack(null)
                         .commit();
                 break;
@@ -133,7 +133,7 @@ public class MainActivity extends ActionBarActivity
                 fragment = new ArtPartnerFragment();
                 mTitle = stringArray[position];
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, fragment)
+                        .add(R.id.container, fragment)
                         .addToBackStack(null)
                         .commit();
                 break;
@@ -142,7 +142,8 @@ public class MainActivity extends ActionBarActivity
                 fragment = new Share();
                 mTitle = stringArray[position];
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, fragment)
+                        .add(R.id.container, fragment)
+                        .addToBackStack(null)
                         .commit();
                 break;
             case 7:
@@ -150,7 +151,7 @@ public class MainActivity extends ActionBarActivity
                 fragment = new Preferences();
                 mTitle = stringArray[position];
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, fragment)
+                        .add(R.id.container, fragment)
                         .addToBackStack(null)
                         .commit();
                 break;
@@ -159,7 +160,7 @@ public class MainActivity extends ActionBarActivity
                 fragment = new HelpFragment();
                 mTitle = stringArray[position];
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, fragment)
+                        .add(R.id.container, fragment)
                         .addToBackStack(null)
                         .commit();
                 break;
