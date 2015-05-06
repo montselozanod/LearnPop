@@ -4,6 +4,7 @@ package mindpop.learnpop;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -145,6 +146,7 @@ public class WebItem extends Fragment {
             public void onClick(View v){
                 WebViewFragment webFrag = new WebViewFragment();
                 webFrag.init(resource.getUrl());
+                getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, webFrag).addToBackStack(null).commit();
             }
         });
