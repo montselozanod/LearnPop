@@ -1,6 +1,7 @@
 package mindpop.learnpop;
 
 import android.app.ProgressDialog;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
@@ -40,6 +41,7 @@ public class Share extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_share, container, false);
+        getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setSpinnerContent(rootView);
         name = (TextView)rootView.findViewById(R.id.resName);
         resUrl = (TextView)rootView.findViewById(R.id.editURL);
