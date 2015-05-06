@@ -1,5 +1,6 @@
 package mindpop.learnpop;
 
+import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -45,6 +46,8 @@ public class WebViewFragment extends Fragment {
 
         Log.d("SwA", "WVF onCreateView");
         View v = inflater.inflate(R.layout.web_layout, container, false);
+        getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+
         setHasOptionsMenu(true);
         progress = (ProgressBar) v.findViewById(R.id.progressBar);
         progress.setMax(100);
