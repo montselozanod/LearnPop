@@ -220,7 +220,7 @@ public class MainActivity extends ActionBarActivity
     @Override
     public void onDestroy() {
         super.onDestroy();
-        //accessTokenTracker.stopTracking();
+        accessTokenTracker.stopTracking();
 
     }
 
