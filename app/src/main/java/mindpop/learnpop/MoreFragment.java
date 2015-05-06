@@ -1,6 +1,7 @@
 package mindpop.learnpop;
 
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -29,6 +30,8 @@ public class MoreFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_more, container, false);
+        getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+
         // Inflate the layout for this fragment
         String [] sub = {"Visual Art", "Science"};
         mRecyclerView = (RecyclerView)rootView.findViewById(R.id.recycler_more);
