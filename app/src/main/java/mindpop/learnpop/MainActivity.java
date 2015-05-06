@@ -81,7 +81,7 @@ public class MainActivity extends ActionBarActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = null;
         String[] stringArray = getResources().getStringArray(R.array.sections);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
         switch(position){
             case 0:
                 // announcements

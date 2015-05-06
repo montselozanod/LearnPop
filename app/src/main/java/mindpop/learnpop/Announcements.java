@@ -109,7 +109,9 @@ public class Announcements extends Fragment {
         @Override
         protected void onPostExecute(JSONObject result){
             super.onPostExecute(result);
-            progressDialog.dismiss();
+            if ((progressDialog != null) && progressDialog.isShowing()) {
+                progressDialog.dismiss();
+            }
             // for performance given that changes in content do not change the layout size of the RecyclerView
             if(list.isEmpty())
             {
