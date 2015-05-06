@@ -1,6 +1,7 @@
 package mindpop.learnpop;
 
 import android.app.Activity;
+import android.content.pm.ActivityInfo;
 import android.content.pm.Signature;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
@@ -80,6 +81,7 @@ public class MainActivity extends ActionBarActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = null;
         String[] stringArray = getResources().getStringArray(R.array.sections);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
         switch(position){
             case 0:
                 // announcements
