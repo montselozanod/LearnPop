@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.ArrayList;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -65,6 +66,8 @@ public class ArtPartnerFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_art_partner, container, false);
+        getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+
         partnersArray = new ArrayList<Partner>();
 
         mRecyclerView = (RecyclerView)rootView.findViewById(R.id.list_partners);

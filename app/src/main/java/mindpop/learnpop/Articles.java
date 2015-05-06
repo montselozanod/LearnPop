@@ -2,6 +2,7 @@ package mindpop.learnpop;
 
 import android.app.ProgressDialog;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -32,6 +33,7 @@ public class Articles extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_article, container, false);
+        getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
         //restore prefs
         resourceArrayList = new ArrayList<Resource>();
         mRecyclerView = (RecyclerView)rootView.findViewById(R.id.recycler_res);
