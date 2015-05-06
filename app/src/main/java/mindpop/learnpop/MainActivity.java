@@ -140,7 +140,6 @@ public class MainActivity extends ActionBarActivity
             case 6:
                 //share
                 fragment = new Share();
-                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
                 mTitle = stringArray[position];
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, fragment)
@@ -149,7 +148,6 @@ public class MainActivity extends ActionBarActivity
             case 7:
                 //preferences
                 fragment = new Preferences();
-                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
                 mTitle = stringArray[position];
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, fragment)
@@ -159,7 +157,6 @@ public class MainActivity extends ActionBarActivity
             case 8:
                 //Help
                 fragment = new HelpFragment();
-                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
                 mTitle = stringArray[position];
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, fragment)

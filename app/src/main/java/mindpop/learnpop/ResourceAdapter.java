@@ -56,7 +56,6 @@ public class ResourceAdapter extends RecyclerView.Adapter<ResourceAdapter.Resour
                 webFrag.init(item.getUrl());*/
                 WebItem webItem = new WebItem();
                 webItem.init(item);
-                _activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
                 _activity.getSupportFragmentManager().beginTransaction().replace(R.id.container, webItem).addToBackStack(null).commit();
             }
         });

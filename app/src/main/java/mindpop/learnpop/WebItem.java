@@ -74,7 +74,6 @@ public class WebItem extends Fragment {
         setRetainInstance(true);
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -146,7 +145,6 @@ public class WebItem extends Fragment {
             public void onClick(View v){
                 WebViewFragment webFrag = new WebViewFragment();
                 webFrag.init(resource.getUrl());
-                getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, webFrag).addToBackStack(null).commit();
             }
         });
